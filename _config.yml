@@ -1,0 +1,19 @@
+highlighter: rouge
+github: [Repository metadata]
+
+baseurl: "https://kristenzirkler.github.io/optimal-health-theme"
+
+livereload: true
+
+# css_path: "https://downloads.channelmaster.com"
+production: true
+encoding: utf-8
+
+# Sass
+sass:
+  sass_dir: scss
+  style: :compressed
+  line_numbers: false
+
+# Gems
+plugins: ['jekyll/minibundle']
