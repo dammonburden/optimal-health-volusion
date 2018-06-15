@@ -6,3 +6,28 @@ $(document).ready(function() {
 </script>
 
 {% include site-google-analytics.html %}
+
+<script src="{{ site.baseurl }}v/vspfiles/templates/ohs-2018/js/custom.js"></script>
+
+<script>
+// match in customjs when updated
+var tU = window.location.href.toLowerCase(), tS = '';
+if (tU.indexOf('login.asp') > -1) {
+tS = 'login'; }
+else if (tU.indexOf('reviewnew.asp') > -1) {
+tS = 'new-review'; }
+else if (tU.indexOf('searchresults.asp') > -1) {
+tS = 'search-results'; }
+else if (tU.indexOf('shoppingcart') > -1) {
+tS = 'cart'; }
+else if ((tU.indexOf('-s/') > -1) || (tU.indexOf('_s/') > -1)) {
+tS = 'category-list'; }
+else if ((tU.indexOf('articles.asp') > -1) || (tU.indexOf('-a/') > -1) || (tU.indexOf('_a/') > -1)) {
+tS = 'article'; }
+else if ((tU.indexOf('productdetails.asp') > -1) || (tU.indexOf('-p/') > -1) || (tU.indexOf('_p/') > -1)) {
+tS = 'product-detail'; }
+else {
+tS = 'other';
+}
+document.body.className += ' ' + 'page-'+tS;
+</script>

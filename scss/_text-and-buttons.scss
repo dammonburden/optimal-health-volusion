@@ -1,0 +1,21 @@
+* {
+-webkit-font-feature-settings: "lnum"; 
+-moz-font-feature-settings: "lnum"; 
+font-feature-settings: "lnum"; 
+}
+.cta-button {
+  display: inline-block;
+  background-color: $button-color;
+  color: $color-neutral-5;
+  line-height: ($field-height - 2);
+  padding: 2px 14px 0;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $button-hover;
+    color: $color-neutral-5;
+    text-decoration: none;
+  }
+  &.block {
+    display: block;
+  }
+}
