@@ -1,0 +1,127 @@
+// ========== LAYOU WIDTHS ========== //
+
+// MAX TEMPLATE WIDTHS
+@max-width:       960px;
+@full-size:       100%;
+
+
+
+
+// ========== DEFAULT COLOR DEFINITIONS ========== //
+
+// Text Colors
+@body-color:            #000;
+@link-color:            #333;
+@link-color-hover:      #666;
+@price-color:           #c00;
+
+@white:                 #fff;
+@black:                 #000;
+
+// Use these as test colors for elements that have no visible boundaries
+@trans-orange:    rgba( 255,  90,   0, 0.5 );
+
+
+
+
+
+// ========== FONTS ========== //
+@fonts: '../fonts/';
+
+.fontface(@font-alias, @file-name, @fontweight: normal, @fontstyle: normal) {
+  @font-face {
+    font-family: '@{font-alias}';
+    src: url('@{fonts}@{font-alias}/@{file-name}.eot');
+    src: url('@{fonts}@{font-alias}/@{file-name}.eot?#iefix') format('embedded-opentype'),
+         url('@{fonts}@{font-alias}/@{file-name}.svg') format('svg'),
+         url('@{fonts}@{font-alias}/@{file-name}.ttf') format('truetype');
+    font-weight: @fontweight;
+    font-style: @fontstyle;
+  }
+}
+
+// ----- DECLARE @FONT-FACE HERE ----- //
+.fontface('CUSTOMFONTNAME', 'FILENAME_NOEXTENSION', normal, normal);
+
+// ----- FONT ALIASES ----- //
+@sans:          Arial, Helvetica, sans-serif;
+@serif:         Georgia, "Times New Roman", Times, serif;
+
+
+
+
+
+// ========================================
+//  STANDARD MIXINS
+// ========================================
+.box-sizing(@size: border-box) {
+  -webkit-box-sizing: @size;
+  -moz-box-sizing: @size;
+  -ms-box-sizing: @size;
+  box-sizing: @size;
+} // .box-sizing
+
+.box-shadow(@props) {
+  -webkit-box-shadow: @props;
+  box-shadow: @props;
+} // .box-shadow
+
+.background-size(@bgsize: contain) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
+
+.linear-gradient(@origin: top, @positions: @white 0%~',' #222 100%) {
+  background-image: -webkit-linear-gradient(@origin, @positions);
+  background-image: -moz-linear-gradient(@origin, @positions);
+  background-image: -o-linear-gradient(@origin, @positions);
+  background-image: -ms-linear-gradient(@origin, @positions);
+  background-image: linear-gradient(@origin, @positions);
+} // .linear-gradient
+
+.transition(@atts: all, @time: 0.3s, @easing: linear) {
+  -webkit-transition: @atts @time @easing;
+  -moz-transition: @atts @time @easing;
+  -o-transition: @atts @time @easing;
+  -ms-transition: @atts @time @easing;
+  transition: @atts @time @easing;
+} // .transition
+
+.placeholder(@color: #f90, @style: normal, @weight: normal) {
+  &::-webkit-input-placeholder { color: @color; font-style: @style; font-weight: @weight; }
+  &:-moz-placeholder           { color: @color; font-style: @style; font-weight: @weight; } /* Firefox 18- */
+  &::-moz-placeholder          { color: @color; font-style: @style; font-weight: @weight; } /* Firefox 19+ */
+  &:-ms-input-placeholder      { color: @color; font-style: @style; font-weight: @weight; }
+} // .placeholder
+
+.placeholderFocus(@color: #f90, @style: normal, @weight: normal) {
+  &:focus::-webkit-input-placeholder { color: @color; font-style: @style; font-weight: @weight; }
+  &:focus:-moz-placeholder           { color: @color; font-style: @style; font-weight: @weight; } /* Firefox 18- */
+  &:focus::-moz-placeholder          { color: @color; font-style: @style; font-weight: @weight; } /* Firefox 19+ */
+  &:focus:-ms-input-placeholder      { color: @color; font-style: @style; font-weight: @weight; }
+} // .placeholderFocus
+
+.font-smoothing(@smoothing: subpixel-antialiased) {
+  -webkit-font-smoothing: @smoothing;
+} // .font-smoothing
+
+
+
+// ========================================
+//  CUSTOM MIXINS
+// ========================================
+
+.bread-crumbs() {
+  /** ===== BREADCRUMBS ===== **/
+  #content_area #divWaitModal + table > tbody > tr:first-child,
+  td.vCSS_breadcrumb_td {
+    b,
+    b a {
+      color: @black;
+      font-weight: normal !important;
+      font-size: 11px !important;
+      font-family: @sans;
+    }
+  }
+} // .bread-crumbs

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js ie9" lang="en"><!--<![endif]-->
+<head>
+
+<!--
+DYNAMIC PAGE-SPECIFIC META TAGS WILL BE PLACED HERE
+DO NOT ADD YOUR OWN META TAGS
+ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
+-->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<meta id="v65-layout-mode" data-cart="storedot" data-checkout="storedot" data-use-simplified-checkout="true">
+
+<meta id="v65-logo-dimensions" data-height="70" data-width="190">
+
+<!--[if lt IE 9]>
+<script src="dist/html5shiv.js"></script>
+<![endif]-->
+
+<link href="v/vspfiles/templates/beautybox/css/imports.css" rel="stylesheet">
+<div id="if_homepage"><link href="v/vspfiles/templates/beautybox/css/homepage.css" rel="stylesheet"></div>
+
+<script src="v/vspfiles/templates/beautybox/js/design-toolkit_min.js"></script>
+<script>DTK.loadCSS("beautybox");</script> <!-- FOR CHECKOUT -->
+
+</head>
+
+<!-- ======================== FILE INFO ========================
+Company:  RETAIL PROJECT
+Designer: CM
+Developer:  WM
+Production: OCT 2013
+======================== END INFO ======================== -->
+
+
+<body>
+
+  <noscript id="no-js-notice">
+    To take full advantage of this site, please enable your browser's JavaScript feature.
+    <a href="http://launchpad.volusion.com/kb_results.asp?ID=42" target="_blank">Learn how</a>
+  </noscript>
+
+  <div id="pageWrapper">
+   
+    <!-- ======================== HEADER ======================== -->
+    <div class="headerWrap">
+      <div id="header" data-v-anchor="cart">
+
+        <div id="if_homepage">
+          <h1 id="display_homepage_title"><a href="/" title=""></a></h1>
+        </div><!--if_homepage-->
+
+        <div id="if_not_homepage">
+        <div id="display_homepage_title"><a href="/" title=""></a></div>
+        </div><!--if_not_homepage-->
+
+        <a href="/shoppingcart.asp" class="cartLink">
+          <img src="v/vspfiles/templates/beautybox/images/template/cart_bg.png">
+          <span class="cartNum" data-v-observable="cart-count">0</span>
+          <span class="cartText">My Cart</span>
+        </a>
+
+        <div class="siteTools" data-v-edit-region="Sitetools"><a href="/myaccount.asp">My Account</a>
+          <a href="/help.asp">Help/Faq</a></div>
+
+
+        <!-- ======================== SEARCH BOX ======================== -->
+        <div id="displaySearch">
+          <form action="/SearchResults.asp" method="get" name="SearchBoxForm">
+            <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
+            <input type="submit" name="Submit" class="searchSubmit" value="">
+          </form>
+        </div><!-- #displaySearch -->
+
+      </div><!-- #header -->
+  
+      <!-- ==================== UL LAYOUT ==================== -->
+      <div class="topNavWrap">
+        <div id="topNav" class="clear">
+          <div id="display_menu_1" class="menu">
+            <ul>
+              <li><a href="/">Link 1</a></li>
+              <li><a href="/">Link 2</a></li>
+              <li><a href="/">Link 3</a></li>
+            </ul>
+          </div>
+        </div><!-- #top_nav -->
+      </div>
+
+    </div><!-- .headerWrap -->
+
+
+<!-- ==================== CONTENT ==================== -->
+<div id="contentWrap" class="clear">
+  <div id="content" class="clear">
+
+    <!-- ==================== CONTENT AREA ==================== -->
+    <div id="content_area"></div><!-- #content_area -->
+
+    <div id="leftNav">
+
+       <!-- ========== MENU 2 ========== -->
+        <!-- <div id="Menu2_Title" class="menu_title">Menu Title</div>
+        <div id="display_menu_2" class="menu">
+          <ul>
+            <li><a href="/">Link 1</a></li>
+            <li><a href="/">Link 2</a></li>
+            <li><a href="/">Link 3</a></li>
+            <li><a href="/">Link 4</a></li>
+          </ul>
+        </div> --> 
+<!-- #display_menu_2 -->
+
+      <div id="display_promotions_999" class="clear"></div>
+
+    </div><!-- #leftNav -->
+
+  </div><!-- #content -->
+
+</div><!-- #contentWrap -->
+
+</div><!-- #pageWrapper -->
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footWrap">
+    <div id="footer" class="clear">
+      <div id="footerTop" class="clear">
+
+        <div class="col-1" data-v-edit-region="About Us">
+          <h3 class="title">About Us</h3>
+          <ul>
+            <li><a href="/aboutus.asp" title="About Config_CompanyNameLegal">About Us</a></li>
+            <li><a href="/articles.asp?ID=83" title="Contact Config_CompanyNameLegal">Contact Us</a></li>
+            <li><a href="/terms_privacy.asp" title="Privacy Policy">Privacy Policy</a></li>
+            <li><a href="https://blog.optimalhealthsystems.com" title="Blog - Optimal Health Systems">Blog</a></li>
+          </ul>
+          <ul>
+            <li><a href="/cindex.asp" title="Config_CompanyNameLegal's Category Index">Category Index</a></li>
+            <li><a href="/productslist.asp" title="Config_CompanyNameLegal's Product Index">Product Index</a></li>
+            <li><a href="/terms.asp" title="Terms and Conditions">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="col-2" data-v-edit-region="My Account">
+          <h3 class="title">My Account</h3>
+          <ul>
+            <li><a href="/shoppingcart.asp" title="View My Shopping Cart">Shopping Cart</a></li>
+            <li><a href="/login.asp" title="Login to Your Account">Login</a>/<a href="/register.asp" title="Register for an Account">Register</a></li>
+            <li><a href="/myaccount.asp" title="Edit My Account">My Account</a></li>
+          </ul>  
+          <ul>
+            <li><a href="/wishlist.asp " title="My Wishlist">My Wishlist</a></li>
+            <li><a href="/articles.asp?ID=57" title="Shipping">Shipping Policy</a></li>
+            <li><a href="/returns.asp" title="Returns">Returns Policy</a></li>
+          </ul>  
+        </div>
+
+        <div class="col-3" data-v-edit-region="Popular Products"><h3 class="title">Most Popular Products</h3>
+          <ul>
+            <li><a href="/Optimal-1-Digestion-p/655705123013.htm" title="Digestion">Digestion</a></li>
+            <li><a href="/Optimal-2-Vitamin-Mineral-Antioxidant-p/655705123020.htm" title="Vitamin/Mineral">Vitamin/Mineral</a></li>
+            <li><a href="/Optimal-Acute-p/655705123044.htm" title="Acute">Acute</a></li>
+          </ul>
+          <ul>
+            <li><a href="/Optimal-Flora-Plus-p/655705123075.htm" title="Flora">Flora</a></li>
+            <li><a href="/Optimal-Whole-C-Chewable-p/655705123211.htm" title="Whole C">Whole C</a></li>
+            <li><a href="https://blog.optimalhealthsystems.com/Catalogs/Summer_2018_Catalog.pdf" target="_blank">PRODUCT CATALOG</a></li>
+          </ul></div>
+
+      </div>
+
+      <div class="co-contact">
+
+        <!-- Social Links -->
+        <div class="social-connect" data-v-edit-region="Social">
+          <h3>Stay Connected</h3>
+          <a href="https://www.facebook.com/OptimalHealthSystems" class="fb-icon" target="_blank"></a>
+          <a href="https://twitter.com/ohsinfo" class="tw-icon" target="_blank"></a>
+          <a href="https://service.ringcentral.com/ringme/ringme.asp?uc=AFE70BDC42AB112BF0181733456B81E94272159318023,0,,1,0&s=no&v=2&s_=1210" target="_blank" "="" class="phone-icon"></a>
+<!--
+          <a href="http://instagram.com/Volusion" class="inst-icon" target="_blank" ></a>
+          <a href="http://www.pinterest.com/volusion/" class="pin-icon" target="_blank" ></a>
+          <a href="mailto:email@beautybox.com" class="mail-icon" target="_blank" ></a>
+-->
+        </div>
+
+                          <!-- Mailing List Section -->
+        <div id="eList">
+          <div class="title" data-v-edit-region="Newsletter">
+            <h4><a href="https://www.optimalhealthsystems.com/register.asp"><img src="/v/vspfiles/photos/affiliate.jpg" width="610" height="65" alt="Affiliate"></a></h4>
+          </div>
+        </div><!-- #eList -->
+
+
+
+
+      </div>
+    </div><!-- #footer -->
+  </div>
+
+
+
+      <!--
+    ==========================================================================================
+    VOLUSION LINK - BEGIN
+    ==========================================================================================
+    Customer has agreed per Volusion's Terms of Service (http://www.volusion.com/agreement_monthtomonth.asp)
+    to maintain a text hyperlink to "http://www.volusion.com" in the footer of the website. The link must be
+    standard html, contain no javascript, and be approved by Volusion. Removing this link breaches the Volusion agreement.
+    ==========================================================================================
+    -->
+
+
+  <div class="footerBottomWrap">
+    <div id="footerBottom" class="clear">
+        <a data-v-edit-region="SSL" class="fright" href="javascript:void(0);" onclick="window.open('https://www.volusion.com/ssl.asp?url=www.optimalhealthsystems.com', 'VolusionSSL',  'top=10,left=10,menubar=0,resizable=0,scrollbars=0,width=467,height=467')"><img src="/v/vspfiles/templates/beautybox/images/template/vsecure.png" alt=""></a>
+        <div class="copyright">
+          <a href="/terms.asp" title="Terms">Copyright &copy; <span class="insertYear">2018</span>&nbsp;Config_CompanyNameLegal. All Rights Reserved.</a>
+          <span id="if_homepage">
+            Powered with Volusion <a href="http://www.volusion.com" target="_blank">ecommerce</a>.
+          </span>
+        <span id="if_not_homepage">
+        Powered with Volusion <a href="http://www.volusion.com" target="_blank" rel="nofollow">shopping cart software</a>.
+        </span><!-- #if_not_hompage -->
+        </div><!-- .copyright -->
+      </div><!-- #footerBottom -->
+  </div>
+
+
+
+<!--PayPal Image with Transparent Background-->
+<script>
+$(document).ready(function() {
+  $('[src$="/btn_xpressCheckout2.gif"]').attr("src", "/v/vspfiles/templates/beautybox/images/template/btn_xpressCheckout2.png"); 
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-604128-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

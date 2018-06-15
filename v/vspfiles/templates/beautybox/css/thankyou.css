@@ -1,0 +1,84 @@
+#leftNav {
+        display: none;
+}
+
+
+/*Load Heading Image On Content Area to Avoid Positioning Headaches*/
+#content_area {
+        background:url("../images/template/heading-thankyou.jpg") center 10px no-repeat;
+        width: 960px;
+        padding: 60px 15px 15px;
+}
+/*Text Indent Heading but Print on Page for Good Document Structure*/
+#content_area h1 {
+        margin:0;
+        padding:0;
+        text-align:left;
+        height:0;
+        text-indent: -9999px;
+}
+/*Order Number Font Style*/
+#content_area p.order-number {
+        color:#000000;
+        font-size: 17px;
+        text-align: left;
+        font-weight: 600;
+}
+/*Receipt and Shipping Font Styles*/
+#content_area p {
+        color:#000;
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: normal;
+        margin:0;
+        padding:0;
+}
+#content_area a, /*Link Colors*/ 
+#content_area a p /*Receipt Link Color*/ {
+        color:#500625;
+        text-decoration:none;
+        font-weight: bold;
+}
+#content_area h3 {
+        font-size: 17px;
+        margin: 0 0 3px;
+}
+#content_area a:hover, /*Link Hover*/
+#content_area a:hover p /*Receipt Link Hover*/ {
+        color:#500625;
+        text-decoration:underline;
+}
+/*Space Before and After Addendum*/
+#content_area p.addendum {
+        padding:10px 0 50px 0;
+        margin:0;
+        white-space:nowrap;
+}
+.colors_backgroundneutral,
+.colors_lines_light {
+        background: none;
+}
+
+#content_area table[width="450"] {
+        width: 710px;
+}
+
+#content_area table[width="450"][cellpadding="0"] > tbody > tr:first-child + tr > td {
+        background: #f7efeb;
+}
+
+#content_area .ty-contact {
+        background: url('../images/template/chatbubble.png') no-repeat 20px 20px;
+        padding: 10px 10px 30px 120px;
+}
+
+
+#content_area .social-connect {
+        width: 550px;
+}
+#content_area a.cont-browsing img {
+        margin: 110px 170px;
+        display: block;
+}
+
+

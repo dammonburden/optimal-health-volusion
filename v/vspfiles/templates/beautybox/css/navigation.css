@@ -1,0 +1,144 @@
+#tbl0 {width: 100%;}
+#tbl0 td {width: auto;}
+
+#topNav .menu #menu0 {margin: 0 auto;}
+
+#topNav .menu td img,  #leftNav .menu td img {display: none !important;}
+
+#topNav .menu table,  #leftNav .menu table {margin: 0; padding: 0;}
+
+
+
+#tbl0 td[id*="sep"] {
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    overflow: hidden;
+}
+
+
+#topNav .menu td.nav a,  #topNav .menu td.nav_hover a {
+	display: block;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 18px 15px;
+	text-align: center;
+	text-transform: uppercase;
+	
+}
+#topNav .menu td.nav_hover a,  #topNav .menu td.nav_selected a {
+	background: #298A08!important;
+	text-decoration: none !important;
+}
+
+
+#topNav .mmenucontainer + .mmenucontainer > .milonictable {
+	background: #fff;
+	border: 1px solid #bfa7a7 !important;
+}
+
+
+#topNav .menu td.subnav a,  #topNav .menu td.subnav_hover a {
+	font-size: 13px;
+	font-weight: normal;
+	text-transform: none;
+	color: #272020;
+	padding: 8px 15px;
+	text-align: left;
+}
+#topNav .menu td.subnav_hover a,  #topNav .menu td.subnav_selected a {
+	background: #298A08 !important;
+	color: #fff;
+}
+
+ 
+#leftNav script + table {width: 100%;}
+
+
+
+
+#leftNav .menu script + div > table:first-child {width: 100%;}
+
+
+#leftNav .menu > .mmenucontainer td.nav a,  #leftNav .menu > .mmenucontainer td.nav_hover a {
+	font-size: 13px;
+	font-weight: normal;
+	color: #000;
+	padding: 8px 0 8px 10px;
+	text-decoration: none;
+        white-space: normal;
+}
+#leftNav .menu > .mmenucontainer td.nav_hover a,  #leftNav .menu > .mmenucontainer td.nav_selected a {
+	background-color: #500625 !important;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+#leftNav .mmenucontainer + .mmenucontainer > .milonictable {
+	background: #fff;
+	border: 1px solid #500625 !important;
+	min-width: 190px;
+}
+
+
+#leftNav .menu > .mmenucontainer td.subnav a,  #leftNav .menu > .mmenucontainer td.subnav_hover a {
+	padding: 7px 0 7px 10px;
+}
+#leftNav .menu > .mmenucontainer td.subnav_hover a,  #leftNav .menu > .mmenucontainer td.subnav_selected a {
+
+}
+
+
+
+
+
+#leftNav .menu script + table {width: 100%;}
+
+
+#leftNav .menu td.nav a,  #leftNav .menu td.nav_hover a {
+	font-size: 13px;
+	font-weight: normal;
+	color: #000;
+	display: block;
+	padding: 8px 0 8px 10px;
+}
+#leftNav .menu td.nav_hover a,  #leftNav .menu td.nav_selected a {
+	color: #500625;
+	text-decoration: none;
+}
+
+
+#leftNav .menu td.subnav a,  #leftNav .menu td.subnav_hover a {
+	padding: 6px 0 6px 25px;
+}
+#leftNav .menu td.subnav_hover a,  #leftNav .menu td.subnav_selected a {
+	
+}
+
+
+
+
+#leftNav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#leftNav li {}
+
+#leftNav li a {
+	color: #000;
+	display: block;
+	width: 100%;
+}
+
+#leftNav li a:hover,  #leftNav li.nav_selected a {
+	color: #666;
+}
+
+#display_menu_1 .nav {background-color:transparent;}
+#display_menu_1 .nav_hover {background-color:transparent;}
+#display_menu_2 .nav {background-color:transparent;}
+#display_menu_2 .nav_hover {background-color:transparent;}
+#display_menu_1 .nav a {}

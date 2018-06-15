@@ -1,0 +1,23 @@
+
+#content_area {
+	width: 960px;
+	background: url('../images/template/error_bg.png') no-repeat center 108px; 
+	padding: 280px 0 200px;
+}
+
+
+#leftNav {
+	display: none;
+}
+
+.error {
+	margin: 0 auto;
+	color: #000;
+	font-size: 15px;
+	text-align: center;
+	line-height: 22px;
+}
+.error p {
+	width: 535px;
+	margin: 0 auto 30px;
+}

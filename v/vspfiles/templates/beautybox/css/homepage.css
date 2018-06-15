@@ -1,0 +1,419 @@
+/*Hides unnecessary <br> tags above Featured Products*/
+#content_area br {display: none;}
+#content_area .v65-productDisplay br {display: block;}
+#homepage br {display: block;}
+
+/*****************************
+* *   	   OVERRIDES	   * *
+******************************/
+
+#Homepage {
+	width: 960px;
+}
+
+#content {
+  padding: 0;
+  width: 960px;
+}
+
+#content_area {
+	width: 960px;
+	padding: 0 0 25px;
+}
+
+#leftNav {
+	display: none;
+}
+
+
+/*****************************
+* *       SLIDE SHOW       * *
+******************************/
+#slideshow {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+    margin: 0 0 30px;
+}
+
+#slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+
+#slideshow .currentPic {z-index: 590;}
+
+.back_btn, .forward_btn {
+    cursor: pointer;
+    display: block;
+    height: 60px;
+    position: absolute;
+    width: 60px;
+    z-index: 999;
+}
+
+.back_btn {
+    background: url(../images/homepage/left.png) no-repeat;
+    left: -30px;
+    top: 50%;
+    margin-top: -30px;
+}
+
+.forward_btn {
+    background: url(../images/homepage/right.png) no-repeat;
+    right: -25px;
+    top: 50%;
+    margin-top: -30px;
+}
+
+
+/* SLIDE ONE TEXT AND LINK */
+#slideshow .sld1 span.title {
+	position: absolute;
+	left: 485px;
+	top: 150px;
+	width: 385px;
+	display: block;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	line-height: 60px;
+	color: #fff;
+	font-size: 60px;
+}
+#slideshow .sld1 span.title span {
+	color: #27201f;
+	display: block;
+	padding-left: 105px;
+}
+#slideshow .sld1 a {
+	background: #bb9894;
+	border: 1px solid #fff;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	display: block;
+	width: 195px;
+	line-height: 45px;
+	text-align: center;
+	float: right;
+	margin: 30px 45px 0 0;
+}
+
+
+/* SLIDE TWO TEXT AND LINK */
+#slideshow .sld2 span.title {
+	position: absolute;
+	left: 420px;
+	top: 65px;
+	width: 430px;
+	display: block;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #505050;
+	letter-spacing: 1;
+	font-size: 90px;
+	line-height: 90px;
+}
+#slideshow .sld2 span.title span {
+	color: #000;
+	font-weight: 500;
+	display: block;
+}
+#slideshow .sld2 span.title b {
+	color: #500726;
+}
+#slideshow .sld2 a {
+	color: #fff;
+	line-height: 20px;
+	font-size: 13px;
+	font-weight: bold;
+	background: #5a0f0d;
+	float: right;
+	display: block;
+	width: 120px;
+	text-align: center;
+	padding: 8px 10px;
+	margin: 30px 0 0 0;
+}
+
+#slideshow .sld2 a img {
+	float: right;
+}
+
+/*****************************
+* *   HOMEPAGE PROMOS     * *
+******************************/
+
+.prod-promos .promo_first {margin:0 !important;}
+.prod-promos a {
+	position: relative;
+	display: block;
+	float: left;
+	width: 175px;
+	height: 175px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 0 0 20px;
+}
+.prod-promos span {
+	position: absolute;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	color: #333;
+	text-transform: uppercase;
+	display: block;
+	width: 175px;
+	bottom: 0;
+	left: 0;
+}
+
+.prod-promos a:hover span {
+  color: #500726;
+  text-decoration: none;
+}
+
+
+.co-promos {
+	width: 960px;
+	margin: 20px 0;
+}
+
+/* New Arrivals */
+.co-promos .new-arrivals {
+	float: left;
+	position: relative;
+	height: 350px;
+	width: 345px;
+	display: block;
+	overflow: hidden;
+}
+
+.co-promos .new-arrivals span {
+	position: absolute;
+	color: #333;
+	left: 0;
+	bottom: 0;
+	background: #c3a7a2;
+	background: rgba(195,167,162,0.70);
+	font-size: 30px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	display: block;
+	width: 345px;
+	text-indent: 10px;
+}
+
+.co-promos .new-arrivals:hover span {
+	color: #000;
+}
+
+/* Free Shippings */
+.co-promos .shipping-promo {
+	background: url('../images/homepage/freeshipping.jpg') no-repeat 0 0;
+	float: left;
+	position: relative;
+	width: 226px;
+	height: 350px;
+	margin: 0 0 0 20px;
+	overflow: hidden;
+}
+
+.co-promos .shipping-promo span {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	color: #500726;
+	font-size: 60px;
+	position: absolute;
+	top: 180px;
+	width: 226px;
+	display: block;
+	text-align: center;
+}
+.co-promos .shipping-promo span sup {
+	font-size: 30px;
+}
+
+/* Blog */
+.co-promos .our-blog {
+	position: relative;
+	background: url('../images/homepage/blog.jpg') no-repeat 0 0;
+	float: left;
+	display: block;
+	width: 345px;
+	height: 350px;
+	margin: 0 0 0 20px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.co-promos .our-blog .info {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 30px;
+	overflow: hidden;
+	background: #c3a7a2;
+	background: rgba(195,167,162,0.70);
+	text-transform: uppercase;
+	display: block;
+	width: 310px;
+	color: #27201f;
+	padding: 0 20px 10px 15px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+	-ms-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+.co-promos .our-blog .info h3 {
+	font-size: 30px;
+	padding: 0 0 10px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+}
+.co-promos .our-blog .info p {
+	line-height: 20px;
+}
+.co-promos .our-blog .info a {
+	font-weight: bold;
+}
+.co-promos .our-blog .info a:after {
+	content: url('../images/template/greyarrow.png');
+	padding: 0 4px;
+}
+
+.co-promos .our-blog:hover .info {
+	height: 100px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+	-ms-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+
+
+/* BUY ONE GET ONE FREE */
+.bo-gof {
+	/*background: url('../images/homepage/bogof_bg.jpg') no-repeat 40px center;*/
+	background: url('../images/homepage/bogo.jpg') no-repeat top center;
+	width: 773px;
+	height: 108px;
+	/*border: 1px solid #f9dcd7;*/
+	padding: 35px 10px 10px 175px;
+        display:block;
+}
+.bo-gof .title {
+	font-size: 56px;
+	letter-spacing: 1;
+	line-height: 60px;
+	color: #505050;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.bo-gof .title span {
+	color: #000;
+}
+.bo-gof .title b {
+	color: #500726;
+}
+.bo-gof p {
+	color: #000;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+}
+.bo-gof p span {
+	color: #500726;
+}
+.bo-gof p a {
+	color: #500726;
+	font-weight: 700;
+}
+
+/*****************************
+* *   FEATURED PRODUCTS    * *
+******************************/
+
+.fp-hd {
+	background: none repeat scroll 0 0 #298A08;
+	width: 960px;
+	color: #333333;
+	text-transform: uppercase;
+	margin: 10px 0;
+}
+
+.fp-hd h3 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	width: 600px;
+	text-indent: 10px;
+	float: left;
+}
+
+.fp-hd a {
+	float: right;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 10px 10px;
+}
+.fp-hd a:after {
+	content: url('../images/template/greyarrow.png');
+	padding: 0 5px;
+}
+
+#content_area table[width="96%"],
+#content_area table[width="96%"] table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align:center; /* Center Featured Products Text */
+}
+
+#content_area table[width="96%"] td {
+	padding: 0;
+	color: #333333;
+	line-height: 20px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+td[background$="Grid_Divider_Vertical.gif"], /*Removes vertical divider*/
+td[background$="Grid_Divider_Horizontal.gif"] {/*Removes vertical divider*/
+	display: none;}
+	
+/* Produt Images */
+table.v65-productDisplay a > img {
+	max-width: 190px;
+}
+
+/* Name */
+a.productnamecolor.colors_productname {
+	color: #333333;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/* Our Price TEXT */
+font.pricecolor.colors_productprice font.text.coltors_text b {
+	color: #333;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+/* Sale PRICE/TEXT / Our Price PRICE */
+font.pricecolor.colors_productprice {
+	color: #333;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	text-transform: uppercase;
+}

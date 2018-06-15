@@ -1,0 +1,109 @@
+/**************************
+*     DEAL OF THE DAY     *
+**************************/
+
+/* DEAL WRAPPER */
+#content_area {}
+
+/* DEAL DIVIDER COLORS */
+.deal,
+.deal-headline,
+.deal-saving-stock-details {
+	border-color: #ccc;
+	font-family: 'Raleway', sans-serif;
+}
+
+/* DEAL HEADINGS */
+#content_area .deal-main-heading {
+        height: 60px !important;
+}
+#content_area .deal-extra-heading { 
+        height: 60px !important;
+}
+
+/* DEAL HEADLINE */
+#content_area .deal-headline {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #000;
+}
+
+/* DEAL PRODUCT NAME */
+#content_area .deal-product-name a {
+        text-decoration: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #000;
+}
+
+/* ARROWS and PRICE COLOR  */
+#content_area .deal-pricing { 
+	font-family: 'Open Sans Condensed', sans-serif;
+        color: #27201f;
+        font-style: 45px;
+        font-weight: 300;
+}
+
+#content_area .deal-price {
+	margin-top: 0px;
+}
+
+/* BUY-NOW and SOLD-OUT BUTTON  */
+#content_area .deal-buy-now,
+#content_area .deal-buy-now.sold-out {
+        /* SET WIDTH, HEIGHT AND MARGIN */
+        background: none;
+        width: 136px;
+        height: 40px;
+        margin: 15px 40px 0 0;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+}
+/* BUY-NOW BUTTON BACKGROUND */        
+#content_area .deal-buy-now a {
+        /* DEFAULT BUY NOW BACKGROUND */
+        background: url(../images/deal-buy-now.png) no-repeat 0 0 transparent;
+        width: 100%;
+        height: 100%;
+        text-indent: -9999px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+}
+/* SOLD-OUT BUTTON BACKGROUND */
+#content_area .deal-buy-now.sold-out {
+        /* DEFAULT BUY NOW BACKGROUND */
+        background: url(../images/deal-buy-soldout.png) no-repeat 0 0 transparent;
+        text-indent: -9999px;
+}
+
+/* DEAL EXPIRATION  */
+#content_area .deal-end {
+        color: #ec2d04;
+        font-size: 15px;
+        font-weight: normal;
+}
+
+/* DEAL PRICE, SAVINGS and STOCK */
+#content_area .deal-regular-price,
+#content_area .deal-savings,
+#content_area .deal-stock {
+        /* INHERITS BODY COLOR */
+        color: #333;
+}
+
+/* DEAL PRICE, SAVINGS and STOCK CAPTIONS TEXT */
+#content_area .deal-regular-price-caption,
+#content_area .deal-savings-caption,
+#content_area .deal-stock-caption{
+        color: #333;
+        font-weight: normal;
+}
+
+/* DEAL DESCRIPTION TEXT */
+#content_area .deal-description {
+        /* INHERITS BODY COLOR */
+        color: #333;
+        font-weight: normal;
+}

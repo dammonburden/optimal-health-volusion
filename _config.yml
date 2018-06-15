@@ -1,11 +1,11 @@
 highlighter: rouge
 github: [Repository metadata]
 
-baseurl: "https://kristenzirkler.github.io/optimal-health-theme"
+baseurl: "https://kristenzirkler.github.io/optimal-health-volusion"
 
 livereload: true
 
-# css_path: "https://downloads.channelmaster.com"
+# cdn_path: ""
 production: true
 encoding: utf-8
 
