@@ -1,5 +1,26 @@
+
+<!--
+DYNAMIC PAGE-SPECIFIC META TAGS WILL BE PLACED HERE
+DO NOT ADD YOUR OWN META TAGS
+ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
+-->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<meta id="v65-layout-mode" data-cart="storedot" data-checkout="storedot" data-use-simplified-checkout="true">
+
+<meta id="v65-logo-dimensions" data-height="70" data-width="190">
+
+<!--[if lt IE 9]>
+<script src="dist/html5shiv.js"></script>
+<![endif]-->
+
+<link href="v/vspfiles/templates/ohs-2018/css/imports.css" rel="stylesheet">
+<div id="if_homepage"><link href="v/vspfiles/templates/ohs-2018/css/homepage.css" rel="stylesheet"></div>
+
+<script src="v/vspfiles/templates/ohs-2018/js/design-toolkit_min.js"></script>
+<script>DTK.loadCSS("beautybox");</script> <!-- FOR CHECKOUT -->
+
 {% if jekyll.environment != "production" %}
 <meta name="robots" content="noindex,nofollow">
 {% endif %}
-
-<link href="{{ site.baseurl }}v/vspfiles/templates/optimal-2018/css/style.css" rel="stylesheet">

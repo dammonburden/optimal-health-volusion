@@ -4,6 +4,7 @@
 <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js ie9" lang="en"><!--<![endif]-->
 <head>
+<!-- Added By Volusion ********************************************************** -->
 <!--script type="text/javascript" src="https://www.optimalhealthsystems.com/a/j/milonic/milonic_src.js"></script>
 <script type="text/javascript">
 if(ns4)_d.write("<scr"+"ipt src=/a/j/milonic/mmenuns4.js><\/scr"+"ipt>"); 
@@ -14,7 +15,6 @@ var Config_CDN_URL = '/'
 </script>
 <script type="text/javascript" src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/Menu_Popout_Styles.js"></script>
 <script type="text/javascript" src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/Menu_Popout_Data.js"></script-->
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Optimal Health Systems</title>
 <meta name="description" content="" />
@@ -92,29 +92,7 @@ var Config_CDN_URL = '/'
     var reCaptchaInit;
 </script>
 
-
-
-<!--
-DYNAMIC PAGE-SPECIFIC META TAGS WILL BE PLACED HERE
-DO NOT ADD YOUR OWN META TAGS
-ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
--->
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width">
-<meta id="v65-layout-mode" data-cart="storedot" data-checkout="storedot" data-use-simplified-checkout="true">
-
-<meta id="v65-logo-dimensions" data-height="70" data-width="190">
-
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
-
-<link href="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/css/imports.css" rel="stylesheet">
-
-
-<!--script src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/js/design-toolkit_min.js"></script>
-<script>DTK.loadCSS("beautybox");</script--> <!-- FOR CHECKOUT -->
+<!-- End Added By Volusion ********************************************************** -->
 
 {% include site-head-code.html %}
 
@@ -137,49 +115,7 @@ Production: OCT 2013
 
   <div id="pageWrapper">
    
-    <!-- ======================== HEADER ======================== -->
-    <div class="headerWrap">
-      <div id="header" data-v-anchor="cart">
-
-        <!--if_homepage-->
-
-        
-        <div id="display_homepage_title"><span class="vol-logo vol-logo--graphic" itemscope itemtype='http://schema.org/Store'><meta itemprop='name' content='Optimal Health Systems'><a class="vol-logo__link" href="https://www.optimalhealthsystems.com/default.asp" title="Optimal Health Systems">Optimal Health Systems</a></span></div>
-        <!--if_not_homepage-->
-
-        <a href="https://www.optimalhealthsystems.com/shoppingcart.asp" class="cartLink">
-          <img src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/images/template/cart_bg.png">
-          <span class="cartNum" data-v-observable="cart-count">0</span>
-          <span class="cartText">My Cart</span>
-        </a>
-
-        <div class="siteTools" data-v-edit-region="Sitetools"><a href="https://www.optimalhealthsystems.com/myaccount.asp">My Account</a>
-          <a href="https://www.optimalhealthsystems.com/help.asp">Help/Faq</a></div>
-
-
-        <!-- ======================== SEARCH BOX ======================== -->
-        <div id="displaySearch">
-          <form action="https://www.optimalhealthsystems.com/SearchResults.asp" method="get" name="SearchBoxForm">
-            <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
-            <input type="submit" name="Submit" class="searchSubmit" value="">
-          </form>
-        </div><!-- #displaySearch -->
-
-      </div><!-- #header -->
-  
-      <!-- ==================== UL LAYOUT ==================== -->
-      <div class="topNavWrap">
-        <div id="topNav" class="clear">
-          <!--div id="display_menu_1" class="menu">
-<script type="text/javascript">var breadCrumb="||";</script>
-<script type="text/javascript">display_menu_1();</script>
-      
-</div-->
-        </div><!-- #top_nav -->
-      </div>
-
-    </div><!-- .headerWrap -->
-
+{% include header.html %}
 
 <!-- ==================== CONTENT ==================== -->
 <div id="contentWrap" class="clear">
@@ -207,15 +143,6 @@ Production: OCT 2013
 <!-- End Custom Code ********************************************************* -->
 <!-- End Custom Code ********************************************************* -->
 <!-- End Custom Code ********************************************************* -->
-
-
-
-
-
-
-
-
-
 
             </td>
         </tr>
@@ -267,110 +194,8 @@ function mClk2(src, popup)
 
 </div><!-- #pageWrapper -->
 
-<!-- ==================== FOOTER ==================== -->
-<div class="footWrap">
-    <div id="footer" class="clear">
-      <div id="footerTop" class="clear">
 
-        <div class="col-1" data-v-edit-region="About Us">
-          <h3 class="title">About Us</h3>
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/aboutus.asp" title="About Optimal Health Systems">About Us</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/articles.asp?ID=83" title="Contact Optimal Health Systems">Contact Us</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/terms_privacy.asp" title="Privacy Policy">Privacy Policy</a></li>
-            <li><a href="https://blog.optimalhealthsystems.com" title="Blog - Optimal Health Systems">Blog</a></li>
-          </ul>
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/cindex.asp" title="Optimal Health Systems's Category Index">Category Index</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/productslist.asp" title="Optimal Health Systems's Product Index">Product Index</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/terms.asp" title="Terms and Conditions">Terms &amp; Conditions</a></li>
-          </ul>
-        </div>
-
-        <div class="col-2" data-v-edit-region="My Account">
-          <h3 class="title">My Account</h3>
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/shoppingcart.asp" title="View My Shopping Cart">Shopping Cart</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/login.asp" title="Login to Your Account">Login</a>/<a href="https://www.optimalhealthsystems.com/register.asp" title="Register for an Account">Register</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/myaccount.asp" title="Edit My Account">My Account</a></li>
-          </ul>  
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/wishlist.asp " title="My Wishlist">My Wishlist</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/articles.asp?ID=57" title="Shipping">Shipping Policy</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/returns.asp" title="Returns">Returns Policy</a></li>
-          </ul>  
-        </div>
-
-        <div class="col-3" data-v-edit-region="Popular Products"><h3 class="title">Most Popular Products</h3>
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/Optimal-1-Digestion-p/655705123013.htm" title="Digestion">Digestion</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/Optimal-2-Vitamin-Mineral-Antioxidant-p/655705123020.htm" title="Vitamin/Mineral">Vitamin/Mineral</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/Optimal-Acute-p/655705123044.htm" title="Acute">Acute</a></li>
-          </ul>
-          <ul>
-            <li><a href="https://www.optimalhealthsystems.com/Optimal-Flora-Plus-p/655705123075.htm" title="Flora">Flora</a></li>
-            <li><a href="https://www.optimalhealthsystems.com/Optimal-Whole-C-Chewable-p/655705123211.htm" title="Whole C">Whole C</a></li>
-            <li><a href="https://blog.optimalhealthsystems.com/Catalogs/Summer_2018_Catalog.pdf" target="_blank">PRODUCT CATALOG</a></li>
-          </ul></div>
-
-      </div>
-
-      <div class="co-contact">
-
-        <!-- Social Links -->
-        <div class="social-connect" data-v-edit-region="Social">
-          <h3>Stay Connected</h3>
-          <a href="https://www.facebook.com/OptimalHealthSystems" class="fb-icon" target="_blank"></a>
-          <a href="https://twitter.com/ohsinfo" class="tw-icon" target="_blank"></a>
-
-        </div>
-        <!-- Mailing List Section -->
-        <div id="eList">
-          <div class="title" data-v-edit-region="Newsletter">
-            <h4><a href="https://www.optimalhealthsystems.com/register.asp"><img src="https://www.optimalhealthsystems.com/v/vspfiles/photos/affiliate.jpg" width="610" height="65" alt="Affiliate"></a></h4>
-          </div>
-        </div><!-- #eList -->
-
-
-
-
-      </div>
-    </div><!-- #footer -->
-  </div>
-
-
-
-      <!--
-    ==========================================================================================
-    VOLUSION LINK - BEGIN
-    ==========================================================================================
-    Customer has agreed per Volusion's Terms of Service (http://www.volusion.com/agreement_monthtomonth.asp)
-    to maintain a text hyperlink to "http://www.volusion.com" in the footer of the website. The link must be
-    standard html, contain no javascript, and be approved by Volusion. Removing this link breaches the Volusion agreement.
-    ==========================================================================================
-    -->
-
-
-  <div class="footerBottomWrap">
-    <div id="footerBottom" class="clear">
-        <a data-v-edit-region="SSL" class="fright" href="javascript:void(0);" onclick="window.open('https://www.volusion.com/ssl.asp?url=www.optimalhealthsystems.com', 'VolusionSSL',  'top=10,left=10,menubar=0,resizable=0,scrollbars=0,width=467,height=467')"><img src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/images/template/vsecure.png" alt=""></a>
-        <div class="copyright">
-          <a href="https://www.optimalhealthsystems.com/terms.asp" title="Terms">Copyright &copy; <span class="insertYear">2018</span>&nbsp;Optimal Health Systems. All Rights Reserved.</a>
-          
-        Powered with Volusion <a href="http://www.volusion.com" target="_blank" rel="nofollow">shopping cart software</a>.
-        <!-- #if_not_hompage -->
-        </div><!-- .copyright -->
-      </div><!-- #footerBottom -->
-  </div>
-
-
-
-<!--PayPal Image with Transparent Background-->
-<script>
-$(document).ready(function() {
-  $('[src$="https://www.optimalhealthsystems.com/btn_xpressCheckout2.gif"]').attr("src", "/v/vspfiles/templates/beautybox/images/template/btn_xpressCheckout2.png"); 
-});
-</script>
+{% include footer.html %}
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

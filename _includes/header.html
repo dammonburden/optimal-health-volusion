@@ -1,1 +1,47 @@
-<!-- waiting for theme -->
+   
+    <!-- ======================== HEADER ======================== -->
+    <div class="headerWrap">
+      <div id="header" data-v-anchor="cart">
+
+        <div id="if_homepage">
+          <h1 id="display_homepage_title"><a href="/" title=""></a></h1>
+        </div><!--if_homepage-->
+
+        <div id="if_not_homepage">
+        <div id="display_homepage_title"><a href="/" title=""></a></div>
+        </div><!--if_not_homepage-->
+
+        <a href="/shoppingcart.asp" class="cartLink">
+          <img src="v/vspfiles/templates/ohs-2018/images/template/cart_bg.png">
+          <span class="cartNum" data-v-observable="cart-count">0</span>
+          <span class="cartText">My Cart</span>
+        </a>
+
+        <div class="siteTools" data-v-edit-region="Sitetools"><a href="/myaccount.asp">My Account</a>
+          <a href="/help.asp">Help/Faq</a></div>
+
+
+        <!-- ======================== SEARCH BOX ======================== -->
+        <div id="displaySearch">
+          <form action="/SearchResults.asp" method="get" name="SearchBoxForm">
+            <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
+            <input type="submit" name="Submit" class="searchSubmit" value="">
+          </form>
+        </div><!-- #displaySearch -->
+
+      </div><!-- #header -->
+  
+      <!-- ==================== UL LAYOUT ==================== -->
+      <div class="topNavWrap">
+        <div id="topNav" class="clear">
+          <div id="display_menu_1" class="menu">
+            <ul>
+              <li><a href="/">Link 1</a></li>
+              <li><a href="/">Link 2</a></li>
+              <li><a href="/">Link 3</a></li>
+            </ul>
+          </div>
+        </div><!-- #top_nav -->
+      </div>
+
+    </div><!-- .headerWrap -->
