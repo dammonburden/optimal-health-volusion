@@ -1,3 +1,313 @@
 // Shopping cart, Checkout Forms, Thank You
 
 // Shopping Cart Page ----------------------------------------------------------
+/**************************
+*   DISPLAY BREADCRUMBS   *
+**************************/
+
+/*#content_area #v65-cart-breadcrumb {
+    display: block !important;
+}
+
+#content_area #v65-cart-breadcrumb-image {
+    display: block;
+    margin-bottom: 50px;
+}*/
+
+/****************************
+*   BORDERS ON CART TABLE   *
+****************************/
+
+/*.v65-cart-details-row td {
+    border: 1px solid #DDD;
+}
+
+.v65-cart-details-row td.v65-cart-details-blank,
+.v65-cart-details-row td td,
+.v65-divider-hr-row.v65-cart-details-row td,
+.v65-cart-details-row td.v65-cart-details-firstcell,
+.v65-cart-details-row td.v65-cart-details-lastcell,
+.v65-cart-details-row td.colors_lines {
+    border: none;
+}*/
+
+/**************************
+*       PAGE HEADING      *
+**************************/
+
+h2.v65-your-cart-title {
+    color: #585858;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0 0;
+}
+
+/**************************
+*   CART DETAILS BORDERS  *
+**************************/
+
+#content_area #cart-top-rule,
+#content_area .v65-divider-hr-cell {
+    border-top: 1px solid #ccc;
+}
+
+/* Border between cart detail rows */
+/*#content_area .v65-cart-details-separator td {
+    border-top: 1px solid #ccc;
+}*/
+
+/**************************
+*     CART HEADER TEXT    *
+**************************/
+
+#content_area #cart-header font {
+    color: #000000 !important;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/**************************
+*       CART DETAILS      *
+**************************/
+
+font.carttext.colors_text b.cart-item-name, /*Product title*/
+font.carttext.colors_text, /*Each*/
+font.carttext.colors_text b /*Total*/ {
+    color: #000000;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+/**************************
+*          ZEBRA          *
+**************************/
+
+#content_area #v65-cart-table .v65-item-zebra {
+    background-color: #eee;
+}
+
+/**************************
+*        EMPTY CART       *
+**************************/
+
+/* Border between 'empty cart' and 'coupon code' rows */
+tr#v65-empty-cart-row + tr.v65-divider-hr-row .v65-divider-hr-cell {
+    border-top: none;
+}
+
+/* Empty cart container */
+#v65-cart-empty-details-cell {
+    padding: 10px 0 0 !important; /*!important required*/
+}
+
+/* "Click X to remove an item from your cart" text */
+#v65-cart-empty-details-cell > span:first-child {
+    color: #585858;
+    font-size: 12px;
+}
+
+/* "Empty My Entire Cart" text */
+#v65-cart-empty-details-cell span + span a {
+    color: #585858;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+/***********************************
+*   CART SHIPPING & GIFT OPTIONS   *
+***********************************/
+
+#v65-cart-coupon-entry-details-div,
+#v65-cart-shipping-details-text {
+    color: #585858;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/******************************
+*    CART SHIPPING DETAILS    *
+******************************/
+
+/* Shipping background color */
+td#v65-cart-shipping-details-container {
+    background: #eee;
+}
+
+/* "Calculate shipping" text */
+#v65-cart-shipping-details-label.v65-cart-left-label {
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* "(optional)" text*/
+#v65-cart-shipping-details-label.v65-cart-left-label small  {
+    color: #000000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Text color */
+#v65-cart-shipping-details-container #v65-cart-shipping-details td, 
+#v65-cart-shipping-details-container #v65-cart-shipping-details span {
+    color: #000000 !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+}
+
+/**************************
+*       TAX & TOTAL       *
+**************************/
+
+/* Targets tax text */
+tr.v65-cart-tax-row b  {
+    color: #7c7c7c;
+    font-size: 12px;
+    font-weight: normal;    
+    white-space: nowrap;
+}
+
+/* Targets tax price */
+td.v65-cart-tax-parent-cell b {
+    color: #7c7c7c;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Targets "total" text */
+tr.v65-cart-tax-row + tr b  {
+    color: #7c7c7c;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* Total price */
+font.pricecolor.colors_productprice, font.pricecolor.colors_productprice b {
+    color: #0b0b0b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/**************************
+*     CHECKOUT TABLE      *
+**************************/
+
+/* Text color and size */
+table#v65-cart-checkout-table tr td {
+    color: #585858;
+    font-size: 12px;
+}
+
+/* Password and Email addres text color */
+table#v65-checkout-form-table tr td {
+    color: #585858;
+    font-size: 12px;
+}
+
+/* Forgot password text */
+table#v65-cart-checkout-table a[href="login_sendpass.asp"] {
+    color: #585858;
+    font-size: 10px !important;
+}
+
+/**************************
+*     RELATED PRODUCTS    *
+**************************/
+/* Heading */
+.productnamecolorLARGE, a.productnamecolorLARGE {
+}
+/* Product Name */
+table.v65-productDisplay .productnamecolor, a.productnamecolor {
+}
+/* "Our Price: $0.00" */
+table.v65-productDisplay font.pricecolor.colors_productprice, 
+table.v65-productDisplay font.pricecolor.colors_productprice b {
+    font-size: 12px;
+}
+
+/*****************************
+*    INPUT/SELECT BORDERS    *
+*****************************/
+
+#v65-cart-coupon-entry-details-input, /*coupon code*/
+input.v65-cart-login-input, /*email address*/
+input#password, /*password*/
+#v65-cart-shipping-details select, /*shipping details*/
+#v65-cart-shipping-details input, /*shipping details*/
+tr.v65-cart-details-row td.v65-item-zebra input /*Qty*/  {
+    border: 1px solid #b3b3b3;
+}
+
+/* * * * * * FIXES * * * * * */
+
+/* Give icon images a max-width */
+#content_area td.v65-cart-detail-productimage img {max-width: 100px;}
+
+/* Superfluous */
+.v65-cart-details-separator img, 
+.v65-divider-hr-row + .v65-cart-details-separator {
+    display: none;
+}
+
+/* Override white-space: nowrap; */
+#v65-cart-shipping-details-text div {white-space: normal !important;}
+
+#content_area td.v65-cart-detail-productimage img, /*Fix image float*/
+#content_area #v65-cart-shipping-details-label, /*Cart shipping details*/ 
+#content_area #v65-cart-shipping-details-wrapper {float: none;}
+
+/* Add spacing within login inputs */
+#v65-cart-checkout-table .v65-cart-login-input {padding: 3px;}
+
+/* Password input margin fix */
+table#v65-checkout-form-table input.v65-cart-login-input {margin-bottom: 5px;}
+
+#v65-cart-shipping-details input[type=radio],
+td#v65-cart-shippingoptionsbuttoncell input {border: none;}
+
+/* Line up "Item Description" heading */
+#v65-cart-header-itemdescription {padding-left: 21px !important;}
+
+/* Centers table values */
+.v65-cart-details-row td[width="70"], 
+.v65-cart-details-row td[width="70"] div, 
+.v65-cart-details-row td[width="135"], 
+.v65-cart-details-row td[width="135"] div {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+/* Align "Type of Address" to left */
+#v65-cart-shipping-details div[align="right"] img[width="5"] {display: none;}
+#v65-cart-shipping-details div[align="right"] {text-align: left;}
+
+#v65-cart-table input /*Qty*/ {text-align: center !important;}
+
+/* --- Gift Cert Layout --- */
+#content_area .v65-cart-giftcert-total div { text-align: center; }
+#content_area .v65-product-price-table div[align="right"] font {
+    text-align: center;
+    display: block;
+}
+
+/* Centers buttons */
+#v65-cart-coupon-entry-details-div * {vertical-align: middle;}
+#btnRecalculate {margin-top: 0 !important;}
+
+/* IE9 border spacing fix */
+#v65-cart-table {border-spacing: 2px; border-collapse: separate;}
+
+/* Remove extra spacing */
+table#v65-cart-moreItems,
+table#v65-cart-table {width: 100%;}
+
+#v65-cart-table-container > tbody > tr > td,
+table#v65-cart-moreItems td {padding: 0;}
+
+/* Forces long product names to wrap to keep width of table */
+.v65-cart-details-text, .carttext, .colors-text {
+    word-break:break-all !important;
+}
