@@ -3,19 +3,19 @@
 	<div id="slideshow">
 		<!-- slide one -->
 		<div class="currentPic slide sld1">
-			<img src="v/vspfiles/templates/beautybox/images/homepage/slide1.jpg" alt=""/>
+			<img src="v/vspfiles/templates/ohs-2018/images/homepage/slide1.jpg" alt=""/>
 			<span class="title">New Season <span>New looks</span>
 			<a href="#">Shop Products</a>
 			</span>
 		</div>
 		<!-- slide two -->
 		<div class="slide sld2">
-			<img src="v/vspfiles/templates/beautybox/images/homepage/slide2.jpg" alt=""/>
+			<img src="v/vspfiles/templates/ohs-2018/images/homepage/slide2.jpg" alt=""/>
 			<span class="title">
 			Buy one
 			<span>Get one</span>
 			<b>Free!</b>
-			<a href="#">Bogo Deals <img src="v/vspfiles/templates/beautybox/images/homepage/circarrow.png" alt=""/></a>
+			<a href="#">Bogo Deals <img src="v/vspfiles/templates/ohs-2018/images/homepage/circarrow.png" alt=""/></a>
 			</span>
 		</div>
 	</div>
@@ -23,27 +23,27 @@
 	<div class="prod-promos clear">
 		<!-- promo 1 -->
 		<a href="#">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/promo1.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/promo1.jpg" alt=""/>
 		<span>Makeup</span>
 		</a>
 		<!-- promo 2 -->
 		<a href="#">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/promo2.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/promo2.jpg" alt=""/>
 		<span>Skincare</span>
 		</a>
 		<!-- promo 3 -->
 		<a href="#">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/promo3.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/promo3.jpg" alt=""/>
 		<span>Fragrance</span>
 		</a>
 		<!-- promo 4 -->
 		<a href="#">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/promo4.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/promo4.jpg" alt=""/>
 		<span>Nail Art</span>
 		</a>
 		<!-- promo 5 -->
 		<a href="#">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/promo5.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/promo5.jpg" alt=""/>
 		<span>Mens</span>
 		</a>
 	</div>
@@ -51,7 +51,7 @@
 	<div class="co-promos clear">
 		<!-- new arrivals -->
 		<a href="#" class="new-arrivals">
-		<img src="v/vspfiles/templates/beautybox/images/homepage/newarrivals.jpg" alt=""/>
+		<img src="v/vspfiles/templates/ohs-2018/images/homepage/newarrivals.jpg" alt=""/>
 		<span>New Arrivals</span>
 		</a>
 		<!-- shipping -->

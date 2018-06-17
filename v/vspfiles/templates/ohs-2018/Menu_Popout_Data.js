@@ -1,7 +1,7 @@
 
 function display_menu_1() {
-  navStyle1.image=Config_CDN_URL + "v/vspfiles/templates/beautybox/images/Template/Menu1_Bullet.gif";
-  navStyle1.subimage=Config_CDN_URL + "v/vspfiles/templates/beautybox/images/Template/Menu1_Bullet_End.gif";
+  navStyle1.image=Config_CDN_URL + "v/vspfiles/templates/ohs-2018/images/Template/Menu1_Bullet.gif";
+  navStyle1.subimage=Config_CDN_URL + "v/vspfiles/templates/ohs-2018/images/Template/Menu1_Bullet_End.gif";
   with(milonic=new menuname("m_v1p0")) {
     style=navStyle1;
     itemwidth="970";
@@ -17,8 +17,8 @@ function display_menu_1() {
     aI("text=Cleanses (organ & toxins);url=https://www.optimalhealthsystems.com/category-s/1821.htm;pagematch=[-_]s/1821\\.htm$|searchresults\\.asp\\?cat=1821$;");
     aI("text=Health Professionals;url=https://www.optimalhealthsystems.com/category-s/1923.htm;pagematch=[-_]s/1923\\.htm$|searchresults\\.asp\\?cat=1923$;showmenu=m_v1p1923;");
   }
-  subNavStyle1.image=Config_CDN_URL +"v/vspfiles/templates/beautybox/images/Template/Menu1_Bullet.gif";
-  subNavStyle1.subimage=Config_CDN_URL +"v/vspfiles/templates/beautybox/images/Template/Menu1_Bullet_End.gif";
+  subNavStyle1.image=Config_CDN_URL +"v/vspfiles/templates/ohs-2018/images/Template/Menu1_Bullet.gif";
+  subNavStyle1.subimage=Config_CDN_URL +"v/vspfiles/templates/ohs-2018/images/Template/Menu1_Bullet_End.gif";
   with(milonic=new menuname("m_v1p1923")) {
     style=subNavStyle1;
     aI("text=Professional Testing Systems&nbsp;&nbsp;&nbsp;;url=https://www.optimalhealthsystems.com/category-s/1927.htm;pagematch=[-_]s/1927\\.htm$|searchresults\\.asp\\?cat=1927$;");
