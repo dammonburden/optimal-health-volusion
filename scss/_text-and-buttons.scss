@@ -1,8 +1,13 @@
+// make numbers look better
 * {
 -webkit-font-feature-settings: "lnum"; 
 -moz-font-feature-settings: "lnum"; 
 font-feature-settings: "lnum"; 
 }
+a {
+  color: $link-color;
+}
+// css buttons
 .cta-button {
   display: inline-block;
   background-color: $button-color;

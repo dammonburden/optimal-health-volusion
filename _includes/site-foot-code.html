@@ -20,6 +20,10 @@ else if (tU.indexOf('searchresults.asp') > -1) {
 tS = 'search-results'; }
 else if (tU.indexOf('shoppingcart') > -1) {
 tS = 'cart'; }
+else if (tU.indexOf('one-page-checkout') > -1) {
+tS = 'checkout'; }
+else if (tU.indexOf('orderfinished') > -1) {
+tS = 'order-confirmation'; }
 else if ((tU.indexOf('-s/') > -1) || (tU.indexOf('_s/') > -1)) {
 tS = 'category-list'; }
 else if ((tU.indexOf('articles.asp') > -1) || (tU.indexOf('-a/') > -1) || (tU.indexOf('_a/') > -1)) {

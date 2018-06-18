@@ -1,11 +1,12 @@
 // Raw Colors
-$color-brand-green: #298A08;
+$color-brand-green: #298A08; // darker? #0b610b
 $color-brand-maroon: #500625;
 $color-ui-red: #cd0f13;
 $color-ui-green: $color-brand-green;
+$color-ui-yellow: #ffea5f;
 
 $color-neutral-1: #000; // darkest neutral - black
-$color-neutral-2: #666;
+$color-neutral-2: #585858;
 $color-neutral-3: #ccc;
 $color-neutral-4: #eee;
 $color-neutral-5: #fff; // lightest neutral - white
@@ -14,26 +15,45 @@ $color-neutral-5: #fff; // lightest neutral - white
 $color-main: $color-brand-green;
 $color-sub: $color-brand-maroon;
 
-$body-background: $color-brand-green;
-$page-background: $color-neutral-5;
-
 $font-family: 'Raleway', Arial, sans-serif;
 $accent-font: $font-family;
 
 $font-color: $color-neutral-1;
-$link: $color-main;
+$subfont-color: $color-neutral-2;
+$font-price-color: $color-brand-maroon;
+$link-color: $color-main;
+
+$font-size-xxl: 30px;
+$font-size-xl: 20px;
+$font-size-lg: 16px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
 
 $success: $color-ui-green;
 $error: $color-ui-red;
 
 $page-size: 930px;
 
+$border-color: $color-neutral-3;
+
+$background-body: $color-brand-green;
+$background-page: $color-neutral-5;
+$background-light: $color-neutral-4;
+$background-highlight: lighten($color-ui-yellow,20);
+$background-error: lighten($error,52);
+
 $button-color: $color-sub;
+$button-color-text: $color-neutral-5;
 $button-hover: lighten($color-sub,12);
 $button-secondarycolor: $color-neutral-3;
-$button-secondaryhover: lighten($color-neutral-3,8);
+$button-secondaryhover: darken($color-neutral-3,12);
 
-$field-height: 40px;
+$header-color-1: $color-neutral-2;
+$header-color-2: $color-neutral-1;
+$header-color-alt: $color-brand-maroon;
+
+$field-height: 34px;
+$field-border-color: $color-neutral-3;
 
 @mixin transition($transitions) {
     -webkit-transition: $transitions;

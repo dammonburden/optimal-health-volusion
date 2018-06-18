@@ -1,0 +1,77 @@
+// General Form Styles
+#content_area input[type="password"],
+#content_area input[type="text"],
+#content_area textarea {
+    background-color: $background-page !important;
+    border: 1px solid $field-border-color;
+    height: $field-height;
+    line-height: $field-height;
+    padding: 0 6px;
+    font-size: $font-size-md;
+    font-family: $font-family;
+}
+#content_area textarea {
+	min-height: 80px;
+    padding: 6px;
+    line-height: 1.4em;
+}
+#content_area select,
+body #v65-onepage-Billing select {
+    padding: 0 6px;
+    font-size: $font-size-md;
+    font-family: $font-family;
+    background-color: $background-page !important;
+    border: 1px solid $field-border-color;
+	border-radius: 0 !important;
+	-webkit-appearance: none;
+    height: $field-height;
+    line-height: $field-height;
+	padding-left: 6px !important;
+	padding-right: $field-height !important;
+	background-image: url($baseurl + "/v/vspfiles/templates/ohs-2018/images/select-icon.png");
+	background-size: $field-height $field-height;
+	background-position: right top;
+	background-repeat: no-repeat;
+    /*
+    &:after {
+    	content: 'f';
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	border-left: 1px solid $border-color; 
+    	width: $field-height;
+	    height: $field-height;
+	    line-height: $field-height;
+    }*/
+    &:focus {
+		outline: none;
+	}
+}
+// Checkout Specific - try to remove?
+/*
+table#v65-onepage-Detail td input[type="password"],
+table#v65-onepage-Detail td input[type="text"],
+.v65-onepage-custom-details-row input {
+    background-color: $background-page !important;
+    border: 1px solid $border-color;
+    height: $field-height;
+    line-height: $field-height;
+    padding: 0 6px;
+}
+*/
+#v65-cart-shipping-details-wrapper #v65-cart-shipping-details select, 
+#v65-cart-shipping-details-wrapper #v65-cart-shipping-details input {
+    width: auto !important;
+}
+#v65-onepage-ordercomments-input {
+    //border: 1px solid $border-color;
+}
+/*
+#v65-onepage-Billing select {
+    font-size: 13px;
+    padding: 6px 4px;
+    background-color: #eee;
+    border: 1px solid #CCC;
+    clear: both;
+    margin-bottom: 4px;
+}*/

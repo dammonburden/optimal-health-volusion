@@ -13,6 +13,10 @@ else if (thisPageURL.indexOf('searchresults.asp') > -1) {
 thisPageSlug = 'search-results'; }
 else if (thisPageURL.indexOf('shoppingcart') > -1) {
 thisPageSlug = 'cart'; }
+else if (thisPageURL.indexOf('one-page-checkout') > -1) {
+thisPageSlug = 'checkout'; }
+else if (thisPageURL.indexOf('orderfinished') > -1) {
+thisPageSlug = 'order-confirmation'; }
 else if ((thisPageURL.indexOf('-s/') > -1) || (thisPageURL.indexOf('_s/') > -1)) {
 thisPageSlug = 'category-list'; }
 else if ((thisPageURL.indexOf('articles.asp') > -1) || (thisPageURL.indexOf('-a/') > -1) || (thisPageURL.indexOf('_a/') > -1)) {
@@ -21,6 +25,11 @@ else if ((thisPageURL.indexOf('productdetails.asp') > -1) || (thisPageURL.indexO
 thisPageSlug = 'product-detail'; }
 else {
 thisPageSlug = 'other';
+}
+// Checkout page ----------------------------------------------------
+if (thisPageSlug == 'checkout') {
+	$('#table_checkout_cart0 br').remove();
+	$('#v65-onepage-payment-details-parent-table br').remove();
 }
 
 });

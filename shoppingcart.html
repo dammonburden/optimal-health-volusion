@@ -3,9 +3,9 @@ layout: frame-hardcoded
 title: Your Cart
 slug: shoppingcart
 path: ../
+
+page-note: DO NOT EDIT HTML - This HTML is just to allow for styling volusion default pages locally. We do not control the HTML for this page. Some pieces may be editable via pagetext.
 ---
-<link rel="stylesheet" type="text/css" href="/v/vspfiles/templates/ohs-2018/css/shoppingcart.css">
-<link rel="stylesheet" type="text/css" href="/v/vspfiles/templates/ohs-2018/css/softaddtocart.css">
 <script type="text/javascript">
 	var vCartEvent = '';
 </script>
@@ -21,13 +21,7 @@ path: ../
       <table width="100%" border="0" cellspacing="0" cellpadding="10">
         <tbody><tr> 
           <td><div id="div_articleid_64">
-<a href="default.asp" class="cta-button cart-continue-shopping">Shop for More Products</a>
-
-<!-- replaced html
-<br>
-<br>
-<a href="default.asp"><img src="https://www.optimalhealthsystems.com/v/vspfiles/templates/beautybox/images/buttons/btn_continueshopping.gif" border="0"></a>
- -->
+<div class="above-cart"><a href="default.asp" class="cta-button cart-continue-shopping">Shop for More Products</a></div>
 </div><!-- .vcb-article -->
 <textarea style="display:none;" id="articleBody_64" readonly="true"></textarea>
 </td>
@@ -42,7 +36,7 @@ path: ../
       <table cellpadding="0" cellspacing="0" width="100%">
         <tbody><tr>
             <td align="center">
-			
+			<div class="v65-error-list-wrapper"><div class="v65-error-list-container"><div class="v65-error-list-text"><div class="v65-error-list-image" data-image-path="http://xrxka.mrsyh.servertrust.com/a/i/error_alert.gif"></div><ul><li>Coupon code "fdfgs" is not valid.</li></ul></div><div class="v65-error-list-clear"></div></div></div>
 
               <br>
        <table cellspacing="0" cellpadding="5" width="100%" border="0" id="v65-cart-table-container">
@@ -618,7 +612,7 @@ path: ../
 
 		<td id="v65-cart-coupon-entry-details-container" colspan="3">
 			<div align="right" id="v65-cart-coupon-entry-details-div">
-				<span style="font-size: 20pt">Please enter your One-Time Promotional/Doctor Code for your Discount.</span>
+				<span class="cart-coupon-text">Please enter your One-Time Promotional/Doctor Code for your Discount.</span>
 				<input id="v65-cart-coupon-entry-details-input" type="text" name="CouponCode" size="6" maxlength="25">
 				<input id="v65-cart-coupon-entry-details-button" type="image" alt="Apply Coupon Code" src="v/vspfiles/templates/ohs-2018/images/buttons/btn_apply.gif" border="0" name="btnCouponCode">
 			</div>
@@ -660,6 +654,7 @@ path: ../
 			
 		</td>
 		<td id="v65-cart-shipping-details-container" colspan="6">
+
 			<div class="v65-cart-left-label" id="v65-cart-shipping-details-label">
 				Calculate Shipping<br>
 				<i><small>(optional)</small></i>
@@ -670,6 +665,42 @@ path: ../
 						
 						<!-- -->
 						<font style="line-height: 22px;"><b class="v65-shipping-details-header">&nbsp;&nbsp;Calculate Shipping Rates:</b></font>
+									<table cellspacing="0" cellpadding="0" border="0" id="v65-cart-shipping-details-wrapper">
+				<tbody><tr>
+					<td>
+						<table cellspacing="1" cellpadding="0" border="0" id="v65-cart-shipping-details">
+							<tbody><tr>
+								<td>
+									<font style="line-height: 22px;"><b>Shipping Rates:</b></font>
+									<br>
+									<a href="?change_my_address=Y">
+										(change my address)</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="v65-cart-shipping-details-input-cell">
+									<select class="browser-default" name="ShippingSpeedChoice" onchange="this.form.submit();" style=""><option value="0">PLEASE SELECT</option><option value="919">Standard Shipping (7-10 Day Ground) $6.95 </option><option value="890">USPS Priority Mail 1-Day $7.25 </option><option value="701">U.P.S. Ground $12.01 </option><option value="703">U.P.S. 3 Day Select $15.96 </option><option value="704">U.P.S. 2nd Day Air $18.86 </option><option value="706">U.P.S. Next Day Air Saver $23.99 </option></select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									United States, AZ, 85282
+								</td>
+							</tr>
+							
+							<tr>
+								<td style="font-weight: bold; white-space: nowrap;">
+									<br>
+									You are $114.65 from qualifying for free shipping.<br>Look for this icon on qualifying products:<br><img src="v/vspfiles/templates/ohs-2018/images/Icon_FreeShipping.gif" alt=""> 
+								</td>
+							</tr>
+							
+						</tbody></table>
+					</td>
+				</tr>
+				
+			</tbody></table>
+			<hr>
 						<table cellspacing="1" cellpadding="0" border="0" id="v65-cart-shipping-details">
 							<tbody><tr>
 								<td class="carttext colors_text" align="right">
@@ -1291,7 +1322,7 @@ var Country_State_Province_Text = {"Angola":"Province","Argentina":"Province","A
 			
 			</form>
 
-			
+{% comment %}			
                 <div class="alternate-payment paypal">
                     <div id="payPalRestErrorMessage"></div>
                     <div id="paypal-button" class="small"><div id="xcomponent-paypal-button-78bbc8c327" class="paypal-button paypal-button-context-iframe paypal-button-label-checkout paypal-button-size-small paypal-button-layout-horizontal" style=""><style>
@@ -1411,7 +1442,7 @@ var Country_State_Province_Text = {"Angola":"Province","Argentina":"Province","A
                         pointer-events: none;
                     }
                 </style><div class="xcomponent-outlet" style=""><iframe class="xcomponent-component-frame xcomponent-visible" frameborder="0" allowtransparency="true" name="xcomponent__ppbutton__4__pmrhk2leei5cemtfheydkmbtmq3gmirmej2gczzchirhaylzobqwyllcov2hi33oeiwcey3pnvyg63tfnz2faylsmvxhiir2pmrhezlgei5ce5dpoarh2lbcojsw4zdfojigc4tfnz2ceot3ejzgkzrchirhi33qej6syitqojxxa4zchj5se5dzobsseorcojqxoirmej3gc3dvmurdu6zcmvxhmir2ejyhe33eovrxi2lpnyrcyitdn5ww22luei5gmylmonssyittor4wyzjchj5se3dbmjswyir2ejrxezlenf2celbconuxuzjchirhg3lbnrwcelbconugc4dfei5ce4djnrwcelbcmnxwy33sei5cezdbojvwe3dvmurcyitumftwy2lomurduztbnrzwk7jmejygc6lnmvxhiir2pmrf6x3upfygkx27ei5cex27mz2w4y3unfxw4x27ej6syitpnzaxk5din5zgs6tfei5hwis7l52hs4dfl5pseorcl5pwm5lomn2gs33ol5pse7jmejxw4rlsojxxeir2pmrf6x3upfygkx27ei5cex27mz2w4y3unfxw4x27ej6syittmvzxg2lpnzeuiir2ei2dsmjwmrrtkzrxgfpwo2lzmr2w4ytynbuxuzdbeiwceytvor2g63stmvzxg2lpnzeuiir2eiztcmddgazwkyrqmzpwo2lzmr2w4ytynbuxuzdbeiwce3lforqseot3puwce43povzggzjchirg2yloovqwyirmejyhezlgmv2gg2cmn5tws3rchjtgc3dtmuwceztvnzsgs3thei5hwitbnrwg653fmqrduw25fqrgi2ltmfwgy33xmvsceos3ej3gk3tnn4rf2lbcojsw2zlnmjsxezleei5fwitqmf4xaylmejosyitsmvwwk3lcmvzceot3ejpv65dzobsv6xzchirf6x3govxgg5djn5xf6xzcpv6syitpnzjgk3temvzceot3ejpv65dzobsv6xzchirf6x3govxgg5djn5xf6xzcpuwce33oinqw4y3fnqrdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5fqrg63sdnruwg2zchj5sex27or4xazk7l4rduis7l5thk3tdoruw63s7l4rh2lbcnrxwgylmmurduitfnzpvkuzcfqrgy33hjrsxmzlmei5ce53bojxcelbcmf3wc2lukbxxa5lqijzgszdhmurdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5fqrhg5lqobwgk3lfnz2ceot3ejtwk5cqmf4w2zloorhxa5djn5xhgir2pmrf6x3upfygkx27ei5cex27mz2w4y3unfxw4x27ej6syitbmrsfaylznvsw45cemv2gc2lmomrdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5puwce5dfon2ceot3ejqwg5djn5xceorcmnugky3ln52xiit5fqrhk2leei5ceyzygqzgcnbqha2gkirmej3gk4ttnfxw4ir2ei2ce7l5fqrgszbchirdemrugzqwin3eha4celbcmrxw2yljnyrduitior2ha4z2f4xxo53xfzxxa5djnvqwy2dfmfwhi2dtpfzxizlnomxgg33nej6q__" title="ppbutton" scrolling="no" allowpaymentrequest="allowpaymentrequest" src="https://www.paypal.com/webapps/hermes/button?env=production&amp;style.label=credit&amp;style.size=small&amp;style.shape=pill&amp;style.color=darkblue&amp;style.tagline=false&amp;sessionID=4916dc5f71_giydunbxhizda&amp;buttonSessionID=310c03eb0f_giydunbxhizda&amp;funding.disallowed=venmo&amp;funding.remembered=paypal&amp;locale.x=en_US&amp;logLevel=warn&amp;uid=c842a4084e&amp;version=4&amp;xcomponent=1" style="background-color: transparent;"></iframe></div></div></div>
-                    
+{% endcomment %}
                 </div>
                 
 			<!-- <input type=image alt="Check Out" src="v/vspfiles/templates/ohs-2018/images/buttons/btn_checkout.gif" border="0" name="btnCheckOut"><br /> -->

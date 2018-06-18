@@ -1,3 +1,7 @@
+---
+---
+@import '_variables';
+
 /*COLORS*/
 .colors_background3 {background-color: #DDD;}
 .colors_highlight {background-color: #fb0;}
@@ -10,7 +14,8 @@
 .colors_productname {color: #444;}
 
 /* PRODUCT PRICE COLOR */
-.colors_productprice {color: #c00;}
+.colors_productprice {color: $font-price-color;}
+/*COLORS*/
 a.colors_homepage_title {color: #007DE9;}
 body, .colors_background_main, .colors_background1, .colors_background2 {background-color: #fff;}
 a, a.colors_background2_text:hover, .colors_background2_text, a.colors_background3_text:hover, .colors_background3_text, .colors_links, a.colors_productname:hover {color: inherit;}

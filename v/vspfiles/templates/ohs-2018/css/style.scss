@@ -4,6 +4,9 @@ $baseurl: '{{ site.baseurl }}';
 
 @import '_variables';
 @import '_text-and-buttons';
+@import '_forms';
+@import '_global-elements';
 
 // Pages
 @import 'checkout';
+@import 'order-confirmation';

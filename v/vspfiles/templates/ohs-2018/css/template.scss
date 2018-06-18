@@ -1,13 +1,17 @@
+---
+---
+@import '_variables';
+
 /*****************************
 * *         FONTS          * *
 ******************************/
-@import url(//fonts.googleapis.com/css?family=Raleway:300,500,600,700);
+@import url("//fonts.googleapis.com/css?family=Raleway:300,500,600,700");
 /*font-family: 'Raleway', sans-serif;*/
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url("//fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
 /*font-family: 'Open Sans Condensed', sans-serif;*/
 
-@import url(//fonts.googleapis.com/css?family=Montserrat);
+@import url("//fonts.googleapis.com/css?family=Montserrat");
 /*font-family: 'Montserrat', sans-serif;*/
 
 html {
@@ -687,33 +691,6 @@ a#homepage_title {
 }
 
 /*****************************
-* *     CHECKOUT FIXES     * *
-******************************/
-
-#v65-onepage-CheckoutForm {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 700px;
-}
-#billing-header,
-#shipping-header,
-#v65-checkout-payment-header {
-  padding-bottom: 0 !important;
-}
-#v65-onepage-cartsummary-label {
-  padding-left: 25px !important;
-}
-.productnamecolorLARGE,
-a.productnamecolorLARGE {
-  font-size: 28px;
-  font-weight: bold;
-  text-decoration: none;
-}
-#v65-cart-shipping-details-text nobr {
-  white-space: normal !important;
-}
-
-/*****************************
 * *         FIXES          * *
 ******************************/
 
@@ -735,24 +712,6 @@ article, aside, figure, footer, header, hgroup, menu, nav, section {display: blo
 .next_page_img,.previous_page_img {width: auto !important;height: auto !important;}
 #table_checkout_cart0 {margin-top: 5px;}
 /* FIXES SHIPPING DROPDOWN ON SHOPPINGCART.ASP PAGE */
-#v65-cart-shipping-details-wrapper #v65-cart-shipping-details select,#v65-cart-shipping-details-wrapper #v65-cart-shipping-details input {width:auto ! important;}
-
-/* ERROR MESSAGES */
-#content_area .v65-error-list-container {
-  background-color: #f6c1ac !important;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-box-shadow: 1px 1px 6px 0px rgba(1, 1, 1, 0.4);
-  box-shadow: 1px 1px 6px 0px rgba(1, 1, 1, 0.4);
-  border: 1px solid #e0ad93;
-}
-#content_area .v65-error-list-image {
-  opacity: .5;
-}
-
-#content_area .v65-error-list-text {
-  color: #6c4836;
-}
 
 #EditRegionModal .v65pageTextModalTitle {
   font-size: 18px !important;

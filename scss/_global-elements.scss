@@ -1,0 +1,18 @@
+// Error and Warning Messages
+body .v65-error-list-wrapper {
+    padding: 0;
+}
+body .v65-error-list-container {
+  background-color: $background-error;
+  border: none;// 1px solid $error;
+}
+body .v65-error-list-text {
+  font-size: 14px;
+}
+body .v65-error-list-image {
+  background-image: url($baseurl + "/v/vspfiles/templates/ohs-2018/images/error_alert.png");
+  background-size: 30px 30px;
+}
+body .v65-error-list-text ul {
+  padding: 12px;line-height: 1.4em;
+}
