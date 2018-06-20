@@ -1,4 +1,4 @@
-// Shopping cart, Checkout Forms, Thank You
+// Shopping cart, Checkout Forms
 
 // onpage Cart Modal -----------------------------------------------------------
 // must override styles in /a/c/soft_add.css
@@ -177,7 +177,7 @@
 // Shopping Cart Page ----------------------------------------------------------
 .page-cart { // add classes that are too generic inside page tag
     #content_area {
-        width: 100%;
+        //width: auto;
     }
     #v65-cart-breadcrumb {
         display: none;
@@ -222,8 +222,13 @@ body #v65-cart-table .v65-cart-details-row {
         width: 70px;
     }
     td.v65-cart-item-remove-cell {
-        width: 20px;
+        width: 26px;
         padding: 0 !important;
+        a {
+            display: block;
+            height: 20px;
+            margin-right: 6px;
+        }
     }
 }
 #content_area #cart-top-rule {
@@ -387,7 +392,7 @@ body td#v65-cart-shipping-details-container {
     font-weight: normal;
 }
 #v65-cart-shipping-details td {
-    padding: 2px 0 !important;
+    //padding: 2px 0 !important;
 }
 #v65-cart-shipping-details-label.v65-cart-left-label small  {
     font-size: 11px;
@@ -399,7 +404,34 @@ body td#v65-cart-shipping-details-container {
     font-weight: normal !important;
 }
 #v65-cart-shipping-details br {
-    display: inline;
+    //display: inline;
+    display: none;
+}
+.v65-cart-shipping-details-input-cell br {
+    display: none;
+    //display: inline;
+}
+//fix shipping button colspan
+#v65-cart-shipping-details {
+    margin-bottom: 40px;
+    position: relative;
+}
+body #v65-cart-shippingoptionsbuttonrow {
+    position: absolute;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+}
+body #v65-cart-shippingoptionsbuttonrow {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+body #v65-cart-shippingoptionsbuttoncell #btnRecalculate {
+    margin-top: 3px !important;
+}
+#v65-cart-shipping-details td {
+    white-space: normal !important;
 }
 
 // TAX & TOTAL
@@ -439,6 +471,44 @@ font.pricecolor.colors_productprice b {
     [align="right"] {
         text-align: left;
     }
+    [for="Check by Mail"] {
+        &:after {
+            display: inline-block;
+            font-weight: normal;
+            font-size: $font-size-sm;
+            margin-left: 10px;
+            content: 'Order will not ship until payment has been received.'
+        }
+    }
+    .referred-tooltip {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-align: center;
+        background: $button-secondarycolor;
+        color: $button-color-text;
+        font-weight: bold;
+        border-radius: 50%;
+        position: relative;
+        &:hover:after {
+            display: block;
+        }
+        &:after {
+            width: 150px;
+            display: none;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            content: 'How did you hear about us? If Health Professional please fill in name.';
+            background: $background-light;
+            color: $font-color;
+            font-weight: normal;
+            padding: 10px;
+            font-size: $font-size-sm;
+        }   
+    }
+
 }
 #v65-onepage-CheckoutForm {
     width: 100%;
@@ -481,6 +551,33 @@ body #v65-onepage-ContentTable {
     padding-bottom: 0 !important;
 }
 // Main Form
+//payment options
+//override volusion
+div#creditCardBlock input[type="radio"] {
+    font-size: 12px;
+}
+div#creditCardBlock {
+    padding-top: 10px;
+}
+div#creditCardBlock .payment-logo {
+    height: 10px;
+    margin-top: -17px;
+}
+#PaymentDIV .payment-block {
+    margin-bottom: 0;
+}
+#PaymentDIV .payment-option-title {
+    display: none;
+}
+#PaymentDIV .alternate {
+    border-top: 0;
+    .payment-option {
+        display: block !important;
+    }
+}
+.v65-payment-details-label-cell div {
+    display: inline-block;
+}
 //shipping address
 #v65-onepage-ShippingParent {
     padding-left: 0 !important;

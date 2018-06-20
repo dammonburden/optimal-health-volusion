@@ -7,6 +7,22 @@ font-feature-settings: "lnum";
 a {
   color: $link-color;
 }
+// form button
+#content_area input[type="button"] {
+  display: inline-block;
+  font-family: $font-family;
+  background-color: $button-color;
+  color: $color-neutral-5;
+  line-height: ($field-height - 2);
+  padding: 2px 14px 0;
+  border: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $button-hover;
+    color: $color-neutral-5;
+    text-decoration: none;
+  }
+}
 // css buttons
 .cta-button {
   display: inline-block;
