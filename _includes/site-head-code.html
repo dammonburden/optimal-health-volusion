@@ -1,10 +1,8 @@
-
 <!--
 DYNAMIC PAGE-SPECIFIC META TAGS WILL BE PLACED HERE
 DO NOT ADD YOUR OWN META TAGS
 ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
 -->
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width">
 <meta id="v65-layout-mode" data-cart="storedot" data-checkout="storedot" data-use-simplified-checkout="true">
@@ -16,8 +14,9 @@ ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
 <![endif]-->
 
 <link href="v/vspfiles/templates/ohs-2018/css/imports.css" rel="stylesheet">
+{% if page.slug == "home" OR page.slug == "template" %}
 <div id="if_homepage"><link href="v/vspfiles/templates/ohs-2018/css/homepage.css" rel="stylesheet"></div>
-
+{% endif %}
 <script src="v/vspfiles/templates/ohs-2018/js/design-toolkit_min.js"></script>
 <script>DTK.loadCSS("ohs-2018");</script> <!-- FOR CHECKOUT -->
 
