@@ -41,6 +41,9 @@
 .soft_add_wrapper {
     .quantity_text {
         display: inline-block;
+        &:after {
+            content: ': ';
+        }
     }
     .soft_add_span {
         padding: 0;
@@ -293,25 +296,31 @@ h2.v65-your-cart-title {
         border: 6px solid $background-page !important;
     }
 }
-//product name
-.v65-cart-details-row font.carttext.colors_text b.cart-item-name {
-    font-size: 16px !important;
-}
-//$ each
-.v65-cart-details-row font.carttext.colors_text {
-    color: #000000;
-    font-size: 12px !important;
-    font-weight: normal !important;
-}
-//$ total
-.v65-cart-details-row font.carttext.colors_text b {
-    color: #000000;
-    font-size: 16px !important;
-}
-//qty
-.v65-cart-details-row input {
-    line-height: 30px;
-    text-align: center !important;
+.v65-cart-details-row {
+    //product name
+        font.carttext.colors_text b.cart-item-name {
+        font-size: 16px !important;
+    }
+    //$ each
+    font.carttext.colors_text {
+        color: #000000;
+        font-size: 12px !important;
+        font-weight: normal !important;
+        display: block;
+        text-align: center;
+    }
+    //$ total
+    font.carttext.colors_text b {
+        color: #000000;
+        font-size: 16px !important;
+        display: block;
+        text-align: center;
+    }
+    //qty
+    input {
+        line-height: 30px;
+        text-align: center !important;
+    }
 }
 //remove image
 .v65-cart-item-remove-link {
@@ -323,7 +332,28 @@ h2.v65-your-cart-title {
         opacity: 1;
     }
 }
+// "Kit" or bundle cart details row
+.v65-cart-kit-row {
+    table {
+        width: 100%;
+    }
+    td[width="2"] {
+        display: none;
+    }
+    .v65-cart-detail-productimage img {
+        max-height: 30px;
+    }
+    .carttext {
+        color: $subfont-color !important;
+    }
+    .v65-cart-details-cell font {
+        text-align: left !important;
+        &:before {
+          content: '\21B3';
+        }
+    }
 
+}
 // Empty the cart row
 .v65-cart-item-remove-cell {
     background: $background-light;
@@ -345,7 +375,7 @@ h2.v65-your-cart-title {
 #v65-coupon-table-row {
     background: $background-highlight;
     .cart-coupon-text {
-        font-size: 14px;
+        font-size: 16px;
         display: block;
         margin-bottom: 6px;
     }
@@ -375,6 +405,7 @@ h2.v65-your-cart-title {
 body td#v65-cart-shipping-details-container {
     background: $background-light;
     padding: 5px;
+    line-height: 1.5em;
 }
 #v65-cart-shipping-details div[align="right"] img[width="5"] {display: none;}
 #v65-cart-shipping-details div[align="right"] {text-align: left;}
@@ -410,6 +441,14 @@ body td#v65-cart-shipping-details-container {
 .v65-cart-shipping-details-input-cell br {
     display: none;
     //display: inline;
+}
+.PageText_L780n {
+    display: block;
+    margin-top: 6px;
+}
+img[src*="Icon_FreeShipping.gif"] {
+    height: 25px;
+    margin-top: 4px;
 }
 //fix shipping button colspan
 #v65-cart-shipping-details {
@@ -477,7 +516,7 @@ font.pricecolor.colors_productprice b {
             font-weight: normal;
             font-size: $font-size-sm;
             margin-left: 10px;
-            content: 'Order will not ship until payment has been received.'
+            content: '(Order will not ship until payment has been received.)'
         }
     }
     .referred-tooltip {
@@ -500,13 +539,17 @@ font.pricecolor.colors_productprice b {
             position: absolute;
             top: 16px;
             left: 0;
-            content: 'How did you hear about us? If Health Professional please fill in name.';
-            background: $background-light;
-            color: $font-color;
-            font-weight: normal;
+            content: 'This helps us know who referred you to us so we can keep our site open to public. We may call to find out if unclear.';
             padding: 10px;
             font-size: $font-size-sm;
+            background: $background-page;
+            border: 1px solid $color-brand-green;
+            color: $color-brand-green;
+            z-index: 100;
         }   
+    }
+    .req-mark {
+        color: $error;
     }
 
 }
@@ -539,7 +582,7 @@ body #v65-onepage-ContentTable {
   content: 'Billing Information'; 
 }
 #v65-onepage-RegistrationHeader .v65-onepage-headerShort:before {
-  content: 'Registration'; 
+  content: 'Create Password'; 
 }
 #shipping-header .v65-onepage-headerShort:before {
   content: 'Shipping Information'; 
@@ -604,7 +647,6 @@ div#creditCardBlock .payment-logo {
         padding-left: 0 !important;
     }
 }
-
 // Order Sidebar
 body #v65-onepage-cartsummary-header {
     background: $color-main;

@@ -1,3 +1,7 @@
+// Overrides
+img[src*="clear1x1.gif"] {
+    display: none;
+}
 // Error and Warning Messages
 body .v65-error-list-wrapper {
     padding: 0;
