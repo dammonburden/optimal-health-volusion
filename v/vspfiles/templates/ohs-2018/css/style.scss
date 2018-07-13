@@ -7,6 +7,8 @@ $baseurl: '{{ site.baseurl }}';
 @import '_forms';
 @import '_global-elements';
 
+@import 'template'; // moving to more structured but it holds a lot of style
+
 // Pages
 @import 'checkout';
 @import 'order-confirmation';
