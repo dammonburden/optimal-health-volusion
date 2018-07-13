@@ -1,0 +1,40 @@
+---
+layout: frame-hardcoded
+title: Pieces
+slug: sitetext
+path: ../
+
+edit-path: /admin/AdminDetails_Generic.asp?Table=Articles&ID=130
+
+page-note: Conversion Tracking Code. Spot Key : ROI_Javascripts.
+---
+<!-- Added 8/31/2017 3:16:00 PM by Dammon Burden - Google tracking for ecommerce / conversions -->
+<script>
+ga('require', 'ecommerce');
+ga('ecommerce:addTransaction', {
+  'id': Order[0],                     // Transaction ID. Required.
+  'affiliation': '--',   			// Affiliation or store name.
+  'revenue': Order[2],     			// Grand Total.
+  'shipping': Order[5],               // Shipping.
+  'tax': Order[4]                     // Tax.
+});
+
+
+  // add item might be called for every item in the shopping cart
+   // where your ecommerce engine loops through each item in the cart and
+   // prints out _addItem for each
+   for (var i=0; i < OrderDetails.length; i++)
+   {
+ga('ecommerce:addItem', {
+  'id': OrderDetails[i][0],                     // Transaction ID. Required.
+  'name': OrderDetails[i][3],    				// Product name. Required.
+  'sku':  OrderDetails[i][2],                 // SKU/code.
+  'category': OrderDetails[i][4],         		// Category or variation.
+  'price': OrderDetails[i][5],                 // Unit price.
+  'quantity': OrderDetails[i][6]                 // Quantity.
+});
+
+  }
+
+ga('ecommerce:send');
+</script>
