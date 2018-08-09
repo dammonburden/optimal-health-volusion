@@ -1,3 +1,13 @@
+<!-- Mobile Navigation - ensure it loads -->
+<script>
+$(document).ready(function() {
+	$('[rel="menu-toggle"]').click(function(event) {
+		event.preventDefault;
+		$('body').toggleClass('nav-open');
+		$('.ohs-menu-toggle .nav-menu-icon').toggleClass('open');
+	});
+});
+</script>
 <!--PayPal Image with Transparent Background-->
 <script>
 $(document).ready(function() {

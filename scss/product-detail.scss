@@ -1,0 +1,40 @@
+// Product Page
+// .page-product-detail
+#v65-product-parent {
+    [align="right"] {
+        background: #eee;
+        padding: 10px;
+    }
+}
+// -------------------------------------------------------------------
+// Responsive
+// -------------------------------------------------------------------
+@media screen and (max-width: $page-size-sm) {
+// Small Screens Only
+#v65-product-parent {
+    td {
+        width: 100%;
+        display: block;
+    }
+    #product_photo {
+        height: 250px;
+    }
+}
+#ProductDetail_ProductDetails_div {
+    overflow: hidden;
+    .video_player iframe {
+        width: 300px;
+    }
+}
+
+}
+@media screen and (min-width: $page-size-md) {
+// Md & Up
+
+
+}
+@media screen and (min-width: $page-size) {
+// Large & Up
+
+
+}

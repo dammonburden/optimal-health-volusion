@@ -1,13 +1,15 @@
 // Raw Colors
-$color-brand-green: #298A08; // darker? #0b610b
+$color-brand-green: #298A08;
+$color-brand-green-dark: #0b610b;
 $color-brand-maroon: #500625;
+$color-brand-dark-gray: #27201f;
 $color-ui-red: #cd0f13;
 $color-ui-green: $color-brand-green;
 $color-ui-yellow: #ffea5f;
 
 $color-neutral-1: #000; // darkest neutral - black
 $color-neutral-2: #585858;
-$color-neutral-3: #ccc;
+$color-neutral-3: #d7d7d7;
 $color-neutral-4: #eee;
 $color-neutral-5: #fff; // lightest neutral - white
 
@@ -32,11 +34,15 @@ $font-size-sm: 12px;
 $success: $color-ui-green;
 $error: $color-ui-red;
 
-$page-size: 930px;
+$page-size: 960px;
+$page-size-md: 740px;
+$page-size-sm: 400px;
+
+$page-side-padding: 10px;
 
 $border-color: $color-neutral-3;
 
-$background-body: $color-brand-green;
+$background-body: $color-neutral-3;
 $background-page: $color-neutral-5;
 $background-light: $color-neutral-4;
 $background-highlight: lighten($color-ui-yellow,20);

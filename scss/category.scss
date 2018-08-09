@@ -1,0 +1,27 @@
+// Product Category
+// .page-category-list
+
+
+// -------------------------------------------------------------------
+// Responsive
+// -------------------------------------------------------------------
+@media screen and (max-width: $page-size-sm) {
+// Small Screens Only
+.page-category-list table[width="250"] {
+    width: 220px;
+    b {
+        display: none;
+    }
+}
+
+}
+@media screen and (min-width: $page-size-md) {
+// Md & Up
+
+
+}
+@media screen and (min-width: $page-size) {
+// Large & Up
+
+
+}

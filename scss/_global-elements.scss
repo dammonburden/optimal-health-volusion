@@ -2,6 +2,33 @@
 img[src*="clear1x1.gif"] {
     display: none;
 }
+// Helpers
+.clear:before,
+.clear:after {
+  content: " ";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
+.transition {
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.block {display: block;}
+.fleft {float: left;}
+.fright {float: right;}
+.first {margin-left: 0 !important;}
+
+
+
+
 // Error and Warning Messages
 body .v65-error-list-wrapper {
     padding: 0;

@@ -1,0 +1,14 @@
+a,a:visited,a:active {outline-style: none;}
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+img {border: none !important;}
+input, textarea {outline: none;}
+h1, h2, h3, h4, h5, h6, p {margin:0; padding:0;}
+
+table,
+tbody,
+tr,
+td {
+  padding: 0;
+  border-collapse: collapse;
+}

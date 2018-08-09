@@ -3,12 +3,16 @@
 $baseurl: '{{ site.baseurl }}';
 
 @import '_variables';
+@import '_reset';
 @import '_text-and-buttons';
 @import '_forms';
 @import '_global-elements';
+@import '_site-frame';
 
-@import 'template'; // moving to more structured but it holds a lot of style
-
+//@import 'remove_template'; // removed. Moved most into site-frame. Left what we didnt use here.
+//
 // Pages
+@import 'category';
+@import 'product-detail';
 @import 'checkout';
 @import 'order-confirmation';

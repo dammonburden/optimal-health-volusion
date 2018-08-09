@@ -1,9 +1,17 @@
+@import url("//fonts.googleapis.com/css?family=Raleway:300,500,600,700");
+
+body {
+  color: $font-color;
+  font-family: $font-family;
+  font-size: $font-size-md;
+}
 // make numbers look better
 * {
 -webkit-font-feature-settings: "lnum"; 
 -moz-font-feature-settings: "lnum"; 
 font-feature-settings: "lnum"; 
 }
+// links
 a {
   color: $link-color;
 }

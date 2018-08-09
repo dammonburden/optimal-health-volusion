@@ -1,39 +1,21 @@
-   
+    <div class="header-bar" id="top-header">
+      <a href="tel:+1-800-890-4547">1-800-890-4547</a>
+      <a href="mailto:support@optimalhealthsystems.com">support@optimalhealthsystems.com</a>
+    </div><!-- #top-header -->
     <!-- ======================== HEADER ======================== -->
     <div class="headerWrap">
       <div id="header" data-v-anchor="cart">
-
-        <div id="if_homepage">
-          <h1 id="display_homepage_title"><a href="/" title=""></a></h1>
-        </div><!--if_homepage-->
-
-        <div id="if_not_homepage">
-        <div id="display_homepage_title"><a href="/" title=""></a></div>
-        </div><!--if_not_homepage-->
-
+        <h1 class="ohs-site-logo"><a href="/" title="Optimal Health Systems">Optimal Health Systems</a></h1>
         <a href="/shoppingcart.asp" class="cartLink">
-          <img src="v/vspfiles/templates/ohs-2018/images/template/cart_bg.png">
           <span class="cartNum" data-v-observable="cart-count">0</span>
           <span class="cartText">My Cart</span>
         </a>
-
-        <div class="siteTools" data-v-edit-region="Sitetools"><a href="/myaccount.asp">My Account</a>
-          <a href="/help.asp">Help/Faq</a></div>
-
-
-        <!-- ======================== SEARCH BOX ======================== -->
-        <div id="displaySearch">
-          <form action="/SearchResults.asp" method="get" name="SearchBoxForm">
-            <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
-            <input type="submit" name="Submit" class="searchSubmit" value="">
-          </form>
-        </div><!-- #displaySearch -->
-
       </div><!-- #header -->
   
       <!-- ==================== UL LAYOUT ==================== -->
       <div class="topNavWrap">
         <div id="topNav" class="clear">
+          <div class="ohs-menu-toggle"><div rel="menu-toggle"><span class="nav-menu-icon"><span></span><span></span><span></span><span></span></span></div></div>
           <div id="display_menu_1" class="menu">
             <ul>
               <li><a href="/">Link 1</a></li>
@@ -44,4 +26,14 @@
         </div><!-- #top_nav -->
       </div>
 
+      <div class="siteTools" data-v-edit-region="Sitetools">
+        <a href="/myaccount.asp">My Account</a>
+        <a href="/help.asp">Help/Faq</a>
+      </div>
+      <div id="displaySearch">
+        <form action="/SearchResults.asp" method="get" name="SearchBoxForm">
+          <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
+          <input type="submit" name="Submit" class="searchSubmit" value="">
+        </form>
+      </div><!-- #displaySearch -->
     </div><!-- .headerWrap -->
