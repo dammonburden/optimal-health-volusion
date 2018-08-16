@@ -1,0 +1,71 @@
+---
+layout: frame-hardcoded
+title: login
+slug: login
+path: ../
+
+page-note: DO NOT EDIT HTML - This HTML is just to allow for styling volusion default pages locally. We do not control the HTML for this page.
+---
+<img src="v/vspfiles/templates/ohs-2018/images/headings/heading_login.gif"><br>
+<form name="loginform" method="post" action="https://www.optimalhealthsystems.com/login.asp">
+<table width="100%" border="0" cellspacing="1" cellpadding="10" align="center">
+<tbody><tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top">
+<td width="50%"><font size="3" class="colors_productname"><b>Returning Customers</b></font><br>
+<div id="div_articleid_94">
+If you've purchased from us before, please login with your email address and password.
+</div>
+<textarea style="display:none;" id="articleBody_94" readonly="true"></textarea>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tbody><tr>
+<td align="right"><b>Email:</b></td>
+<td><input type="text" name="email" value="" size="30" maxlength="75"></td>
+</tr>
+<tr>
+<td align="right"><b>Password:<br>
+<br>
+</b></td>
+<td><input type="password" name="password" size="20" maxlength="20">
+<br><a href="login_sendpass.asp">Forgot your password?</a></td>
+</tr>
+<tr align="center">
+<td colspan="2">
+<input type="hidden" name="CustomerNewOld" value="old">
+<input type="image" border="0" name="imageField2" src="v/vspfiles/templates/ohs-2018/images/buttons/btn_login.gif">
+<br>
+<br>
+<br></td>
+</tr>
+</tbody></table></td>
+<td width="10"><img src="/clear1x1.gif" width="10" height="1"></td>
+<td width="1" class="colors_lines_light"><img src="/clear1x1.gif" width="1" height="1"></td>
+<td width="10"><img src="/clear1x1.gif" width="10" height="1"></td>
+<td width="50%"><font size="3" class="colors_productname"><b>New Customers</b></font><br>
+<div id="div_articleid_95">
+If this is your <b>first</b> purchase with us, please proceed by clicking the following button to continue first-time registration. Please fill out <b>all</b> fields so your registration will be complete.<br><br>
+</div>
+<textarea style="display:none;" id="articleBody_95" readonly="true"></textarea>
+<a href="AccountSettings.asp?AddNewCustomer=Y&amp;ReturnTo="><img src="v/vspfiles/templates/ohs-2018/images/buttons/btn_Continue.gif" border="0"></a>
+</td>
+</tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center">&nbsp;</td>
+</tr>
+</tbody></table>
+</form>
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        var loginForm = document.querySelector("form[name='loginform'][action*='login.asp']");
+        if (loginForm) {
+            var loginFormClone = loginForm.cloneNode();
+            while (loginForm.firstChild) {
+                loginFormClone.appendChild(loginForm.lastChild);
+            }
+            loginForm.parentNode.replaceChild(loginFormClone, loginForm);
+        }
+    });
+</script>

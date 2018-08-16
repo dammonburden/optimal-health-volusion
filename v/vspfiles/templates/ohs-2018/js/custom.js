@@ -5,7 +5,7 @@ $(document).ready(function(){
 var thisPageURL = window.location.href.toLowerCase(),
 	thisPageSlug = '';
 
-if (thisPageURL.indexOf('login.asp') > -1) {
+if (thisPageURL.indexOf('login') > -1) {
 thisPageSlug = 'login'; }
 else if (thisPageURL.indexOf('reviewnew.asp') > -1) {
 thisPageSlug = 'new-review'; }
@@ -30,6 +30,10 @@ thisPageSlug = 'other';
 if (thisPageSlug == 'checkout') {
 	$('#table_checkout_cart0 br').remove();
 	$('#v65-onepage-payment-details-parent-table br').remove();
+}
+// Checkout page ----------------------------------------------------
+if (thisPageSlug == 'login') {
+	$('img[src*="heading_login.gif"]').after('<h1>Login</h1>').hide();
 }
 
 });

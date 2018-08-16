@@ -1,0 +1,66 @@
+// Member Logins & Account Pages
+.page-login {
+  #content_area {
+    // form field labels
+    [align="right"] {
+      text-align: left;
+      vertical-align: top;
+      b {
+        display: block;
+        margin-top: 10px;
+      }
+      br {
+        display: none;
+      }
+    }
+    // remove space in login button
+    [colspan="2"] {
+      text-align: left;
+      br {
+        display: none;
+      }
+    }
+    //space after fields
+    [type="text"] {
+      margin-bottom: 8px;
+    }
+    // space after section
+    [width="50%"] {
+      margin-bottom: 20px;
+      table {
+        margin-top: 10px;
+      }
+    }
+    //space after PW reset link
+    [href*="login_sendpass"] {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+  }
+}
+// -------------------------------------------------------------------
+// Responsive
+// -------------------------------------------------------------------
+@media screen and (max-width: $page-size-md) {
+// Small & Med Screens Only
+.page-login {
+  #content_area {
+    // responsive
+    td {
+      display: block;
+      width: 100%;
+      float: left;
+    }
+  }
+}
+
+}
+@media screen and (min-width: $page-size-md) {
+// Md & Up
+
+}
+@media screen and (min-width: $page-size) {
+// Large & Up
+
+
+}
