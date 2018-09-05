@@ -1,8 +1,8 @@
 ---
 ---
 @import '_variables';
-
-/*COLORS*/
+/*
+// COLORS
 .colors_background3 {background-color: #DDD;}
 .colors_highlight {background-color: #fb0;}
 .colors_lines {background-color: #000;}
@@ -10,12 +10,12 @@
 .colors_menutitle {background-color: #444;}
 .colors_menutitletext {color: #fff;}
 
-/* PRODUCT NAME COLOR */
+//  PRODUCT NAME COLOR 
 .colors_productname {color: #444;}
 
-/* PRODUCT PRICE COLOR */
+//  PRODUCT PRICE COLOR 
 .colors_productprice {color: $font-price-color;}
-/*COLORS*/
+// COLORS
 a.colors_homepage_title {color: #007DE9;}
 body, .colors_background_main, .colors_background1, .colors_background2 {background-color: #fff;}
 a, a.colors_background2_text:hover, .colors_background2_text, a.colors_background3_text:hover, .colors_background3_text, .colors_links, a.colors_productname:hover {color: inherit;}
@@ -25,7 +25,7 @@ td, a.colors_text:hover, .colors_text {color: inherit;}
 .colors_backgroundlight, .colors_backgroundneutral, .colors_descriptionbox, .colors_pricebox {background-color: #eee;}
 .colors_backgroundlight_dark, .colors_backgroundneutral_dark {background-color: #ddd;}
 
-/*CONTENT AREA*/
+// CONTENT AREA
 form {margin: 0;}
 .productnamecolor, a.productnamecolor {
 	font-size: 12px;
@@ -44,15 +44,12 @@ a.navtop:hover {
 	text-decoration: underline;
 }
 table, td, .bgcolor1, .bgcolor2, .bgcolor3, .pricecolor, a.regularlink, .nav1, a.nav1, .nav1_selected, a.nav1_selected, .nav2, a.nav2, .nav2_selected, a.nav2_selected, .nav3, a.nav3, .nav3_selected, a.nav3_selected, .navbottom, a.navbottom, .navspecials, a.navspecials {
-	font-size: 12px;
+	font-size: 14px;
 }
 textarea, input, .navtop, a.navtop {
 	color: #000;
-	font-size: 12px;
-}
-.productnamecolorLARGE, a.productnamecolorLARGE, a.productnamecolorLARGE:hover {
 	font-size: 14px;
-	font-weight: bold;
 }
 .productnamecolorsmall, a.productnamecolorsmall, .pricecolorsmall, .smalltext, .carttext, a.carttext {font-size: 10px;}
 a.regularlink:hover, a.navbottom:hover {text-decoration: underline;}
+*/

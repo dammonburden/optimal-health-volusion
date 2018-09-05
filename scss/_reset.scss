@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 a,a:visited,a:active {outline-style: none;}
 a {text-decoration: none;}
 a:hover {text-decoration: underline;}

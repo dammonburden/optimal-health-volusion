@@ -1,4 +1,5 @@
 // General Form Styles
+#content_area input,
 #content_area input[type="password"],
 #content_area input[type="text"],
 #content_area textarea,
@@ -14,6 +15,21 @@
     font-size: $font-size-md;
     font-family: $font-family;
 }
+// override general input style on checks & radios
+#content_area input[type="checkbox"],
+#content_area input[type="radio"] {
+    height: auto;
+    line-height: inherit;
+}
+// override general input style on images
+#content_area input[type="image"] {
+    background-color: transparent !important;
+    border: none;
+    height: auto;
+    line-height: inherit;
+    padding: 0 !important;
+}
+// Long Text Boxes
 #content_area textarea {
 	min-height: 80px;
     padding: 6px;

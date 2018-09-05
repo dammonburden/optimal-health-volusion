@@ -1,4 +1,4 @@
-<config>
+<config responsive="true">
 <navigation_menu category_visible="1" type="list_items" alignment="horizontal" divider="none" width="" sub_levels="" title_textcolor="" title_bgcolor="">
 <title><![CDATA[Nav Menu 1]]></title>
 <custom_divider><![CDATA[]]></custom_divider>

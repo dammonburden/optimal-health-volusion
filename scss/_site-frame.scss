@@ -118,8 +118,6 @@ body {
 }
 // SEARCH BOX
 #displaySearch {
-  display: none;
-
   background: url('../images/template/search_bg.png') no-repeat 0 0;
   height: 27px;
   position: absolute;
@@ -174,7 +172,7 @@ body {
 // Top Navigation
 // -------------------------------------------------------------------
 .ohs-menu-toggle {
-  height: $nav-height - 14px;
+  height: $nav-height;
   padding-top: 14px;
 }
 .nav-open {
@@ -294,79 +292,107 @@ body {
 // Footer
 // -------------------------------------------------------------------
 .footWrap {
-  background: $color-brand-green-dark;
+  background: $color-brand-dark-gray;
   padding: 0 0 35px;
 }
 #footer {
   margin: 0 auto;
-  padding: 0 $page-side-padding;
+  padding: 20px $page-side-padding;
   max-width: $page-size;
   text-align: left;
+  color: darken($color-neutral-3,30);
   a {
-    color: #333;
+    color: darken($color-neutral-3,30);
+    &:hover {
+      color: $color-neutral-5;
+    }
   }
-}
-#footerTop {
-  color: $color-brand-green;
-  padding: 24px 0 33px;
-}
-#footer {
   ul {
     float: left;
     list-style: none;
-    margin: 0 0 0 10px;
-    padding: 0 16px 0 0;
+    margin: 0;
+    padding: 0;
+    width: 50%;
   }
   li {
-    color: #333;
     font-size: 12px;
-    margin: 0 0 10px 0;
-    padding: 0;
+    margin: 0 0 6px;
+    padding: 0 4px 0 0;
     text-transform: uppercase;
     text-align: left;
-    a {
-      color: #000;
-    }
   }
   h3 {
-    font-size: 15px;
+    font-size: 14px;
+    padding-bottom: 6px;
+    margin-right: 18px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 12px;
-    padding: 0 10px 13px;
-    background: url('../images/template/ft_title_bg.png') no-repeat -15px bottom;
+    color: lighten($color-brand-green,10);
+    border-bottom: 2px solid lighten($color-brand-green,10);
+    color: $color-neutral-3;
+    border-bottom: 2px solid $color-neutral-3;
+  }
+  .ohs-site-logo {
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+    a {
+      background-size: contain;
+      height: 50px;
+    }
+  }
+  .company-info {
+    line-height: 1.4em;
+    h3 {
+      border-bottom: 0;
+      margin: 0;
+    }
+  }
+  .address {
+    float: left;
+    margin-right: 20px;
   }
   .col-1,
   .col-2,
-  .col-3 {
-    width: 320px;
-    float: left;
+  .col-3,
+  .social-connect {
+    overflow: hidden;
+    margin-bottom: 20px;
   }
 }
-.co-contact {
-  max-width: $page-size;
-}
 .social-connect {
-  float: left;
-  text-align: left;
-  margin: 0 41px 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
   a {
-    background: url('../images/template/social_btn.png') no-repeat 0 0;
+    background-image: url('../images/template/social_btn_2.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 284px 32px;
     display: block;
     float: left;
     width: 32px;
     height: 32px;
-    margin: 3px 0 0 10px;
+    margin: 0 6px 6px 0;
+    background-color: $color-neutral-5;
+    opacity: .8;
+    transition: all .3s;
     &.tw-icon { background-position: -42px 0; }
     &.inst-icon { background-position: -84px 0; }
     &.pin-icon { background-position: -126px 0; }
-    &.gplus-icon { background-position: -168px 0; }
-    &.phone-icon { background-position: -169px 0; }
+    &.phone-icon { background-position: -168px 0; }
     &.mail-icon { background-position: -210px 0; }
+    &.youtube-icon { background-position: -252px 0; }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 // Affiliate Link
 .footer-affiliate-link {
+  padding-top: 20px;
+  clear: both;
+  text-align: center;
   a {
     display: inline-block;
     max-width: 600px;
@@ -437,21 +463,54 @@ body {
 #display_menu_1 {
   display: block;
 }
+#footer {
+  .company-info,
+  .footer-links,
+  .col-1,
+  .col-2,
+  .col-3 {
+    float: left;
+  }
+  .company-info {
+    width: 25%;
+    padding-right: 20px;
+  }
+  .footer-links {
+    width: 75%;
+  }
+  .col-1,
+  .col-2,
+  .col-3 {
+    width: 50%;
+  }
+  .col-3 {
+    clear: both;
+  }
+  .address {
+    float: none;
+  }
+}
+
 
 
 }
 @media screen and (min-width: $page-size) {
 // Large & Up
-
-
+#footer {
+  .company-info {
+    width: 20%;
+  }
+  .footer-links {
+    width: 80%;
+  }
+  .col-1,
+  .col-2,
+  .col-3 {
+    width: 33.33%;
+  }
+  .col-3 {
+    clear: none;
+  }
 }
 
-
-
-
-
-
-
-
-
-
+}

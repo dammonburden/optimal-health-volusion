@@ -20,32 +20,4 @@ ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
 <script src="v/vspfiles/templates/ohs-2018/js/design-toolkit_min.js"></script>
 <script>DTK.loadCSS("ohs-2018");</script> <!-- FOR CHECKOUT -->
 
-<link href="v/vspfiles/templates/ohs-2018/css/style.css?v=3" rel="stylesheet">
-<script>
-var tU = window.location.href.toLowerCase(), tS = '';
-if (tU.indexOf('login.asp') > -1) {
-tS = 'login'; }
-else if (tU.indexOf('reviewnew.asp') > -1) {
-tS = 'new-review'; }
-else if (tU.indexOf('searchresults.asp') > -1) {
-tS = 'search-results'; }
-else if ((tU.indexOf('_s/') > -1) || (tU.indexOf('_s_366') > -1)) {
-tS = 'category-list'; }
-else if ((tU.indexOf('_p/') > -1) || (tU.indexOf('productdetails.asp') > -1)) {
-tS = 'product-detail'; }
-else {
-tS = 'other';
-}
-document.body.className += ' ' + 'page-'+tS;
-/*
-var cS = tU.indexOf('_s/'),
-    cS = cS + 3,
-    cE = cS + 3;
-if (cS > -1) {
-    var tC = tU.substring(cS,cE);
-  if (tC == '366') {
-    document.body.className += ' ' + 'shop-with-filters';
-  }
-}
-*/
-</script>
+<link href="v/vspfiles/templates/ohs-2018/css/style.css?v=4" rel="stylesheet">
