@@ -1,0 +1,14 @@
+.alert {
+  background-color: $color-neutral-3;
+  color: $color-neutral-1;
+  padding: 6px;
+  &.alert--success {
+    background-color: $success;
+    color: $color-neutral-5;
+  }
+  &.alert--error {
+    background-color: $error;
+    color: $color-neutral-5;
+
+  }
+}

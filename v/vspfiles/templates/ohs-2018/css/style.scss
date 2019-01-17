@@ -7,13 +7,15 @@ $baseurl: '{{ site.baseurl }}';
 @import '_text-and-buttons';
 @import '_forms';
 @import '_global-elements';
+@import '_alerts';
 @import '_site-frame';
 
 //@import 'remove_template'; // removed. Moved most into site-frame. Left what we didnt use here.
-//
+////
 // Pages
 @import 'category';
 @import 'product-detail';
 @import 'checkout';
 @import 'order-confirmation';
 @import 'account-login';
+@import 'catalog';

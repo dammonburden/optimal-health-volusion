@@ -1,0 +1,259 @@
+// Product Catalog for Doctors
+$catalog-sidebar-width: 220px;
+$catalog-logoheader-height: 56px;
+$catalog-filter-height: 40px;
+
+.page-catalog {
+	#contentWrap {
+		max-width: 10000px;
+	}
+	#content_area {
+		//position: relative;
+		padding-top: $catalog-logoheader-height + $catalog-filter-height;
+	}
+	table[cellpadding="3"] {
+		display: none;
+	}
+	.topNavWrap, .siteTools, #displaySearch, .cartLink, 
+	.header-bar, .footWrap {
+		display: none;
+	}
+	#content {
+		padding: 0;
+	}
+	.headerWrap {
+		z-index: 4;
+		position: fixed;
+		top: 0;
+		left: 0; right: 0;
+	}
+	#header {
+		height: $catalog-logoheader-height;
+	}
+	.ohs-site-logo {
+	    height: 50px;
+	    float: left;
+	    width: 120px;
+	    a {
+			height: 50px;
+			background-size: contain;
+	    }
+	}
+	.hp-info-header {
+		color: $color-neutral-5;
+		float: left;
+		margin-top: 12px;
+		strong {
+			font-size: 14px;
+			display: block;
+			font-weight: bold;
+		}
+		em {
+			font-style: normal;
+			font-size: 10px;
+		}
+	}
+	.page-header {
+		h1 {
+			margin-bottom: 4px;
+		}
+		margin-bottom: 20px;
+	}
+	.v-product-grid {
+		min-height: 500px;
+	}
+	.v-product {
+		width: 100% !important;
+		padding: 10px !important;
+		margin-bottom: 0 !important;
+		position: relative;
+		padding-left: 80px !important;
+	}
+	.colors_productprice, .product_productprice {
+	  font-size: 12px !important;
+	}
+	.v-product__title {
+		padding-top: 0px;
+		overflow: hidden;
+	}
+	.v-product__desc {
+	  display: none;
+	}
+	.no-hp-error {
+		padding: 0 20px;
+	}
+	.v-product__img {
+	    float: left;
+	    padding: 0;
+	    position: absolute;
+	    top: 10px; bottom: 0;
+	    left: 0;
+		img {
+		  max-height: 40px !important;
+		  margin-bottom: 0;
+		}
+	}
+	.v-product__qty {
+		margin-top: 0;
+		margin-left: 10px;
+		float: right;
+		min-width: 150px;
+	}
+	.product_productprice b {
+	  font-weight: normal !important;
+	}
+	.page-overlay {
+		background-color: $color-neutral-1;
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		opacity: .5;
+		z-index: 5;
+	}
+}
+.catalog-selection-summary {
+	width: $catalog-sidebar-width;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: $background-light;
+	border-left: 1px solid $border-color;
+	z-index: 10;
+	.catalog-actions {
+		border-bottom: 1px solid $border-color;
+		padding: 10px;
+		overflow: hidden;
+		input {
+			margin-bottom: 8px;
+		}
+	}
+	.alert {
+		position: absolute;
+		padding-top: 20px;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		z-index: 100;
+		font-size: 18px;
+		text-align: center;
+	}
+	label {
+		font-size: 10px;
+	}
+	.hp-info {
+		margin-bottom: 6px;
+	}
+	.results {
+		padding: 20px 10px;
+		overflow-y: scroll; 
+		position: absolute;
+		top: 170px;
+		bottom: 0;
+		left: 10px;
+		right: 10px;
+	}
+	.item {
+		font-size: 12px;
+		margin-bottom: 6px;
+		strong {
+			font-weight: normal;
+		}
+		span {
+			float: right;
+			display: inline-block;
+			width: 26px;
+			text-align: center;
+		}
+	}
+	.error {
+		color: $error;
+		font-size: 12px;
+		input {
+			border-color: $error !important;
+		}
+		.results {
+			color: $error;
+		}
+	}
+	input {
+		width: 100%;
+	}
+	&.sticky {
+		position: fixed;
+		right: 0;
+	}
+}
+.product-category-slide {
+	position: relative;
+	z-index: 1;
+	width: 100vw;
+	padding-right: $catalog-sidebar-width;
+	overflow: hidden;
+	.swiper-pagination {
+		width: 100vw;
+		padding-right: $catalog-sidebar-width;
+		height: $catalog-filter-height;
+		background-color: $background-page;
+		top: 0;
+		text-align: left;
+		z-index: 3;
+		position: fixed;
+		top: 56px;
+		left: 0; right: 0;
+		overflow: hidden;
+	}
+	.swiper-pagination-bullet {
+		width: 33.33%;
+		float: left;
+		display: block;
+		height: $catalog-filter-height;
+		line-height: $catalog-filter-height;
+		border-radius: 0;
+		background: $color-neutral-3;
+		opacity: .5;
+		padding: 0 10px;
+		font-weight: bold;
+		font-size: 12px;
+	    margin: 0 !important;
+	    text-align: center;
+		&:hover {
+			opacity: 1;
+		} 
+	}
+	.swiper-pagination-bullet-active {
+	    opacity: 1;
+	    background: $color-brand-green;
+	    color: $color-neutral-5;
+	}
+}
+
+// -------------------------------------------------------------------
+// Responsive Product Tiles
+// -------------------------------------------------------------------
+@media screen and (min-width: $page-size-md) {
+.page-catalog {
+}
+
+}
+@media screen and (min-width: $page-size) {
+// Large
+
+.page-catalog {
+	.v-product-grid {
+		.v-product {
+			// size 1/2
+			width: 50% !important;
+			&:nth-child(5n+6) {
+				clear: none;
+			}
+			&:nth-child(2n + 1) {
+				clear: both;
+			}
+		}
+		.v-product__qty {
+			min-width: 100px;
+		}
+	}
+}
+
+}

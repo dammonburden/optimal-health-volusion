@@ -486,6 +486,15 @@ td.v65-cart-tax-parent-cell b  {
     //padding-right: 50px;
 }
 
+// Custom Fields & Referral Code
+.hidden-referral-code {
+    display: none;
+}
+.referral-doctor-alert {
+    padding: 6px 10px;
+    background-color: $background-highlight;
+}
+
 // -------------------------------------------------------------------
 // Responsive Cart Page
 // -------------------------------------------------------------------
