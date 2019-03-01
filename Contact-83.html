@@ -1,0 +1,36 @@
+---
+layout: frame-hardcoded
+title: Contact Page
+slug: contact
+path: ../
+
+edit-path: /admin/AdminDetails_Generic.asp?Table=Articles&ID=83
+---
+Email Us A Message
+18 W. Center Street</br>
+Pima, Arizona 85543</br>
+(800) 890-4547</br>
+
+<form name="eMail" method="post" action="emailform.asp">
+
+<BR>
+<BR>
+
+Name: <input type="text" name="Name" value=""><BR>
+Email: <input type="text" name="E-Mail" value=""><BR>
+Phone: <input type="text" name="Phone" value="">
+<BR>
+<BR>
+
+Message:<br /><textarea name="Sample Text Area" rows="8" cols="65"></textarea>
+
+<BR>
+Please enter the following code into the box provided:<br />$(Verification_Image)<br /><input type="text" name="Verification_Code" />
+<br /><br />
+<input type="submit" name="submit" value="submit">
+<input type="hidden" name="email_From" value="info@optimalhealthsystems.com">
+<input type="hidden" name="email_To" value="support@optimalhealthsystems.com">
+<input type="hidden" name="email_Subject" value="OHS Contact Form Submission">
+<input type="hidden" name="email_ThankYou" value="Thank you for reaching out. We'll respond as soon as we can.">
+<input type="hidden" name="email_Redirect" value="">
+<br /><br /></form>
