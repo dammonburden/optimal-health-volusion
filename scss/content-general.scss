@@ -1,0 +1,52 @@
+// Pages like about, contact
+.article-head {
+	margin-bottom: 4px;
+}
+.article-wrap {
+	padding: 20px;
+	background-color: $background-page;
+	p {
+		margin-bottom: 1em;
+		max-width: 650px;
+	}
+}
+
+// Contact Page ---------------------------------------------------
+.contact-form {
+	.form-field {
+		margin-bottom: 4px;
+	}
+	.form-field-full-width-label {
+		label {
+			width: 100%;
+		}
+	}
+	label {
+		display: block;
+	}
+	input[type="text"] {
+		width: 280px;
+	}
+	textarea {
+		width: 100%;
+	}
+}
+.contact-form-footer {
+	margin-top: 40px;
+	border-top: 1px solid $border-color;
+	padding-top: 20px;
+}
+@media screen and (min-width: $page-size-md) {
+.contact-form {
+	.form-field-full-width-label {
+		label {
+			width: 100%;
+		}
+	}
+	label {
+		display: inline-block;
+		width: 100px;
+	}
+}
+
+}

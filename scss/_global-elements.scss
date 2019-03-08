@@ -3,6 +3,15 @@ img[src*="clear1x1.gif"] {
     display: none;
 }
 // Helpers
+.bullet-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
 .clear:before,
 .clear:after {
   content: " ";

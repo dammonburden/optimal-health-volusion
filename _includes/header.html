@@ -1,39 +1,41 @@
-    <div class="header-bar" id="top-header">
-      <a href="tel:+1-800-890-4547">1-800-890-4547</a>
-      <a href="mailto:support@optimalhealthsystems.com">support@optimalhealthsystems.com</a>
-    </div><!-- #top-header -->
-    <!-- ======================== HEADER ======================== -->
-    <div class="headerWrap">
-      <div id="header" data-v-anchor="cart">
-        <h1 class="ohs-site-logo"><a href="/" title="Optimal Health Systems">Optimal Health Systems</a></h1>
-        <a href="/shoppingcart.asp" class="cartLink">
-          <span class="cartNum" data-v-observable="cart-count">0</span>
-          <span class="cartText">My Cart</span>
-        </a>
-      </div><!-- #header -->
-  
-      <!-- ==================== UL LAYOUT ==================== -->
-      <div class="topNavWrap">
-        <div id="topNav" class="clear">
-          <div class="ohs-menu-toggle"><div rel="menu-toggle"><span class="nav-menu-icon"><span></span><span></span><span></span><span></span></span></div></div>
-          <div id="display_menu_1" class="menu">
-            <ul>
-              <li><a href="/">Link 1</a></li>
-              <li><a href="/">Link 2</a></li>
-              <li><a href="/">Link 3</a></li>
-            </ul>
-          </div>
-        </div><!-- #top_nav -->
+<!-- ======================== HEADER ======================== -->
+<div class="headerWrap">
+  <div class="ohs-header" id="header" data-v-anchor="cart">
+    <h1 class="ohs-header-logo"><a href="/" title="Optimal Health Systems">Optimal Health Systems</a></h1>
+    <div class="ohs-header-tools">
+      <div class="ohs-header-support">
+        <a class="phone" href="tel:+1-800-890-4547">1-800-890-4547</a>
+        <a class="email" href="mailto:support@optimalhealthsystems.com">support@optimalhealthsystems.com</a>
       </div>
-
-      <div class="siteTools" data-v-edit-region="Sitetools">
-        <a href="/myaccount.asp">My Account</a>
-        <a href="/help.asp">Help/Faq</a>
-      </div>
-      <div id="displaySearch">
-        <form action="/SearchResults.asp" method="get" name="SearchBoxForm">
-          <input type="text" name="Search" class="searchInput transition" value="" placeholder="Search...">
+      <div class="ohs-header-help"><a href="/help.asp" title="Help FAQ"><i class="fal fa-question-circle"></i></a></div>
+      <div class="ohs-header-account"><a href="/myaccount.asp" title="My Account"><i class="fal fa-user-circle"></i></a></div>
+      <div class="ohs-header-cart" title="My Cart"><a href="/shoppingcart.asp" class="cartLink">
+        <i class="fal fa-shopping-cart"></i><span class="cartNum" data-v-observable="cart-count">0</span>
+      </a></div>
+      <div class="ohs-header-search">
+        <a href="#" rel="search-toggle"><i class="fal fa-search"></i></a>
+        <form class="search-form" action="/SearchResults.asp" method="get" name="SearchBoxForm">
+          <i rel="search-toggle" class="fal fa-times"></i>
+          <input type="text" id="searchInput" name="Search" class="searchInput transition" value="">
           <input type="submit" name="Submit" class="searchSubmit" value="">
         </form>
-      </div><!-- #displaySearch -->
-    </div><!-- .headerWrap -->
+      </div>
+    </div>
+  </div><!-- .ohs-header -->
+  <div class="ohs-main-nav">
+    <div class="ohs-main-nav-button" rel="menu-toggle"><div class="ohs-menu-toggle"><span class="nav-menu-icon"><span></span><span></span><span></span><span></span></span></div> Products</div>
+      <div class="ohs-main-nav-menu">
+        <ul class="bullet-reset">
+          <li><a href="/category-s/1931.htm">OHS<em> Optimal</em></a></li>
+          <li><a href="/category-s/1926.htm">Dr. Brimhall<em> Opti-Nutrient</em></a></li>
+          <li><a href="/category-s/1515.htm">Dr. Harris<em> Essential</em></a></li>
+          <li><a href="/category-s/1824.htm">Performance<em> & Energy</em></a></li>
+          <li><a href="/category-s/1819.htm">Fat Loss<em> & Nutrition</em></a></li>
+          <li><a href="/category-s/1820.htm">Pain, Joint &<em> Inflammation</em></a></li>
+          <li><a href="/category-s/1821.htm">Organ & <em>Toxin Cleanses</em></a></li>
+          <li><a href="/category-s/1821.htm">OHS <em>Seminars</em></a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- .ohs-main-nav -->
+</div><!-- .headerWrap -->

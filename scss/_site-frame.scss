@@ -1,9 +1,3 @@
-$header-height: 75px;
-$nav-height: 50px;
-$nav-width: 300px;
-$mobile-nav-width: 200px;
-$nav-menu-icon-size: 24px;
-
 // Layout
 body {
   background: $background-body;
@@ -11,419 +5,8 @@ body {
   padding: 0;
 }
 // -------------------------------------------------------------------
-// Site Header
-// -------------------------------------------------------------------
-.header-bar {
-  background: $color-brand-green;
-  color: $color-neutral-5;
-  line-height: 30px;
-  padding: 0 10px;
-  a {
-    color: $color-neutral-5;
-    font-size: 12px;
-    margin-right: 10px;
-  }
-}
-.headerWrap {
-  background: $color-brand-dark-gray;
-  width: 100%;
-  z-index: 9999;
-  position: relative;
-}
-#header {
-  height: $header-height;
-  padding: 0;
-  text-align: left;
-  position: relative;
-}
-// Logo
-.ohs-site-logo {
-  width: 175px;
-  padding-left: 10px;
-  height: $header-height;
-  a {
-    background-image: url('../images/template/header_bg.png');
-    background-repeat: no-repeat;
-    background-position: left 4px;
-    display: block;
-    overflow: hidden;
-    width: 175px;
-    height: $header-height;
-    text-align: left;
-    text-indent: -9999px;
-  }
-}
-// Links
-.siteTools {
-  display: none;
-
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  right: 300px;
-  text-align: right;
-  top: 27px;
-  a {
-    color: #fff;
-    font-size: 15px;
-    text-transform: uppercase;
-    margin: 0 10px 0 30px;
-    &:hover {
-      color: #fcefed;
-      text-decoration: none;
-    }
-  }
-}
-// Cart Link
-.cartLink {
-  background: #500625;
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 75px;
-  height: $header-height;
-  display: block;
-  text-align: center;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-  background-image: url(../images/template/cart_bg.png);
-  background-position: center 7px;
-  background-repeat: no-repeat;
-  span {
-    display: block;
-  }
-  &:hover,
-  &:hover span {
-    color: #fff;
-    text-decoration:none;
-  }
-}
-.cartNum {
-  color: #27201f;
-  font-size: 22px;
-  line-height: 28px;
-  padding-top: 20px;
-  padding-bottom: 6px;
-}
-// Not sure
-#cartWrapper {
-  font-weight: normal;
-  position: absolute;
-  right: 10px;
-  top: 30px;
-}
-// SEARCH BOX
-#displaySearch {
-  background: url('../images/template/search_bg.png') no-repeat 0 0;
-  height: 27px;
-  position: absolute;
-  right: 88px;
-  top: 18px;
-  width: 161px;
-  form {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-}
-.searchInput {
-  font-family: 'Raleway', sans-serif;
-  background: none;
-  border: 0;
-  color: #fff;
-  display: block;
-  float: left;
-  font-size: 11px;
-  font-weight: normal;
-  margin: 0;
-  padding: 6px 10px 4px;
-  text-align: left;
-  width: 110px;
-  outline:none; /* webkit */
-}
-.searchInput::-webkit-input-placeholder{color:#fff;} /* webkit */
-
-.searchInput:focus{color:#f7deda;}
-.searchInput:focus::-webkit-input-placeholder {color:#f7deda;} /* webkit */
-
-.searchSubmit {
-  background: none;
-  border: 0;
-  color: white;
-  cursor: pointer;
-  display: block;
-  float: right;
-  font-size: 0;
-  height: 25px;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  text-indent: -9999px;
-  width: 25px;
-  outline:none; /* webkit */
-}
-
-// -------------------------------------------------------------------
-// Top Navigation
-// -------------------------------------------------------------------
-.ohs-menu-toggle {
-  height: $nav-height;
-  padding-top: 14px;
-}
-.nav-open {
-  #display_menu_1 {
-    display: block;
-    li {
-      width: 100%;
-    }
-  }
-  .siteTools {
-    display: block;
-    position: relative;
-    background: $color-brand-green;
-    right: 0;
-    top: 0;
-    text-align: center;
-    a {
-      display: inline-block;
-      margin: 8px 10px;
-    }
-  }
-  #displaySearch {
-    display: block;
-    position: relative;
-    height: 40px;
-    margin: 10px auto;
-    right: 0;
-    top: 0;
-  }
-}
-// Mobile Nav Icon
-.nav-menu-icon {
-  width: $nav-menu-icon-size;
-  height: ($nav-menu-icon-size)-($nav-menu-icon-size/6);
-  position: relative;
-  cursor: pointer;
-  margin: auto;
-  display: block;
-  @include transform(rotate(0deg));
-  @include transition(.5s ease-in-out);
-  span {
-    display: block;
-    position: absolute;
-    height: $nav-menu-icon-size/6;
-    width: 100%;
-    background: $color-neutral-5;
-    opacity: 1;
-    left: 0;
-    @include transform(rotate(0deg));
-    @include transition(.25s ease-in-out);
-  }
-  span:nth-child(1) {
-    top: 0px;
-  }
-  span:nth-child(2),
-  span:nth-child(3) {
-    top: $nav-menu-icon-size/3;
-  }
-  span:nth-child(4) {
-    top: ($nav-menu-icon-size/3)*2;
-  }
-  &.open {
-    span:nth-child(1) {
-      top: $nav-menu-icon-size/3;
-      width: 0%;
-      left: 50%;
-    }
-    span:nth-child(2) {
-      @include transform(rotate(45deg));
-    }
-    span:nth-child(3) {
-      @include transform(rotate(-45deg));
-    }
-    span:nth-child(4) {
-      top: $nav-menu-icon-size/3;
-      width: 0%;
-      left: 50%;
-    }
-  }
-}
-.topNavWrap {
-  width: 100%;
-  background: $color-brand-green-dark;
-}
-#topNav {
-  padding: 0;
-  text-align: center;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-    }
-    a {
-      display: block;
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-      padding: 10px 10px;
-      text-transform: uppercase;
-    }
-    li.nav_hover a,
-    li a:hover {
-      background: $color-brand-green;
-      color: white;
-      text-decoration: none;
-    }
-  }
-}
-#display_menu_1 {
-  padding: 0;
-  width: auto;
-  display: none;
-}
-// -------------------------------------------------------------------
-// Footer
-// -------------------------------------------------------------------
-.footWrap {
-  background: $color-brand-dark-gray;
-  padding: 0 0 35px;
-}
-#footer {
-  margin: 0 auto;
-  padding: 20px $page-side-padding;
-  max-width: $page-size;
-  text-align: left;
-  color: darken($color-neutral-3,30);
-  a {
-    color: darken($color-neutral-3,30);
-    &:hover {
-      color: $color-neutral-5;
-    }
-  }
-  ul {
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 50%;
-  }
-  li {
-    font-size: 12px;
-    margin: 0 0 6px;
-    padding: 0 4px 0 0;
-    text-transform: uppercase;
-    text-align: left;
-  }
-  h3 {
-    font-size: 14px;
-    padding-bottom: 6px;
-    margin-right: 18px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: lighten($color-brand-green,10);
-    border-bottom: 2px solid lighten($color-brand-green,10);
-    color: $color-neutral-3;
-    border-bottom: 2px solid $color-neutral-3;
-  }
-  .ohs-site-logo {
-    width: auto;
-    height: auto;
-    margin-bottom: 10px;
-    a {
-      background-size: contain;
-      height: 50px;
-    }
-  }
-  .company-info {
-    line-height: 1.4em;
-    h3 {
-      border-bottom: 0;
-      margin: 0;
-    }
-  }
-  .address {
-    float: left;
-    margin-right: 20px;
-  }
-  .col-1,
-  .col-2,
-  .col-3,
-  .social-connect {
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-}
-.social-connect {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  a {
-    background-image: url('../images/template/social_btn_2.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 284px 32px;
-    display: block;
-    float: left;
-    width: 32px;
-    height: 32px;
-    margin: 0 6px 6px 0;
-    background-color: $color-neutral-5;
-    opacity: .8;
-    transition: all .3s;
-    &.tw-icon { background-position: -42px 0; }
-    &.inst-icon { background-position: -84px 0; }
-    &.pin-icon { background-position: -126px 0; }
-    &.phone-icon { background-position: -168px 0; }
-    &.mail-icon { background-position: -210px 0; }
-    &.youtube-icon { background-position: -252px 0; }
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-// Affiliate Link
-.footer-affiliate-link {
-  padding-top: 20px;
-  clear: both;
-  text-align: center;
-  a {
-    display: inline-block;
-    max-width: 600px;
-    padding: 2px;
-    border: 1px solid $border-color;
-  }
-  img {
-    width: 100%;
-    float: left;
-  }
-}
-
-// Copyright
-#footerBottom {
-  font-size: 12px;
-  text-align: left;
-  color: $subfont-color;
-  a {
-    color: $subfont-color;
-  }
-}
-.copyright {
-  padding: 8px;
-}
-
-// -------------------------------------------------------------------
 // Page Content
 // -------------------------------------------------------------------
-#pageWrapper {
-  background: $background-page;
-}
 #contentWrap {
   margin: 0 auto;
   text-align: left;
@@ -433,12 +16,6 @@ body {
 #content {
   padding: 20px $page-side-padding;
 }
-
-
-
-
-
-
 // -------------------------------------------------------------------
 // Responsive Site Frame
 // -------------------------------------------------------------------
@@ -449,67 +26,192 @@ body {
 }
 
 }
-@media screen and (min-width: $page-size-md) {
-// Md & Up
-.ohs-menu-toggle {
-  display: none;
+
+// -------------------------------------------------------------------
+// Footer
+// -------------------------------------------------------------------
+.ohs-footer {
+  .ohs-company-info {
+    background-color: $color-brand-dark-gray;
+    padding: 10px;
+    color: $color-neutral-4;
+    text-align: center;
+    a {
+      color: $color-neutral-4;
+    }
+    span {
+      display: block;
+    }
+  }
+  .ohs-site-logo {
+    margin-bottom: 10px;
+    a {
+      background-image: url('../images/template/header_bg.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      display: block;
+      height: 40px;
+      text-indent: -9999px;
+    }
+  }
+  .ohs-location {
+    font-size: 12px;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+  }
+  .social-connect {
+    font-size: 24px;
+    a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
 }
-.siteTools {
-  display: block;
-}
-#displaySearch {
-  display: block;
-}
-#display_menu_1 {
-  display: block;
-}
-#footer {
-  .company-info,
-  .footer-links,
-  .col-1,
-  .col-2,
-  .col-3 {
+.ohs-footer-links {
+  background-color: $color-main;
+  color: $color-neutral-5;
+  padding: 20px;
+  line-height: 1.8em;
+  a {
+    color: $color-neutral-5;
+  }
+  .title {
+    font-size: 14px;
+  }
+  ul {
+    margin-bottom: 10px;
+  }
+  .sub-links {
+    display: none;
+  }
+  .main-links {
+  }
+  .narrow {
+    width: 50%;
     float: left;
   }
-  .company-info {
-    width: 25%;
-    padding-right: 20px;
-  }
-  .footer-links {
-    width: 75%;
-  }
-  .col-1,
-  .col-2,
-  .col-3 {
-    width: 50%;
-  }
-  .col-3 {
+  .affiliate-links {
+    padding-bottom: 20px;
     clear: both;
-  }
-  .address {
-    float: none;
+    p {
+      font-size: 12px;
+      line-height: 1.3em;
+      margin-bottom: 6px;
+    }
+    .cta-button {
+      display: block;
+      max-width: 300px;
+      padding: 10px;
+      line-height: 1.3em;
+      position: relative;
+      height: 60px;
+      padding-right: 40px;
+      span {
+        line-height: 1.6em;
+        display: block;
+        font-size: 10px;
+      }
+      strong {
+        font-size: 20px;
+      }
+      &:after {
+        content: '\f054';
+        position: absolute;
+        top: 0; bottom: 0;
+        right: 0;
+        width: 40px;
+        line-height: 60px;
+        text-align: center;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+      }
+    }
   }
 }
-
-
+.ohs-footer-disclaimer {
+  clear: both;
+  font-size: 10px;
+  line-height: 1.2em;
+  color: $color-neutral-3;
+}
+.ohs-footer-copyright {
+  background-color: $color-sub;
+  font-size: 10px;
+  padding: 6px;
+  a {
+    color: $color-neutral-3;
+    display: inline-block;
+    margin: 0 6px 0 0;
+  }
+}
+@media screen and (min-width: $page-size-md) {
+// Medium & Up
+.ohs-footer {
+  .ohs-company-info {
+    overflow: hidden;
+    text-align: left;
+    div {
+      float: left;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  .ohs-site-logo {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+  .ohs-location {
+    margin: 0;
+    line-height: 40px;
+    strong:after {
+      content: ' \2022 ';
+    }
+  }
+  .social-connect {
+    line-height: 40px;
+    margin-left: 40px;
+  }
+}
+.ohs-footer-links {
+  .sub-links {
+    display: block;
+  }
+  .main-links,
+  .sub-links,
+  .ohs-footer-aside {
+    float: left;
+  }
+  .main-links {
+    width: 33.33%;
+  }
+  .ohs-footer-aside {
+    width: 66.66%;
+  }
+  .sub-links {
+    width: 50%;
+  }
+  .narrow {
+    width: 100%;
+  }
+}
 
 }
 @media screen and (min-width: $page-size) {
 // Large & Up
-#footer {
-  .company-info {
-    width: 20%;
+.ohs-footer-links {
+  .affiliate-links {
+    float: left;
+    width: 33.33%;
+    clear: none;
   }
-  .footer-links {
-    width: 80%;
-  }
-  .col-1,
-  .col-2,
-  .col-3 {
+  .sub-links {
     width: 33.33%;
   }
-  .col-3 {
-    clear: none;
+  .narrow {
+    width: 50%;
   }
 }
 

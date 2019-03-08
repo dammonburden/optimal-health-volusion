@@ -14,11 +14,14 @@ ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
 
-<link href="v/vspfiles/templates/ohs-2018/css/imports.css" rel="stylesheet">
+{% comment %}<link href="v/vspfiles/templates/ohs-2018/css/imports.css" rel="stylesheet">{% endcomment %}
 {% if page.slug == "home" OR page.slug == "template" %}
 <div id="if_homepage"><link href="v/vspfiles/templates/ohs-2018/css/homepage.css" rel="stylesheet"></div>
 {% endif %}
-<script src="v/vspfiles/templates/ohs-2018/js/design-toolkit_min.js"></script>
-<script>DTK.loadCSS("ohs-2018");</script> <!-- FOR CHECKOUT -->
+{% comment %}<script src="v/vspfiles/templates/ohs-2018/js/design-toolkit_min.js"></script>
+<script>DTK.loadCSS("ohs-2018");</script> <!-- FOR CHECKOUT -->{% endcomment %}
 
-<link href="v/vspfiles/templates/ohs-2018/css/style.css?v=4" rel="stylesheet">
+<link href="v/vspfiles/templates/ohs-2018/css/style.css?v={{ site.time | date: '%Y%m%d.%H%M' }}" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/light.css" integrity="sha384-ouQ4uivIto2ZdBS6+torZMbImJhWA6/m7/CAGY9z0FNDmoAF6uWAEnavvIsR1EBt" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-toEUmnrGu+eq8XUD6ovsr/vFX+R3v9+FUGAnpef+uwGKMCeqZkcZfkXQ0Pls5WS7" crossorigin="anonymous">

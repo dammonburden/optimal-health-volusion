@@ -1,29 +1,31 @@
 // Raw Colors
-$color-brand-green: #298A08;
-$color-brand-green-dark: #0b610b;
-$color-brand-maroon: #500625;
+$color-brand-green: #008A5E;
+$color-brand-green-dark: #005D3F;
+$color-brand-blue-dark: #06488F;
 $color-brand-dark-gray: #27201f;
+$color-brand-yellow: #FFD51C;
 $color-ui-red: #cd0f13;
 $color-ui-green: $color-brand-green;
-$color-ui-yellow: #ffea5f;
+$color-ui-yellow: $color-brand-yellow;
 
 $color-neutral-1: #000; // darkest neutral - black
-$color-neutral-2: #585858;
+$color-neutral-2: #585858;//544F4E
 $color-neutral-3: #d7d7d7;
-$color-neutral-4: #eee;
+$color-neutral-4: #E7E8E8; // site bg
 $color-neutral-5: #fff; // lightest neutral - white
 
 // Variables
 $color-main: $color-brand-green;
-$color-sub: $color-brand-maroon;
+$color-sub: $color-brand-green-dark;
+$color-accent: $color-brand-yellow;
 
-$font-family: 'Raleway', Arial, sans-serif;
+$font-family: 'usual', Arial, sans-serif;
 $accent-font: $font-family;
 
 $font-color: $color-neutral-1;
 $subfont-color: $color-neutral-2;
-$header-color: $color-neutral-2;
-$font-price-color: $color-brand-maroon;
+$header-color: $color-main;
+$font-price-color: $color-brand-blue-dark;
 $link-color: $color-main;
 
 $font-size-xxl: 30px;
@@ -35,6 +37,7 @@ $font-size-sm: 12px;
 $success: $color-ui-green;
 $error: $color-ui-red;
 
+$page-size-lg: 1200px;
 $page-size: 960px;
 $page-size-md: 740px;
 $page-size-sm: 400px;
@@ -43,10 +46,10 @@ $page-side-padding: 10px;
 
 $border-color: $color-neutral-3;
 
-$background-body: $color-neutral-3;
+$background-body: $color-neutral-4;
 $background-page: $color-neutral-5;
 $background-light: $color-neutral-4;
-$background-highlight: lighten($color-ui-yellow,20);
+$background-highlight: lighten($color-ui-yellow,36);
 $background-error: lighten($error,52);
 
 $button-color: $color-sub;
@@ -55,9 +58,9 @@ $button-hover: lighten($color-sub,12);
 $button-secondarycolor: $color-neutral-2;
 $button-secondaryhover: darken($color-neutral-2,12);
 
-$header-color-1: $color-neutral-2;
+$header-color-1: $color-brand-green;
 $header-color-2: $color-neutral-1;
-$header-color-alt: $color-brand-maroon;
+$header-color-alt: $color-brand-blue-dark;
 
 $field-height: 34px;
 $field-border-color: $color-neutral-3;

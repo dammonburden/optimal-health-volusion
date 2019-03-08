@@ -32,7 +32,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 {% endif %}
 
-<script src="{{ site.baseurl }}v/vspfiles/templates/ohs-2018/js/custom.js"></script>
+<script src="{{ site.baseurl }}v/vspfiles/templates/ohs-2018/js/custom.js?v={{ site.time | date: '%Y%m%d.%H%M' }}"></script>
 
 <script>
 // match in customjs when updated
@@ -53,6 +53,16 @@ else if ((tU.indexOf('-s/') > -1) || (tU.indexOf('_s/') > -1)) {
 tS = 'category-list'; }
 else if ((tU.indexOf('articles.asp') > -1) || (tU.indexOf('-a/') > -1) || (tU.indexOf('_a/') > -1)) {
 tS = 'article'; }
+else if (tU.indexOf('register') > -1) {
+tS = 'register'; }
+else if ((tU.indexOf('help.asp') > -1) || (tU.indexOf('help.html') > -1)) {
+tS = 'help'; }
+else if ((tU.indexOf('help_answer') > -1) || (tU.indexOf('help-article') > -1)) {
+tS = 'help-article'; }
+else if (tU.indexOf('myaccount') > -1) {
+tS = 'myaccount'; }
+else if (tU.indexOf('wishlist') > -1) {
+tS = 'wishlist'; }
 else if ((tU.indexOf('productdetails.asp') > -1) || (tU.indexOf('-p/') > -1) || (tU.indexOf('_p/') > -1)) {
 tS = 'product-detail'; }
 else {

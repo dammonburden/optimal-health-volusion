@@ -1,6 +1,17 @@
 // Member Logins & Account Pages
+// Main Login Page ---------------------------------------------
 .page-login {
   #content_area {
+    .colors_productname {
+      font-weight: bold;
+      font-size: 24px;
+      padding-top: 10px;
+      display: block;
+      margin-bottom: 0;
+      b {
+        font-weight: bold;
+      }
+    }
     // form field labels
     [align="right"] {
       text-align: left;
@@ -38,6 +49,168 @@
     }
   }
 }
+// Register.asp Page ------------------------------------------------
+// Register/Login Forms
+.page-register {
+  br {
+    display: none;
+  }
+  td[width="48%"] {
+    width: 100px;
+  }
+  td[width="52%"] {
+    width: auto;
+  }
+  td[width="1%"] {
+    display: none;
+  }
+  td[width="49%"],
+  td[width="50%"], {
+    width: 100%;
+    display: block;
+  }
+  [align="right"], [align="center"] {
+    text-align: left;
+  }
+  form td {
+    padding-bottom: 4px;
+  }
+  [width="80%"],
+  [width="98%"] {
+    width: 100%;
+  }
+  .register-page-intro {
+    padding-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 10px;
+    span {
+      display: block;
+      font-size: 14px;
+      //font-weight: normal;
+    }
+  }
+  .new-customer-intro {
+    margin-bottom: 20px;
+  }
+  .new-account-header {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid $border-color;
+  }
+  h3 {
+    border-top: 1px solid $border-color;
+    padding-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 400px;
+  }
+  .password-help-content {
+    margin-top: 16px;
+    //margin-left: 100px;
+    strong {
+      //font-weight: bold;
+    }
+  }
+}
+// myaccount.asp Page ------------------------------------------------
+.page-myaccount {
+  table[width="95%"],
+  table[width="500"] {
+    width: 100%;
+  }
+  /* white bg on body
+  table[width="500"] {
+    background-color: $background-page;
+    td {
+      padding: 0 20px;
+    }
+  }
+  */
+  [align="center"] {
+    text-align: left;
+  }
+  .bgcolor3 {
+    span {
+      display: block;
+      margin-top: 30px;
+      border-top: 1px solid $border-color;
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+    b {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  [href*="login.asp"] {
+    display: inline-block;
+    margin-top: 30px;
+    border-top: 1px solid $border-color;
+    padding-top: 10px;
+  }
+}
+// wishlist.asp Page -------------------------------------------------
+.page-wishlist {
+  table[width="96%"] {
+    width: 100%;
+  }
+  [src*="btn_addtowishlist_clear"] {
+    height: 15px;
+  }
+  #content_area form {
+    background-color: $background-page;
+  }
+  .v65-productDisplay .v65-productDisplay > tbody {
+    br {
+      display: none;
+    }
+    // Start of each row + Image?
+    > tr:first-child,
+    > tr:nth-child(6n+7) {
+      border-top: 1px solid $border-color;
+      td:first-child {
+        padding: 10px;
+        width: 15%;
+        vertical-align: top;
+      }
+      img {
+        max-height: 100px;
+      }
+      a {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+    // Title
+    > tr:nth-child(6n+2) {
+      font-size: 16px;
+      font-weight: bold;
+      td {
+        padding: 10px 0;
+      }
+    }
+    // Price & Buttons
+    > tr:nth-child(6n+3) {
+    }
+    // Description
+    > tr:nth-child(6n+4) {
+      td {
+        padding: 10px 0;
+      }
+    }
+  }
+  [src*="btn_addtocart_small"] {
+    height: 50px;
+    margin-right: 20px;
+  }
+  [src*="btn_addtowishlist_remove"] {
+    height: 14px;
+  }
+}
 // -------------------------------------------------------------------
 // Responsive
 // -------------------------------------------------------------------
@@ -57,6 +230,23 @@
 }
 @media screen and (min-width: $page-size-md) {
 // Md & Up
+.page-register {
+  .password-help-content {
+    //margin-left: 150px;
+  }
+  td[width="48%"] {
+    width: 150px;
+  }
+  td[width="1%"] {
+    width: 4%;
+    display: block;
+  }
+  td[width="49%"],
+  td[width="50%"], {
+    width: 48%;
+    display: table-cell;
+  }
+}
 
 }
 @media screen and (min-width: $page-size) {

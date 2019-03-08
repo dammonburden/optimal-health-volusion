@@ -21,7 +21,7 @@ var HPClientID = getHashVars()['code'],
 	HPEmailAddress = decodeURIComponent(HPEmailAddress);
 
 if (HPClientID) {
-	$('.ohs-site-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
+	$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
 	$('#providerEmail').val(HPEmailAddress);
 	// Show Page
 	$('.search_results_section').show();

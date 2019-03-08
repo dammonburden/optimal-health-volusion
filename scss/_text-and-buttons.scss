@@ -1,9 +1,18 @@
-@import url("//fonts.googleapis.com/css?family=Raleway:300,500,600,700");
+@import url("//use.typekit.net/foy1exi.css");
 
 body {
   color: $font-color;
   font-family: $font-family;
   font-size: $font-size-md;
+  line-height: 1.6em;
+}
+h1 {
+  color: $header-color-1;
+  font-size: 32px;
+  line-height: 1.2em;
+}
+h2 {
+  color: $header-color-2;
 }
 // make numbers look better
 * {
@@ -15,14 +24,26 @@ font-feature-settings: "lnum";
 a {
   color: $link-color;
 }
-// form button
-#content_area input[type="button"] {
+b {
+  font-weight: normal;
+}
+// breadcrumbs 
+.breadcrumb {
+  color: $font-color;
+  font-size: 12px;
+  a {
+    color: $font-color;
+  }
+}
+// form button 
+#content_area input[type="button"],
+#content_area input[type="submit"] {
   display: inline-block;
   font-family: $font-family;
-  background-color: $button-color;
+  background-color: $button-color !important;
   color: $color-neutral-5;
   line-height: ($field-height - 2);
-  padding: 2px 14px 0;
+  padding: 2px 14px 0 !important;
   border: none;
   text-transform: uppercase;
   &:hover {
@@ -55,6 +76,21 @@ a {
   }
 }
 .productnamecolorLARGE, a.productnamecolorLARGE, a.productnamecolorLARGE:hover {
-  font-size: 18px;
+  color: $header-color;
+  font-size: 32px;
+  line-height: 1.4em;
   font-weight: bold;
+  display: block;
+}
+// -------------------------------------------------------------------
+// Responsive
+// -------------------------------------------------------------------
+@media screen and (min-width: $page-size) {
+h1 {
+  font-size: 36px;
+}
+.productnamecolorLARGE, a.productnamecolorLARGE, a.productnamecolorLARGE:hover {
+  font-size: 36px;
+}
+
 }

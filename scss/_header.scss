@@ -1,0 +1,327 @@
+$header-height: 60px;
+$nav-height: 40px;
+$nav-width: 300px;
+$mobile-nav-width: 200px;
+$nav-menu-icon-size: 12px;
+
+// -------------------------------------------------------------------
+// Site Header
+// -------------------------------------------------------------------
+.headerWrap {
+  background-color: $color-brand-dark-gray;
+  width: 100%;
+  z-index: 9999;
+  position: relative;
+  min-width: 290px;
+  line-height: 1.1em;
+}
+.ohs-header {
+  height: $header-height;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  .ohs-header-logo {
+    float: left;
+  }
+  .ohs-header-tools {
+    float: right;
+    div {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+  a {
+    color: $color-neutral-5;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .search-form {
+    display: none;
+  }
+  &.ohs-header--search-open {
+    .search-form {
+      display: block;
+    }
+  }
+}
+// Logo
+.ohs-header-logo {
+  width: 90px;
+  padding: 5px;
+  height: $header-height;
+  a {
+    background-image: url('../images/template/header_bg.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    display: block;
+    overflow: hidden;
+    height: $header-height - 10px;
+    text-align: left;
+    text-indent: -9999px;
+  }
+}
+.ohs-header-support {
+  font-size: 11px;
+  text-align: right;
+  padding-top: 17px;
+
+  position: absolute;
+  top: 56px; right: 0;
+  z-index: 2;
+  .phone {
+    font-size: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+  }
+  .email {
+    display: none;
+  }
+}
+//. search 
+.ohs-header-search {
+  margin-top: 10px;
+  .search-form {
+      position: absolute;
+      top: 10px; bottom: 10px;
+      right: 10px;
+  }
+  form i, input {
+    float: left;
+    background-color: $color-neutral-2;
+  }
+  form i {
+    width: $header-height - 20px;
+    line-height: $header-height - 20px;
+    display: inline-block;
+    color: $color-neutral-5;
+    text-align: center;
+    font-size: 20px;
+  }
+  input[type="text"] {
+    border: none;
+    padding: 0;
+    width: 200px;
+    font-size: 18px;
+    line-height: $header-height - 20px;
+    color: $color-neutral-5;
+  }
+  input[type="submit"] {
+    display: none;
+  }
+}
+// Account
+.ohs-header-help,
+.ohs-header-account,
+.ohs-header-cart,
+.ohs-header-search {
+  width: $header-height - 20px;
+  text-align: center;
+  margin: 0;
+  i {
+    font-size: 24px;
+    line-height: $header-height;
+    color: $color-main;
+  }
+  a:hover {
+    i {
+      color: $color-neutral-5;
+    }
+
+  }
+}
+.ohs-header-cart {
+  position: relative;
+  .cartNum {
+    display: none;
+    position: absolute;
+    top: 6px;
+    left: -3px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-main;
+    border-radius: 100%;
+    &.cartLink--full {
+      display: block;
+    }
+  }
+}
+.ohs-main-nav {
+  background-color: $color-main;
+  font-size: 12px;
+  position: relative;
+  a {
+    color: $color-neutral-5;
+    display: block;
+    height: $nav-height;
+    padding: 10px;
+    transition: all .3s;
+    &:hover {
+      background-color: $color-sub;
+      text-decoration: none;
+    }
+  }
+  em {
+    font-style: normal;
+  }
+  &.ohs-header--menu-open {
+    .ohs-main-nav-menu {
+      display: block;
+    }
+  }
+}
+.ohs-main-nav-button {
+  color: $color-neutral-5;
+  background-color: $color-sub;
+  padding: 0 10px;
+  line-height: $nav-height;
+  font-weight: bold;
+  text-transform: uppercase;
+  .ohs-menu-toggle {
+    display: inline-block;
+    padding-right: 6px;
+    margin-top: 14px;
+  }
+}
+.ohs-main-nav-menu {
+  display: none;
+  background-color: $color-main;
+  position: absolute;
+  left: 0; right: 0;
+}
+// Mobile Nav Icon
+.nav-menu-icon {
+  width: $nav-menu-icon-size;
+  height: ($nav-menu-icon-size)-($nav-menu-icon-size/6);
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  @include transform(rotate(0deg));
+  @include transition(.5s ease-in-out);
+  span {
+    display: block;
+    position: absolute;
+    height: $nav-menu-icon-size/6;
+    width: 100%;
+    background: $color-neutral-5;
+    opacity: 1;
+    left: 0;
+    @include transform(rotate(0deg));
+    @include transition(.25s ease-in-out);
+  }
+  span:nth-child(1) {
+    top: 0px;
+  }
+  span:nth-child(2),
+  span:nth-child(3) {
+    top: $nav-menu-icon-size/3;
+  }
+  span:nth-child(4) {
+    top: ($nav-menu-icon-size/3)*2;
+  }
+  &.open {
+    span:nth-child(1) {
+      top: $nav-menu-icon-size/3;
+      width: 0%;
+      left: 50%;
+    }
+    span:nth-child(2) {
+      @include transform(rotate(45deg));
+    }
+    span:nth-child(3) {
+      @include transform(rotate(-45deg));
+    }
+    span:nth-child(4) {
+      top: $nav-menu-icon-size/3;
+      width: 0%;
+      left: 50%;
+    }
+  }
+}
+@media screen and (min-width: $page-size-md) {
+// Md & Up
+.ohs-header {
+  .ohs-header-support {
+    position: relative;
+    top: 0;
+    .phone {
+      font-size: 18px;
+    }
+    .email {
+      display: block;
+    }
+  }
+  .ohs-header-search input[type="text"] {
+    width: 380px;
+  }
+}
+.ohs-main-nav {
+  .ohs-menu-toggle {
+    display: none;
+  }
+  a {
+    text-align: center;
+    padding: 5px 0 0 0;
+    //padding-top: 5px;
+    //padding-bottom: 0;
+  }
+  li {
+    display: inline-block;
+    width: 12%;
+  }
+  em {
+    display: block;
+  }
+}
+.ohs-main-nav-menu {
+  display: block;
+  position: static;
+}
+.ohs-main-nav-button {
+  float: left;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-top: $nav-height/2 solid transparent;
+    border-left: 8px solid $color-sub;
+    border-bottom: $nav-height/2 solid transparent;
+  }
+}
+
+}
+@media screen and (min-width: $page-size) {
+// Lg & Up
+
+
+}
+@media screen and (min-width: $page-size-lg) {
+// Xl & Up
+.ohs-main-nav {
+  li {
+    width: auto;
+  }
+  a {
+    line-height: $nav-height;
+    padding: 0 10px;
+  }
+  em {
+    display: inline;
+  }
+  .ohs-main-nav-button {
+    margin-right: 15px;
+  }
+}
+
+
+}

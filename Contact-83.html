@@ -6,31 +6,51 @@ path: ../
 
 edit-path: /admin/AdminDetails_Generic.asp?Table=Articles&ID=83
 ---
-Email Us A Message
-18 W. Center Street</br>
-Pima, Arizona 85543</br>
-(800) 890-4547</br>
+<div class="article-head">
+    <div class="breadcrumb">
+        <a href="/">Home</a> &gt; <a href="/aboutus.asp">Contact OHS</a>
+    </div>
+    <h1>Contact Us</h1>
+</div>
+<div class="article-wrap contact-form">
 
-<form name="eMail" method="post" action="emailform.asp">
+  <form name="eMail" method="post" action="emailform.asp">
+  <div class="form-field">
+    <label for="Name">Name</label>
+    <input type="text" name="Name" id="Name" value="">
+  </div>
+  <div class="form-field">
+    <label for="E-Mail">Email</label>
+    <input type="text" name="E-Mail" id="E-Mail" value="">
+  </div>
+  <div class="form-field">
+    <label for="Phone">Phone</label>
+    <input type="text" name="Phone" id="Phone" value="">
+  </div>
+  <div class="form-field form-field-full-width-label">
+    <label for="message">Message</label>
+    <textarea name="Sample Text Area" id="message" rows="8" cols="65"></textarea>
+  </div>
+  <div class="form-field form-field-full-width-label">
+    <label>Please enter the following code into the box provided:</label>
+    $(Verification_Image)<br />
+    <input type="text" name="Verification_Code" />
+  </div>
+  <div class="form-field">
+    <input type="submit" name="submit" value="submit">
+  </div>
+  <input type="hidden" name="email_From" value="info@optimalhealthsystems.com">
+  <input type="hidden" name="email_To" value="support@optimalhealthsystems.com">
+  <input type="hidden" name="email_Subject" value="OHS Contact Form Submission">
+  <input type="hidden" name="email_ThankYou" value="Thank you for reaching out. We'll respond as soon as we can.">
+  <input type="hidden" name="email_Redirect" value="">
 
-<BR>
-<BR>
+</form>
 
-Name: <input type="text" name="Name" value=""><BR>
-Email: <input type="text" name="E-Mail" value=""><BR>
-Phone: <input type="text" name="Phone" value="">
-<BR>
-<BR>
-
-Message:<br /><textarea name="Sample Text Area" rows="8" cols="65"></textarea>
-
-<BR>
-Please enter the following code into the box provided:<br />$(Verification_Image)<br /><input type="text" name="Verification_Code" />
-<br /><br />
-<input type="submit" name="submit" value="submit">
-<input type="hidden" name="email_From" value="info@optimalhealthsystems.com">
-<input type="hidden" name="email_To" value="support@optimalhealthsystems.com">
-<input type="hidden" name="email_Subject" value="OHS Contact Form Submission">
-<input type="hidden" name="email_ThankYou" value="Thank you for reaching out. We'll respond as soon as we can.">
-<input type="hidden" name="email_Redirect" value="">
-<br /><br /></form>
+<div class="contact-form-footer">
+  <p><strong><a href="/">Optimal Health Systems</a></strong><br>
+  18 W. Center Street</br>
+  Pima, Arizona 85543</br>
+  (800) 890-4547</p>
+</div>
+</div>

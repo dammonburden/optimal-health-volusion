@@ -11,7 +11,7 @@
     border: 1px solid $field-border-color;
     height: $field-height;
     line-height: $field-height;
-    padding: 0 6px !important;
+    padding: 0 8px !important;
     font-size: $font-size-md;
     font-family: $font-family;
 }
@@ -25,14 +25,14 @@
 #content_area input[type="image"] {
     background-color: transparent !important;
     border: none;
-    height: auto;
-    line-height: inherit;
+    //height: auto;
+    //line-height: inherit;
     padding: 0 !important;
 }
 // Long Text Boxes
 #content_area textarea {
 	min-height: 80px;
-    padding: 6px;
+    padding: 8px;
     line-height: 1.4em;
 }
 #content_area select,
@@ -42,11 +42,11 @@ body #v65-onepage-Billing select {
     background-color: $background-page !important;
     border: 1px solid $field-border-color;
 	border-radius: 0 !important;
-    padding: 0 6px !important;
+    padding: 0 8px !important;
 	-webkit-appearance: none;
     height: $field-height;
     line-height: $field-height;
-	padding-left: 6px !important;
+	padding-left: 8px !important;
 	padding-right: $field-height !important;
 	background-image: url($baseurl + "/v/vspfiles/templates/ohs-2018/images/select-icon.png");
 	background-size: $field-height $field-height;

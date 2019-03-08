@@ -8,15 +8,26 @@
     left: auto !important;
     position: absolute;
     right: 0;
-    top: 75px !important;
+    top: 60px !important;
     width: 100%;
     max-width: 400px;
     z-index: 1100;
+    .product-name {
+        a {
+            color: $link-color;
+        }
+    }
 }
 .ie8 .soft_add_wrapper {
     border: 1px solid $border-color;
 }
 // override BAD styling autoadded by volusion
+.table-border-left, 
+.table-border-right, 
+.v65-cart-giftcert-details-row td.table-border-left, 
+.v65-cart-giftcert-details-row td.table-border-right {
+    background-color: transparent !important;
+}
 .soft_add_content_wrapper,
 .soft_add_content_shadow,
 .soft_add_header_shadow,
@@ -217,13 +228,15 @@ body #v65-cart-moreItems {
 }
 
 // Cart Pre-Header (continue shopping or checkout?)
+.above-cart {
+    display: none;
+}
 .cart-continue-shopping {
     float: right;
 }
 
 // Cart Header
 h2.v65-your-cart-title {
-    margin-top: -40px;
     color: $header-color-1;
     font-size: 25px;
     font-weight: bold;
@@ -244,17 +257,12 @@ h2.v65-your-cart-title {
 }
 
 // Cart Table List Items
-//borders
-#content_area .v65-cart-details-separator td {
-    border-top: 1px solid $border-color;
-}
-//row hover
-.v65-cart-details-row:hover {
-    background: $background-light;
-}
 //zebra
 #content_area #v65-cart-table .v65-item-zebra {
     background-color: transparent;
+}
+#content_area .v65-cart-details-separator {
+    background-color: $background-page;
 }
 //product image
 .v65-cart-detail-productimage {
@@ -266,6 +274,7 @@ h2.v65-your-cart-title {
 }
 body #v65-cart-table {
     .v65-cart-details-row {
+        border-top: 1px solid $border-color;
         td {
             width: 100%;
         }
@@ -283,9 +292,12 @@ body #v65-cart-table {
     }
 }
 .v65-cart-details-row {
+    background-color: $background-page;
     //product name
-        font.carttext.colors_text b.cart-item-name {
+    font.carttext.colors_text b.cart-item-name {
         font-size: 16px !important;
+        font-weight: bold;
+        color: $color-main;
     }
     //$ each
     font.carttext.colors_text {
@@ -320,6 +332,7 @@ body #v65-cart-table {
 }
 // "Kit" or bundle cart details row
 .v65-cart-kit-row {
+    background: $background-page !important;
     table {
         width: 100%;
     }
@@ -342,7 +355,7 @@ body #v65-cart-table {
 }
 // Empty the cart row
 .v65-cart-item-remove-cell {
-    background: $background-light;
+    background: $background-page;
     padding: 6px !important;
     text-align: right;
     span {
@@ -428,6 +441,9 @@ body td#v65-cart-shipping-details-container {
     display: none;
     //display: inline;
 }
+#content_area input[name="btncalc_shipping"] {
+    background-color: $button-color !important;
+}
 .PageText_L780n {
     display: block;
     margin-top: 6px;
@@ -500,6 +516,10 @@ td.v65-cart-tax-parent-cell b  {
 // -------------------------------------------------------------------
 @media screen and (max-width: $page-size-sm) {
 // Small Screens Only
+
+}
+@media screen and (max-width: $page-size-md) {
+// Small & Medium Screens Only
 #v65-cart-table {
     td {
         display: block;
@@ -509,12 +529,11 @@ td.v65-cart-tax-parent-cell b  {
         display: none;
     }
     .v65-cart-details-row {
-        border-top: 1px solid $border-color;
         position: relative;
         display: block;
         overflow: hidden;
         &:hover {
-            background: transparent;
+            background: $background-page;
         }
         //3=photo 4=title 6=each 8=qty 10=total
         td:nth-child(3) {
@@ -525,11 +544,14 @@ td.v65-cart-tax-parent-cell b  {
         td:nth-child(4) {
             padding-top: 6px;
         }
+        td:nth-child(8) {
+            float: left;
+            width: 50px;
+        }
         td:nth-child(6),
-        td:nth-child(8),
         td:nth-child(10) {
             float: left;
-            width: 60px;
+            width: 80px;
         }
         td:nth-child(10) {
             width: 30%;
@@ -565,6 +587,9 @@ td.v65-cart-tax-parent-cell b  {
             display: inline-block;
         }
     }
+    td[width="70"] div {
+        margin-left: 10px;
+    }
     td[width="70"] div:before {
         content: 'Each: ';
     }
@@ -576,13 +601,17 @@ td.v65-cart-tax-parent-cell b  {
     }
     .v65-cart-details-cell.v65-cart-item-remove-cell {
         position: absolute;
-        top: 4px; right: -4px;
+        top: 4px; right: 10px;
         padding: 0;
         width: 25px;
     }
     .v65-divider-hr-row,
     .v65-cart-details-lastcell {
         display: none !important;
+    }
+    .colors_productname {
+        display: inline-block;
+        margin-left: 10px;
     }
 }
 .page-cart {
@@ -614,6 +643,14 @@ td.v65-cart-tax-parent-cell b  {
 @media screen and (min-width: $page-size-md) {
 // Md & Up
 
+// Cart Pre-Header (continue shopping or checkout?)
+.above-cart {
+    display: block;
+}
+// Cart Header
+h2.v65-your-cart-title {
+    margin-top: -40px;
+}
 //align rows & widths
 body #v65-cart-table {
     td {
@@ -636,12 +673,6 @@ body #v65-cart-table {
         }
     }
 }
-
-
-}
-@media screen and (min-width: $page-size) {
-// Large & Up
-
 
 }
 
@@ -669,6 +700,10 @@ body #v65-cart-table {
     }
     #v65-onepage-header {
         margin-left: 0;
+        color: $header-color-1;
+    }
+    .loginHeaderWrapper {
+        color: $font-color;
     }
     [align="right"] {
         text-align: left;
@@ -717,6 +752,18 @@ body #v65-cart-table {
     .req-mark {
         color: $error;
     }
+}
+#table_checkout_cart0,
+#v65-onepage-CartSummary,
+#v65-onepage-ordersummary-items {
+    background-color: $background-page !important;
+}
+#PaymentDIV {
+    background-color: $background-page !important;
+}
+.payment-block,
+.payment-option, .payment-option-title {
+    border-color: $border-color !important;
 }
 #v65-onepage-CheckoutForm {
     width: 100%;
@@ -837,9 +884,6 @@ div#creditCardBlock .payment-logo {
 }
 body #v65-onepage-cartsummary-header {
     background: $color-main;
-}
-body #table_checkout_cart0 {
-    background: $background-light;
 }
 body #TotalsDivContainer {
     float: none;
