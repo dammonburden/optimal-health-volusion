@@ -11,7 +11,43 @@ if (siteDomain.indexOf('optimalhealthsystems') >= 0) {
 }
 // Remove Breadcrumb
 $('#content_area').children().eq(-2).children().children().eq(0).remove();
-//navFade();
+
+// Add nav to header
+var topNav = '<a rel="open-selected-products" class="cart-button"><i class="fal fa-prescription-bottle"></i><span class="cart-count">0</span></a>';//
+	topNav += '<a href="#" rel="tool-menu-toggle" data-action="select-tests" class="tests-button"><i class="fal fa-clipboard-list-check"></i></a>';
+	topNav += '<a href="#" rel="tool-menu-toggle" data-action="send-emails" class="send-emails-button"><i class="fal fa-envelope"></i></a>';
+$('.ohs-header-tools').html(topNav);
+$('[rel="open-selected-products"]').click(function(event) {
+    event.preventDefault();
+	$('[rel="tool-menu-toggle"]').removeClass('selected');
+	$('.catalog--tool').hide();
+	$('body').removeClass('modal-open');
+	swiper.slideTo(3);
+});
+$('[rel="tool-menu-toggle"]').click(function(event) {
+    event.preventDefault();
+	var isOpen = $(this).hasClass('selected');
+		action = $(this).attr('data-action');
+
+	// Close all screens
+	$('[rel="tool-menu-toggle"]').removeClass('selected');
+	$('.catalog--tool').hide();
+	$('body').removeClass('modal-open');
+
+	if (!isOpen) {
+		// open it
+		$(this).addClass('selected');
+		$('body').addClass('modal-open');
+    	switch(action) {
+		case 'send-emails':
+			$('.catalog--send-emails').show();
+		    break;
+		case 'select-tests':
+			$('.catalog--select-tests').show();
+			break;
+		}
+	}
+});
 
 var selectedProductsArray = [];
 
@@ -21,20 +57,28 @@ var HPClientID = getHashVars()['code'],
 	HPEmailAddress = decodeURIComponent(HPEmailAddress);
 
 if (HPClientID) {
-	$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
+	//$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
+	$('.page-catalog').addClass('tools-active');
+	$('.provider-code').text(HPClientID);
 	$('#providerEmail').val(HPEmailAddress);
 	// Show Page
 	$('.search_results_section').show();
-	$('.catalog-selection-summary').show();
+	$('.catalog--tools').show();
+	$('.ohs-header-tools').show();
+
 } else {
 	$('.search_results_section').hide();
-	$('.catalog-selection-summary').hide();
-	$('#content_area').append('<div class="no-hp-error"><h2>No Healthcare Provider Provided</div>');
+	$('#content_area').append('<div class="no-hp-error"><h2>No Healthcare Professional Provided</div>');
+	$('.catalog--tools').hide();
+	$('.ohs-header-tools').hide();
+	$('.ohs-footer-copyright').hide();
 }
 
 // Initialize Product List
 $('.v-product').each(function(index) {
 	var productCode = $(this).find('.v-product__add-to-cart').parent('a').attr('href');
+	
+	$(this).find('a').attr('target','_blank');
 
 	if (typeof productCode == 'undefined') {
 		$(this).remove();
@@ -44,6 +88,9 @@ $('.v-product').each(function(index) {
 		var productName = $(this).find('.v-product__title').text();
 		productName = $.trim(productName);
 		productAttrHTML = 'data-productcode="'+productCode+'" data-productname="'+productName+'"';
+
+		// Add code to v-product
+		$(this).attr('data-productid',productCode);
 
 		// Add Category filter tag
 		if (productName.indexOf('Essential') == 0) {
@@ -71,38 +118,43 @@ $('.v-product').each(function(index) {
 var productsHTMLHarris = '',
 	productsHTMLBrimhall = '';
 $('.v-product').each(function(index) {
-	var productFilter = $(this).attr('data-filter');
+	var productFilter = $(this).attr('data-filter'),
+		productCode = $(this).attr('data-productid');
 	if (productFilter) {
 		if (productFilter == 'harris') {
-			productsHTMLHarris += '<div class="v-product">'+$(this).html()+'</div>';
+			productsHTMLHarris += '<div class="v-product" data-productid="'+productCode+'">'+$(this).html()+'</div>';
 		}
 		if (productFilter == 'brimhall') {
-			productsHTMLBrimhall += '<div class="v-product">'+$(this).html()+'</div>';
+			productsHTMLBrimhall += '<div class="v-product" data-productid="'+productCode+'">'+$(this).html()+'</div>';
 		}
 	}
 });
 productsHTMLHarris = '<div class="v-product-grid">'+productsHTMLHarris+'</div>';
 productsHTMLBrimhall = '<div class="v-product-grid">'+productsHTMLBrimhall+'</div>';
 productsHTMLAll = '<div class="v-product-grid">'+$('.v-product-grid').html()+'</div>';
+productsHTMLSelected = '<div class="v-product-grid" id="selectedProductList"><div class="no-results-text">No items selected.</div></div>';
 $('.v-product-grid').remove();
 
-$('.v65-productDisplay td').prepend('<div class="product-category-slide"><div class="swiper-pagination"></div><div class="swiper-wrapper"><div class="swiper-slide">'+productsHTMLAll+'</div><div class="swiper-slide">'+productsHTMLHarris+'</div><div class="swiper-slide">'+productsHTMLBrimhall+'</div></div></div></div>');
+$('.v65-productDisplay td').prepend('<div class="product-category-slide"><div class="swiper-pagination"></div><div class="swiper-wrapper"><div class="swiper-slide">'+productsHTMLAll+'</div><div class="swiper-slide">'+productsHTMLHarris+'</div><div class="swiper-slide">'+productsHTMLBrimhall+'</div><div class="swiper-slide">'+productsHTMLSelected+'</div></div></div></div>');
 
 var swiper = new Swiper('.product-category-slide', {
+    touchEventsTarget: 'wrapper',
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    threshold: 4,
     renderBullet: function (index, className) {
     	switch(index) {
 		case 0:
 	      return '<span class="' + className + '">All Products</span>';
 	      break;
 		case 1:
-	      return '<span class="' + className + '">Dr. Marc Harris Essential</span>';
+	      return '<span class="' + className + '">Dr. Harris Essential</span>';
 	      break;
 		case 2:
-	      return '<span class="' + className + '">Opti-Nutrient Dr. Brimhall</span>';
+	      return '<span class="' + className + '">Dr. Brimhall Opti-Nutrient</span>';
+	      break;
+		case 3:
+	      return '<span class="' + className + '">Selected (<em class="cart-count">0</em>)</span>';
 	      break;
 	  }
     },
@@ -114,26 +166,30 @@ swiper.on('slideChange', function () {
 		behavior: 'smooth' 
 	});
 });
+// Move swiper-pagination
+$('body').prepend( $('.swiper-pagination') );
 
+// Selected Test Toggle
+$('[rel="select-test-toggle"]').click(function(event) {
+    event.preventDefault();
+	var isSelected = $(this).hasClass('selected'),
+		selectedTest = $(this).attr('data-test-id'),
+		productList =  $(this).attr('data-test-products');
 
-/*
-// Float selected items
-function navFade(){
-	var y = $(document).scrollTop();
-	var t = $('#content_area').offset().top;
+	if (isSelected) {
+		// unselect it
+		$(this).removeClass('selected');
+		// Remove products
+		updateProductArray('test-selection','remove',productList,0,'','');
 
-	if (y > t) {
-	    $('.catalog-selection-summary').addClass('sticky');
 	} else {
-	    $('.catalog-selection-summary').removeClass('sticky');
-	}
-}
-// Scroll Functions
-$(document).scroll(function () {
-	navFade();
-});
-*/
+		// select it
+		$(this).addClass('selected');
+		// Update products
+		updateProductArray('test-selection','add',productList,1,'','');
 
+	}
+});
 // Add or Subtract Item
 $('[rel="cat-update-button"]').click(function(event) {
     event.preventDefault();
@@ -149,6 +205,18 @@ $('[rel="cat-update-button"]').click(function(event) {
     	// Add
     	productQuantity = productQuantity + 1;
     	$(this).siblings('.product-qty').text(productQuantity);
+    	if (productQuantity == 1) {
+    		// Mark this one as selected
+    		$(this).closest('.v-product').addClass('selected-product');
+    		// Hide other instances of the product
+    		$('[data-productid="'+productCode+'"]').hide();
+    		$('.selected-product').show();
+    		// Move the product to selected list
+			productObj = $(this).closest('.v-product');
+			$(productObj).appendTo( $('#selectedProductList') );
+    		// Success Message
+			$('<div class="alert--success"><span>Added to Selected</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
+    	}
 	} else {
 		// Check for 0 then subtract
 		if (productQuantity > 0) {
@@ -156,8 +224,9 @@ $('[rel="cat-update-button"]').click(function(event) {
 	    	$(this).siblings('.product-qty').text(productQuantity);
 		}
 	}
+
 	// Update selected items & qty list
-	updateProductArray(productCode,productQuantity,productName);
+	updateProductArray('single','',productCode,productQuantity,productName);
 });
 // Validate form when exit
 $('#customerEmail').focusout(function(event) {
@@ -249,7 +318,7 @@ function validateForm(action) {
 		}
 	} else {
 		// No Email
-		Error = 'Provider Email Required';
+		Error = 'Professional Email Required';
 	}
 
 	if (PatientEmailAddress) {
@@ -271,39 +340,114 @@ function validateForm(action) {
 		$('.cta-button').removeClass('cta-button--disabled');
 	}
 }
-function updateProductArray(productCode,productQty,productName) {
-	// Is the product already in list
-	var productInList = false;
-	for (var i = 0; i < selectedProductsArray.length; i++) {
-	   if (selectedProductsArray[i].id == productCode) {
-	        productInList = true;
-	    }
-	}
-	var currentProduct = {};
+function updateProductArray(type,action,productCode,productQty,productName) {
+	var productInList = false,
+		thisTestProducts = '',
+		fullTestProductsArray = {},
+		currentProduct = {},
+		productObj = {};
+// Update List -----------------------------------------------------------------------------
+	// Is the update for a meth test?
+	if (type == 'test-selection') {
+		// break up products into array
+		var selectedTestProducts = productCode.split('|');
+		// are we adding or subtracting a test
+		if (action == 'add') {
+			// Add Products - check existing list first, then add if there are no existing.
+			$.each( selectedTestProducts, function( key, thisProductCode ) {
+				// Is the product already in list
+				productInList = false;
+				for (var i = 0; i < selectedProductsArray.length; i++) {
+					if (selectedProductsArray[i].id == thisProductCode) {
+						productInList = true;
+					}
+				}
+				if (!productInList) {
+					// Set up product data
+					currentProduct.id = thisProductCode;
+					currentProduct.qty = 1;
+					productName = $('[data-productcode="'+thisProductCode+'"]').first().attr('data-productname');
+					if (productName == undefined) {
+						productName = 'Code: '+thisProductCode;
+					}
+					currentProduct.productname = productName;
+					// Add to List
+					selectedProductsArray.push(currentProduct);
+					// Choose 1st .v-product, Mark as selected
+		    		$('[data-productid="'+thisProductCode+'"]').first().addClass('selected-product');
+		    		// Change QTY
+		    		$('[data-productid="'+thisProductCode+'"] .product-qty').text('1');
+		    		// Hide other instances of the product
+		    		$('[data-productid="'+thisProductCode+'"]').hide();
+		    		$('.selected-product').show();
+					// Add to Tab
+					productObj = $('[data-productid="'+thisProductCode+'"]');
+					$(productObj).appendTo($('#selectedProductList'));
+				}
+				currentProduct = {};
+			});
+			thisTestProducts = $('.selected-test-products').text();
+			thisTestProducts += '|'+productCode;
+			$('.selected-test-products').text(thisTestProducts);
+			$('<div class="alert--success"><span>Added to Selected</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
+		} else {
+		// Remove products
+			// Remove from test list
+			thisTestProducts = $('.selected-test-products').text();
+			thisTestProducts = thisTestProducts.replace('|'+productCode,'');
+			$('.selected-test-products').text(thisTestProducts);
+			// Check if the products are included in other selected tests
+			$.each( selectedTestProducts, function( key, thisProductCode ) {
+				// Is the product in the TEST list
+				productInList = false;
+				for (var i = 0; i < fullTestProductsArray.length; i++) {
+					if (fullTestProductsArray[i].id == thisProductCode) {
+						productInList = true;
+					}
+				}
+				// If not in testlist, remove from Selected Products List
+				if (!productInList) {
+					selectedProductsArray = $.grep(selectedProductsArray, function(e){ 
+					     return e.id != thisProductCode; 
+					});
+				}
+
+			});
+		}
+	} else {
+		// Is the product already in list
+		productInList = false;
+		for (var i = 0; i < selectedProductsArray.length; i++) {
+		   if (selectedProductsArray[i].id == productCode) {
+		        productInList = true;
+		    }
+		}
 		currentProduct.id = productCode;
 		currentProduct.qty = productQty;
 		currentProduct.productname = productName;
 
-	if (productInList) {
-		// Remove it from list
-		selectedProductsArray = $.grep(selectedProductsArray, function(e){ 
-		     return e.id != productCode; 
-		});
-		// Is the QTY > 0 if so add new qty in array
-		if (productQty > 0) {
-			selectedProductsArray.push(currentProduct);
+		if (productInList) {
+			// Remove it from list
+			selectedProductsArray = $.grep(selectedProductsArray, function(e){ 
+			     return e.id != productCode; 
+			});
+			// Is the QTY > 0 if so add new qty in array
+			if (productQty > 0) {
+				selectedProductsArray.push(currentProduct);
+			}
+		} else {
+			// Else add the product in array
+			// Is the QTY > 0 if so add in array
+			if (productQty > 0) {
+				selectedProductsArray.push(currentProduct);
+			}
 		}
-	} else {
-		// Else add the product in array
-		// Is the QTY > 0 if so add in array
-		if (productQty > 0) {
-			selectedProductsArray.push(currentProduct);
-		}
-	}
-
+	} //type
+// Visualise List --------------------------------------------------------------------------
 	// Update the visual list
 	var selectedProductsHTML = '',
-		selectedProductsURL = '';
+		selectedProductsURL = '',
+		totalProducts = 0;
 
 	// Sort By Product Name
 	selectedProductsArray = selectedProductsArray.sort(function(a, b){
@@ -314,22 +458,29 @@ function updateProductArray(productCode,productQty,productName) {
 	        return 1
 	    return 0
 	});
-
+	// Create List
 	$.each(selectedProductsArray, function (index, value) {
+		totalProducts += value.qty;
 		selectedProductsHTML += '<div class="item">';
-		selectedProductsHTML += '<span>'+value.qty+'</span>';
-		selectedProductsHTML += '<strong>'+value.productname+'</strong>';
+		selectedProductsHTML += '<span class="qty">'+value.qty+'</span>';
+		selectedProductsHTML += '<span class="title">'+value.productname+'</span>';
+		selectedProductsHTML += '<span class="code">'+value.id+'</span>';
 		selectedProductsHTML += '</div>';
 		selectedProductsURL += 'ProductCode='+value.id+'&qty.'+value.id+'='+value.qty+'&';
 	});
 	selectedProductsURL += 'HPClientID='+HPClientID;
 
 	if (selectedProductsHTML) {
-		$('.catalog-selections .results').html(selectedProductsHTML);
+		//$('#selectedProductList').html(selectedProductsHTMLFull);
+		$('.no-results-text').remove();
+		$('.selected-item-list').html(selectedProductsHTML);
 		$('#customerCartUrl').val('/Articles.asp?ID=277&'+selectedProductsURL);
 		$('#catalogActions .cta-button').removeClass('cta-button--disabled');
+		$('.cart-count').text(totalProducts);
 	} else {
-		$('.catalog-selections .results').html('No items selected.');
+		$('#selectedProductList').html('<div class="no-results-text">No items selected.</div>');
+		$('.cart-count').text('0');
+		$('.selected-item-list').html('');
 	}
 }
 

@@ -7,34 +7,49 @@ edit-path: /admin/AdminDetails_Generic.asp?table=Categories&Page=1&ID=1930
 view-path: /HP-Tablet-s/1930.htm
 ---
 <style>
-.search_results_section,
-.catalog-selection-summary {
+.search_results_section {
 	display: none;
 }
 </style>
 <script type="text/javascript">
 document.body.className += ' ' + 'page-catalog';
 </script>
-<script type="text/javascript" src="v/vspfiles/templates/ohs-2018/js/catalog.js"></script>
+<script type="text/javascript" src="v/vspfiles/templates/ohs-2018/js/catalog.js?v={{ site.time | date: '%Y%m%d.%H%M' }}"></script>
 <!-- Swipe Content - swiper.js -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
-
-<div class="catalog-selection-summary sticky">
-	<div class="mobile-toggle"><i class="fas fa-envelope"></i></div>
+<div class="catalog--tools" style="display:none;">
+<div class="catalog--tool catalog--select-tests">
+	<h2><i class="fal fa-clipboard-list-check"></i> Methylation Tests</h2>
+	<div class="catalog--test-list">
+{% assign tests-list = site.data.methylation-tests | sort: 'index' %}
+{% for test in tests-list %}
+		<div class="catalog--one-test" rel="select-test-toggle" data-test-id="{{ test.index }}" data-test-products="{{ test.codes }}">
+			<span class="check"><span>&nbsp;</span></span>
+			<span class="index">{{ test.index }}</span>
+			<span class="title"><strong>{{ test.title }}</strong><em>{{ test.desc }}</em></span>
+		</div>
+{% endfor %}
+	</div>
+	<div class="selected-test-products" style="display:none;"></div>
+</div><!-- / select-tests -->
+<div class="catalog--tool catalog--send-emails">
+	<h2><i class="fal fa-envelope"></i> Send Emails</h2>
 	<div class="catalog-selections">
 		<div class="catalog-actions" id="catalogActions">
-			<label for="providerEmail">Provider</label>
-			<input type="email" name="provider-email" id="providerEmail" placeholder="Provider Email" />
-			<label for="customerEmail">Patient</label>
-			<input type="email" name="email" id="customerEmail" placeholder="Patient Email (optional)..." />
+			<label>Professional Code</label>
+			<div class="provider-code">&nbsp;</div>
+			<label for="providerEmail">Professional Email</label>
+			<input type="email" name="provider-email" id="providerEmail" placeholder="Professional Email" />
+			<label for="customerEmail">Patient Email (optional)</label>
+			<input type="email" name="email" id="customerEmail" placeholder="Patient Email..." />
 			<input type="hidden" name="cartUrl" id="customerCartUrl" />
 			<a class="cta-button cta-button--disabled block" rel="cat-send-email">Send</a>
 		</div>
-		<div class="results" id="productList">No items selected.</div>
 	</div>
+	<div class="selected-item-list">&nbsp;</div>
+</div><!-- / send-emails -->
 </div>
-
 
 <!-- NOT IN EDITOR -->
 <!-- NOT IN EDITOR -->
@@ -106,6 +121,34 @@ Page <input type="text" value="1" size="3" onkeydown="return OnKeyDownPageInputB
 <style>.v-product-grid .v-product{margin-left: -4px; display: inline-block; vertical-align: top; width: 33.3333333333333%;padding: 15px 5px; box-sizing: border-box;} .v-product-grid img{vertical-align:middle;} @media (max-width: 480px){.v-product-grid .v-product{width: 100%;}} .v-product__img img{max-width: 100%; margin: 0 auto 15px;} .v-product-grid .v-product__title{display:block; word-wrap: break-word;} .v-product div[itemprop="aggregateRating"] *{line-height: 30px;}</style>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="v65-productDisplay"><tbody><tr><td>
 <div class="v-product-grid">
+<div class="v-product">
+<a href="https://www.optimalhealthsystems.com/product-p/619587048130.htm" title="Essential Resveratrol" alt="Essential Resveratrol" class="v-product__img">
+<img src="//cdn3.volusion.com/zmqem.ufakh/v/vspfiles/photos/619587048130-1.jpg?1526485470" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" border="0" alt="Essential Resveratrol" title="Essential Resveratrol"></a>
+<a href="https://www.optimalhealthsystems.com/product-p/619587048130.htm" class="v-product__title productnamecolor colors_productname" title="Essential Resveratrol, 619587048130">
+Essential Resveratrol
+</a>
+<div>
+<div>
+<font class="pricecolor colors_productprice"> <div class="product_productprice"> <b><font class="text colors_text">Price:</font> $45.00 </b> </div></font>
+</div></div>
+<img class="v-product__free-shipping" src="/v/vspfiles/templates/ohs-2018/images/Icon_FreeShipping_Small.gif">
+<a href="/ShoppingCart.asp?ProductCode=619587048130">
+<img class="v-product__add-to-cart" src="/v/vspfiles/templates/ohs-2018/images/buttons/btn_addtocart_small.gif" align="absmiddle" border="0"></a>
+</div>
+<div class="v-product">
+<a href="https://www.optimalhealthsystems.com/product-p/619587047874.htm" title="Opti-BFF" alt="Opti-BFF" class="v-product__img">
+<img src="//cdn3.volusion.com/zmqem.ufakh/v/vspfiles/photos/619587047874-1.jpg?1541167670" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" border="0" alt="Opti-BFF" title="Opti-BFF"></a>
+<a href="https://www.optimalhealthsystems.com/product-p/619587047874.htm" class="v-product__title productnamecolor colors_productname" title="Opti-BFF, 619587047874">
+Opti-BFF
+</a>
+<div>
+<div>
+<font class="pricecolor colors_productprice"> <div class="product_productprice"> <b><font class="text colors_text">Price:</font> $37.00 </b> </div></font>
+</div></div>
+<img class="v-product__free-shipping" src="/v/vspfiles/templates/ohs-2018/images/Icon_FreeShipping_Small.gif">
+<a href="/ShoppingCart.asp?ProductCode=619587047874">
+<img class="v-product__add-to-cart" src="/v/vspfiles/templates/ohs-2018/images/buttons/btn_addtocart_small.gif" align="absmiddle" border="0"></a>
+</div>
 <div class="v-product">
 <a href="https://www.optimalhealthsystems.com/Optimal-1-Digestion-p/655705123013.htm" title="Digestion" alt="Digestion" class="v-product__img">
 <img src="//cdn3.volusion.com/zmqem.ufakh/v/vspfiles/photos/655705123013-1.jpg?1491996343" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" border="0" alt="Digestion" title="Digestion"></a>
@@ -397,7 +440,7 @@ Our immune system is constantly being bombarded by infectious diseases every day
 </div>
 <div class="v-product">
 <a href="https://www.optimalhealthsystems.com/Optimal-Opti-Cleanse-Repair-p/655705123242.htm" title="Opti-Cleanse &amp; Repair" alt="Opti-Cleanse &amp; Repair" class="v-product__img">
-<img src="//cdn3.volusion.com/zmqem.ufakh/v/vspfiles/photos/655705123242-1.jpg?1429092704" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" border="0" alt="Opti-Cleanse &amp; Repair" title="Opti-Cleanse &amp; Repair"></a>
+<img src="http://cdn3.volusion.com/zmqem.ufakh/v/vspfiles/photos/619587048130-1.jpg?1526485470" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" border="0" alt="Opti-Cleanse &amp; Repair" title="Opti-Cleanse &amp; Repair"></a>
 <a href="https://www.optimalhealthsystems.com/Optimal-Opti-Cleanse-Repair-p/655705123242.htm" class="v-product__title productnamecolor colors_productname" title="Optimal Opti-Cleanse &amp; Repair, 655705123242">
 Optimal Opti-Cleanse &amp; Repair
 </a>

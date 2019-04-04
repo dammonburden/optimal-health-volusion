@@ -38,6 +38,7 @@ $nav-menu-icon-size: 12px;
   }
   .search-form {
     display: none;
+    z-index: 5;
   }
   &.ohs-header--search-open {
     .search-form {
@@ -146,7 +147,9 @@ $nav-menu-icon-size: 12px;
     font-weight: bold;
     background-color: $color-main;
     border-radius: 100%;
-    &.cartLink--full {
+  }
+  .cartLink--full {
+    .cartNum {
       display: block;
     }
   }

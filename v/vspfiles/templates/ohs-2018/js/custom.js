@@ -38,9 +38,9 @@ thisPageSlug = 'other';
 }
 // Main Navigation ----------------------------------------------
 // Cart icon when it has items
-if ($('.cart-summary__count').length ) {
+if ($('.cartNum').length ) {
     setTimeout(function () {
-        var cartCount = parseInt($('.cart-summary__count').text());
+        var cartCount = parseInt($('.cartNum').text());
         if (cartCount > 0) {
             $('.cartLink').addClass('cartLink--full');
         }
