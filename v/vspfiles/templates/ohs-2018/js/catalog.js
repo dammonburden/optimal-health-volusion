@@ -55,12 +55,13 @@ var selectedProductsArray = [];
 var HPClientID = getHashVars()['code'],
 	HPEmailAddress = getHashVars()['email'],
 	HPEmailAddress = decodeURIComponent(HPEmailAddress);
+	if (HPEmailAddress == 'undefined') { HPEmailAddress = ''; }
 
 if (HPClientID) {
 	//$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
 	$('.page-catalog').addClass('tools-active');
 	$('.provider-code').text(HPClientID);
-	$('#providerEmail').val(HPEmailAddress);
+	if (HPEmailAddress) { $('#providerEmail').val(HPEmailAddress); }
 	// Show Page
 	$('.search_results_section').show();
 	$('.catalog--tools').show();
@@ -108,6 +109,14 @@ $('.v-product').each(function(index) {
 		buttonHTML += '<div class="product-qty" id="productQty'+productCode+'">0</div>';
 		buttonHTML += '<button class="cta-button" rel="cat-update-button" data-action="plus" '+productAttrHTML+'>+</button>';
 		$(this).prepend('<div class="v-product__qty">'+buttonHTML+'</div>');
+		// remove html from desc
+		var productDesc = $(this).find('.v-product__desc').text();
+		if (productDesc) {
+			$(this).find('.v-product__desc').html(productDesc);
+			//$(this).find('.v-product__qty').append('<button class="product-desc-toggle-button" rel="product-desc-toggle"><i class="caret fal fa-angle-down"></i><i class="fal fa-info-circle"></i></button>');
+			$(this).find('.v-product__qty').append('<button class="product-desc-toggle-button" rel="product-desc-toggle"><span></span></button>');
+			//<div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+		}
 
 	}
 });
@@ -169,6 +178,16 @@ swiper.on('slideChange', function () {
 // Move swiper-pagination
 $('body').prepend( $('.swiper-pagination') );
 
+// Product Description Toggle
+$('[rel="product-desc-toggle"]').click(function(event) {
+    event.preventDefault();
+	// Update desc visibility
+    $(this).closest('.v-product').toggleClass('show-description');
+    // Update Icon
+    $(this).closest('.v-product').find('.product-desc-toggle-button').toggleClass('active');
+    //$(this).closest('.v-product').find('.caret').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
+
+});
 // Selected Test Toggle
 $('[rel="select-test-toggle"]').click(function(event) {
     event.preventDefault();
@@ -204,24 +223,22 @@ $('[rel="cat-update-button"]').click(function(event) {
     if ( action == 'plus' ) {
     	// Add
     	productQuantity = productQuantity + 1;
-    	$(this).siblings('.product-qty').text(productQuantity);
     	if (productQuantity == 1) {
-    		// Mark this one as selected
-    		$(this).closest('.v-product').addClass('selected-product');
-    		// Hide other instances of the product
-    		$('[data-productid="'+productCode+'"]').hide();
-    		$('.selected-product').show();
-    		// Move the product to selected list
+    		$(this).siblings('.product-qty').text(productQuantity);
+    		// Add the product to selected list
 			productObj = $(this).closest('.v-product');
-			$(productObj).appendTo( $('#selectedProductList') );
+			$(productObj).clone(true).appendTo( $('#selectedProductList') );
     		// Success Message
-			$('<div class="alert--success"><span>Added to Selected</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
+    	} else {
+    		//update QTY on both
+    		$('[data-productcode="'+productCode+'"').siblings('.product-qty').text(productQuantity);
     	}
+		$('<div class="alert--success"><span>Added</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
 	} else {
 		// Check for 0 then subtract
 		if (productQuantity > 0) {
 	    	productQuantity = productQuantity - 1;
-	    	$(this).siblings('.product-qty').text(productQuantity);
+	    	$('[data-productcode="'+productCode+'"').siblings('.product-qty').text(productQuantity);
 		}
 	}
 
@@ -245,8 +262,9 @@ $('[rel="cat-send-email"]').click(function(event) {
     // Get customer & content from form
     var PatientEmailAddress = $('#customerEmail').val(),
 	    PatientCartUrl = $('#customerCartUrl').val(),
-	    ProviderEmail = $('#providerEmail').val();
-
+	    ProviderEmail = $('#providerEmail').val(),
+	    emailMessage = $('#message').val(),
+	    emailProductList = $('.selected-item-list').html();
 	// If theres an error display it
 	if (!formError) {
 	// success
@@ -260,14 +278,14 @@ $('[rel="cat-send-email"]').click(function(event) {
 		    'PatientCartUrl': PatientCartUrl,
 		    'PatientEmailAddress': PatientEmailAddress,
 		    'HPClientID': HPClientID,
-		    'HPEmailAddress': ProviderEmail
+		    'HPEmailAddress': ProviderEmail,
+		    'Message': emailMessage,
+		    'Products': emailProductList
 		  },
 		  success: function(response) { 
 	      	//console.log(response);
 	      	// Show Alert
-	      	$('<div class="alert alert--success">Email Sent.</div>').insertBefore('#catalogActions').delay(3000).fadeOut();
-	      	// cover page
-	      	$('<div class="page-overlay">&nbsp;</div>').insertBefore('#content_area').delay(3000).fadeOut();
+	      	$('<div class="alert alert--success alert--fullscreen"><span>Email Sent.</span></div>').insertBefore('#pageWrapper').delay(3000).fadeOut();
 	      	// Reset Page
 	      	resetPage();
 	      },
@@ -284,16 +302,25 @@ $('[rel="cat-send-email"]').click(function(event) {
 });
 
 function resetPage(action) {
+	$('[rel="cat-send-email"]').text('Send');
 	// Clear patient email
 	$('#customerEmail').val('');
+	// Clear message
+	$('#message').val('');
 	// Clear indv products in list
 	$('.product-qty').html('0');
+	// Clear products in selected
+	$('#selectedProductList').html('<div class="no-results-text">No items selected.</div>');
+	// Clear counter
+	$('.cart-count').html('0');
 	// Clear products in form
 	$('#customerCartUrl').val('');
 	// Clear product list in sidebar
 	$('#productList').html('No items selected.');
 	// Reset Button
 	$('[rel="cat-send-email"]').addClass('cta-button--disabled');
+	// Reset sidebar list
+	$('.selected-item-list').html('');
 }
 function validateForm(action) {
 	$('#catalogActions').removeClass('error');
@@ -316,9 +343,9 @@ function validateForm(action) {
 			// Invalid Email
 			Error = 'Invalid Email';
 		}
-	} else {
+	//} else {
 		// No Email
-		Error = 'Professional Email Required';
+		//Error = 'Professional Email Required';
 	}
 
 	if (PatientEmailAddress) {
@@ -335,7 +362,7 @@ function validateForm(action) {
 	// If theres an error display it
 	if (Error) {
 		$('#catalogActions').addClass('error');
-		$('#customerEmail').after('<span class="error-text">'+Error+'</span>');
+		$('.catalog-actions .cta-button').before('<span class="error-text">'+Error+'</span>');
 	} else {
 		$('.cta-button').removeClass('cta-button--disabled');
 	}
@@ -389,7 +416,7 @@ function updateProductArray(type,action,productCode,productQty,productName) {
 			thisTestProducts = $('.selected-test-products').text();
 			thisTestProducts += '|'+productCode;
 			$('.selected-test-products').text(thisTestProducts);
-			$('<div class="alert--success"><span>Added to Selected</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
+			$('<div class="alert--success"><span>Added</span></div>').insertBefore('#pageWrapper').delay(1000).fadeOut();
 		} else {
 		// Remove products
 			// Remove from test list

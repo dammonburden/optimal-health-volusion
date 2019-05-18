@@ -27,7 +27,7 @@ document.body.className += ' ' + 'page-catalog';
 		<div class="catalog--one-test" rel="select-test-toggle" data-test-id="{{ test.index }}" data-test-products="{{ test.codes }}">
 			<span class="check"><span>&nbsp;</span></span>
 			<span class="index">{{ test.index }}</span>
-			<span class="title"><strong>{{ test.title }}</strong><em>{{ test.desc }}</em></span>
+			<span class="title"><strong>{{ test.title }}</strong><em class="desc">{{ test.desc }}</em><em>{{ test.doseinfo }}</em></span>
 		</div>
 {% endfor %}
 	</div>
@@ -40,10 +40,12 @@ document.body.className += ' ' + 'page-catalog';
 			<label>Professional Code</label>
 			<div class="provider-code">&nbsp;</div>
 			<label for="providerEmail">Professional Email</label>
-			<input type="email" name="provider-email" id="providerEmail" placeholder="Professional Email" />
-			<label for="customerEmail">Patient Email (optional)</label>
+			<input type="email" name="provider-email" id="providerEmail" placeholder="Professional Email..." />
+			<label for="customerEmail">Patient Email</label>
 			<input type="email" name="email" id="customerEmail" placeholder="Patient Email..." />
 			<input type="hidden" name="cartUrl" id="customerCartUrl" />
+			<label for="message">Note</label>
+			<textarea name="message" id="message"></textarea>
 			<a class="cta-button cta-button--disabled block" rel="cat-send-email">Send</a>
 		</div>
 	</div>

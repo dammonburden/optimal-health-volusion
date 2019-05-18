@@ -1,5 +1,5 @@
 // Product Catalog for Doctors
-$catalog-sidebar-width: 220px;
+$catalog-sidebar-width: 280px;
 $catalog-logoheader-height: 60px;
 $catalog-filter-height: 40px;
 
@@ -111,19 +111,30 @@ $catalog-filter-height: 40px;
 	}
 	.alert--success {
 		position: fixed;
-		padding: 20px;
-		top: 0;// bottom: 0;
+		top: 0;
 		left: 0; right: 0;
 		z-index: 1000000;
-		background-color: rgba($color-main,.9);
+		background-color: rgba($color-main,.5);
 		color: $color-neutral-5;
+		height: $catalog-logoheader-height;
 		span {
 			width: 100%;
+			height: $catalog-logoheader-height;
+			line-height: $catalog-logoheader-height;
+			margin: auto;
+			top: 0; bottom: 0;
+			left: 0; right: 0;
+			position: absolute;
 			font-size: 24px;
 			font-weight: bold;
 			display: block;
 			text-align: center;
 		}
+	}
+	.alert--fullscreen {
+		bottom: 0;
+		background-color: rgba($color-main,.8);
+		height: 100%;
 	}
 	.v-product-grid {
 		min-height: 500px;
@@ -139,10 +150,16 @@ $catalog-filter-height: 40px;
 		background-color: $background-page;
 		border-top: 1px solid $border-color;
 		padding-left: 80px !important;
-		height: 90px;
+		height: 100px;
 		clear: none !important;
 		a, p, .product_productprice {
 			padding: 0;
+		}
+		&.show-description {
+			height: auto;
+			.v-product__desc {
+			  	display: block;
+			}
 		}
 	}
 	.colors_productprice, .product_productprice {
@@ -157,20 +174,41 @@ $catalog-filter-height: 40px;
 	}
 	.v-product__desc {
 	  display: none;
+	  font-size: 10px;
+	  line-height: 1.2em;
+	  height: auto;
+	  margin-top: 6px !important;
+	  margin-bottom: 10px !important;
+	  transition: all .2s;
+	  &:after {
+	  	display: none;
+	  }
 	}
 	.no-hp-error {
 		padding: 0 20px;
 	}
 	.v-product__img {
-	    float: left;
-	    padding: 0;
-	    padding-top: 10px !important;
 	    position: absolute;
-	    top: 0; bottom: 0;
+	    top: 10px; bottom: 0;
 	    left: 0;
+	    text-align: center;
+	    padding: 0;
+	    padding-top: 0 !important;
 		img {
 		  max-height: 40px !important;
 		  margin-bottom: 0;
+		}
+	}
+	.product-desc-toggle-button {
+		margin-top: 16px !important;
+		clear: both;
+		border-radius: 0;
+		padding: 0;
+		border: none;
+		float: right !important;
+		outline: none;
+		&:focus {
+			outline: none;
 		}
 	}
 	.v-product-grid .product_recurringpricingtext {
@@ -185,7 +223,7 @@ $catalog-filter-height: 40px;
 			margin-top: 0;
 			margin-left: 10px;
 			float: right;
-			min-width: 150px;
+			min-width: 100px;
 		}
 	}
 	.v-product__qty {
@@ -196,14 +234,6 @@ $catalog-filter-height: 40px;
 	}
 	.product_productprice b {
 	  font-weight: normal !important;
-	}
-	.page-overlay {
-		background-color: $color-neutral-1;
-		position: fixed;
-		top: 0; bottom: 0;
-		left: 0; right: 0;
-		opacity: .5;
-		z-index: 5;
 	}
 	.selected-item-list {
 		color: $color-neutral-5;
@@ -232,7 +262,7 @@ $catalog-filter-height: 40px;
 	.swiper-pagination {
 		//width: 100%;
 		height: $catalog-filter-height;
-		background-color: $background-page;
+		background-color: $background-body;
 		text-align: left;
 		z-index: 40;
 		position: fixed;
@@ -299,7 +329,7 @@ $catalog-filter-height: 40px;
 
 	padding: 10px;
 	background-color: $color-main;
-	z-index: 10;
+	z-index: 100;
 	h2 {
 		color: $color-neutral-5;
 		margin-bottom: 10px;
@@ -318,7 +348,7 @@ $test-height: 50px;
 	span {
 		display: block;
 		float: left;
-		height: $test-height;
+		height: $test-height + 15;
 	}
 	.check {
 		float: right;
@@ -371,12 +401,16 @@ $test-height: 50px;
 		}
 	}
 }
+.page-catalog #content_area .catalog--send-emails textarea {
+	padding-top: 8px !important;
+}
 .catalog--send-emails {
 	.catalog-actions {
 		padding: 10px;
 		background-color: $background-page;
-		input {
-			margin-bottom: 10px;
+		input, textarea {
+			margin-bottom: 6px;
+			width: 100%;
 		}
 	}
 	// successful submission
@@ -424,10 +458,79 @@ $test-height: 50px;
 	width: 100vw;
 	overflow: hidden;
 }
+.product-desc-toggle-button {
+	width: 26px;
+	height: 16px;	
+	position: relative;
+	span,
+	&:before,
+	&:after {
+		content: '';
+		height: 2px;
+		position: absolute;
+		background-color: #333;
+		display: block;
+		width: 100%;
+		position: absolute;
+		right: 0;
+	}
+	span {
+		top: 0px;
+		width: 40%;
+		transition: width .3s, transform .3s, top .0s;
+		transition-timing-function: ease-out;
+	}
+	&:before {
+		width: 60%;
+		top: calc(50% - 1px);
+		transform-origin: 100% 50%;
+		transition: opacity .1s;
+		transition-timing-function: ease-out;
+	}
+	&:after {
+		bottom: 0;
+		transition: width .3s, transform .3s, bottom .0s;
+		transition-timing-function: ease-out;
+	}
+	&.active {
+		transform: rotate(-90deg);
+		span {
+			width: 67%;
+			top: 2px;
+			transform: translateY(-50%) rotate(-45deg);
+			transform-origin: 50% 50%;
+		}
+		&:before {
+			opacity: 0;
+		}
+		&:after {
+			width: 67%;
+			bottom: 2px;
+			transform: translateY(50%) rotate(45deg);
+			transform-origin: 50% 50%;
+		}
 
+	}
+}
 // -------------------------------------------------------------------
 // Responsive Page
 // -------------------------------------------------------------------
+@media screen and (min-width: 725px) {
+.catalog--one-test {
+	span {
+		height: $test-height;
+	}
+	.title {
+		em {
+			float: left;
+		}
+		.desc {
+			width: 280px;
+		}
+	}
+}
+
+}
 @media screen and (min-width: $page-size-md) {
 .page-catalog {
 
@@ -463,9 +566,6 @@ $test-height: 50px;
 		top: $catalog-logoheader-height; bottom: 0;
 		left: auto; right: 0;
 		z-index: 5;
-		.provider-code {
-			display: inline;
-		}
 	}
 	.catalog--tool h2 {
 		font-size: 14px;

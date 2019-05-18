@@ -36,6 +36,12 @@ thisPageSlug = 'product-detail'; }
 else {
 thisPageSlug = 'other';
 }
+
+var tempCookie = getCookie('CartID5');
+    console.log('hereiam1: '+tempCookie);
+    createCookie('CartID5', '', -1);
+    console.log('hereiam2: '+tempCookie);
+
 // Main Navigation ----------------------------------------------
 // Cart icon when it has items
 if ($('.cartNum').length ) {
@@ -159,7 +165,6 @@ if (imgHead) {
     $('img[src*="heading_MyAccount.gif"]').remove();
     $('#content_area br').first().remove();
 }
-
 
 }); // end of document.ready
 function getUrlVars() {
