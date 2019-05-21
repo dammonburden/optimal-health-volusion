@@ -24,6 +24,15 @@ $('[rel="open-selected-products"]').click(function(event) {
 	$('body').removeClass('modal-open');
 	swiper.slideTo(3);
 });
+$('[rel="edit-provider-code"]').click(function(event) {
+    event.preventDefault();
+    // hide button
+	$('.edit-button').hide();
+    // hide text
+	$('.provider-code-text').hide();
+    // open form field
+	$('#providerCode').show();
+});
 $('[rel="tool-menu-toggle"]').click(function(event) {
     event.preventDefault();
 	var isOpen = $(this).hasClass('selected');
@@ -58,22 +67,19 @@ var HPClientID = getHashVars()['code'],
 	if (HPEmailAddress == 'undefined') { HPEmailAddress = ''; }
 
 if (HPClientID) {
-	//$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');	
+	//$('.ohs-header-logo').after('<div class="hp-info-header"><strong>ID: '+HPClientID+'</strong><em>'+HPEmailAddress+'</em></div>');
+	$('.provider-code-text').text(HPClientID);
+	$('#providerCode').val(HPClientID).hide();
+} else {
+	$('.provider-code-text').hide();
+	$('#providerCode').show().val('');
+}
 	$('.page-catalog').addClass('tools-active');
-	$('.provider-code').text(HPClientID);
 	if (HPEmailAddress) { $('#providerEmail').val(HPEmailAddress); }
 	// Show Page
 	$('.search_results_section').show();
 	$('.catalog--tools').show();
 	$('.ohs-header-tools').show();
-
-} else {
-	$('.search_results_section').hide();
-	$('#content_area').append('<div class="no-hp-error"><h2>No Healthcare Professional Provided</div>');
-	$('.catalog--tools').hide();
-	$('.ohs-header-tools').hide();
-	$('.ohs-footer-copyright').hide();
-}
 
 // Initialize Product List
 $('.v-product').each(function(index) {
@@ -148,25 +154,26 @@ $('.v65-productDisplay td').prepend('<div class="product-category-slide"><div cl
 
 var swiper = new Swiper('.product-category-slide', {
     touchEventsTarget: 'wrapper',
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    renderBullet: function (index, className) {
-    	switch(index) {
-		case 0:
-	      return '<span class="' + className + '">All Products</span>';
-	      break;
-		case 1:
-	      return '<span class="' + className + '">Dr. Harris Essential</span>';
-	      break;
-		case 2:
-	      return '<span class="' + className + '">Dr. Brimhall Opti-Nutrient</span>';
-	      break;
-		case 3:
-	      return '<span class="' + className + '">Selected (<em class="cart-count">0</em>)</span>';
-	      break;
-	  }
-    },
+    threshold: 20,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+		renderBullet: function (index, className) {
+			switch(index) {
+			case 0:
+				return '<span class="' + className + '">All Products</span>';
+				break;
+			case 1:
+				return '<span class="' + className + '">Dr. Harris Essential</span>';
+				break;
+			case 2:
+				return '<span class="' + className + '">Dr. Brimhall Opti-Nutrient</span>';
+				break;
+			case 3:
+				return '<span class="' + className + '">Selected (<em class="cart-count">0</em>)</span>';
+				break;
+		}
+	},
   },
 });
 swiper.on('slideChange', function () {
@@ -252,6 +259,9 @@ $('#customerEmail').focusout(function(event) {
 $('#providerEmail').focusout(function(event) {
 	validateForm();
 });
+$('#providerCode').focusout(function(event) {
+	validateForm();
+});
 // Send Email Button Click
 $('[rel="cat-send-email"]').click(function(event) {
     event.preventDefault();
@@ -263,8 +273,10 @@ $('[rel="cat-send-email"]').click(function(event) {
     var PatientEmailAddress = $('#customerEmail').val(),
 	    PatientCartUrl = $('#customerCartUrl').val(),
 	    ProviderEmail = $('#providerEmail').val(),
+	    ProviderCode = $('#providerCode').val(),
 	    emailMessage = $('#message').val(),
 	    emailProductList = $('.selected-item-list').html();
+
 	// If theres an error display it
 	if (!formError) {
 	// success
@@ -277,7 +289,7 @@ $('[rel="cat-send-email"]').click(function(event) {
 		  data: {
 		    'PatientCartUrl': PatientCartUrl,
 		    'PatientEmailAddress': PatientEmailAddress,
-		    'HPClientID': HPClientID,
+		    'HPClientID': ProviderCode,
 		    'HPEmailAddress': ProviderEmail,
 		    'Message': emailMessage,
 		    'Products': emailProductList
@@ -330,7 +342,9 @@ function validateForm(action) {
     var PatientEmailAddress = $('#customerEmail').val(),
 	    PatientCartUrl = $('#customerCartUrl').val(),
 	    ProviderEmail = $('#providerEmail').val(),
-	    Error = '';
+	    ProviderCode = $('#providerCode').val(),
+	    Error = '',
+	    pageHash = '';
 
 	// check for cart url
 	if (!PatientCartUrl && action == 'button') {
@@ -347,6 +361,10 @@ function validateForm(action) {
 		// No Email
 		//Error = 'Professional Email Required';
 	}
+	if (!ProviderCode) {
+		// No Provider Code
+		Error = 'Please enter a provider code';
+	}
 
 	if (PatientEmailAddress) {
 		// check if email is valid
@@ -358,6 +376,15 @@ function validateForm(action) {
 		// No Email
 		//Error = 'Required';
 	//}
+
+	if (ProviderCode && ProviderEmail) {
+		pageHash = 'code='+ProviderCode+'&email='+ProviderEmail;
+	} else if (ProviderCode) {
+		pageHash = 'code='+ProviderCode;
+	} else if (ProviderEmail) {
+		pageHash = 'email='+ProviderEmail;
+	}
+	window.location.hash = pageHash;
 
 	// If theres an error display it
 	if (Error) {
@@ -495,6 +522,7 @@ function updateProductArray(type,action,productCode,productQty,productName) {
 		selectedProductsHTML += '</div>';
 		selectedProductsURL += 'ProductCode='+value.id+'&qty.'+value.id+'='+value.qty+'&';
 	});
+	HPClientID = $('#providerCode').val();
 	selectedProductsURL += 'HPClientID='+HPClientID;
 
 	if (selectedProductsHTML) {

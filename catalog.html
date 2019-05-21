@@ -37,8 +37,10 @@ document.body.className += ' ' + 'page-catalog';
 	<h2><i class="fal fa-envelope"></i> Send Emails</h2>
 	<div class="catalog-selections">
 		<div class="catalog-actions" id="catalogActions">
-			<label>Professional Code</label>
-			<div class="provider-code">&nbsp;</div>
+			<a class="edit-button" rel="edit-provider-code"><i class="fal fa-pencil-alt"></i></a>
+			<label for="providerCode">Professional Code</label>
+			<div class="provider-code-text">&nbsp;</div>
+			<input type="code" name="provider-code" id="providerCode" placeholder="Professional Code..." />
 			<label for="providerEmail">Professional Email</label>
 			<input type="email" name="provider-email" id="providerEmail" placeholder="Professional Email..." />
 			<label for="customerEmail">Patient Email</label>

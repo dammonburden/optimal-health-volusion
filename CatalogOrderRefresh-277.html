@@ -23,10 +23,18 @@ $(document).ready(function(){
   if (HPClientID) {
     createCookie('HPClientID', HPClientID, 14);
   }
-  // redirect user to shoppping page
-  //window.location = 'http://xrxka.mrsyh.servertrust.com/ShoppingCart.asp'+URLParams;
-  window.location = 'https://www.optimalhealthsystems.com/ShoppingCart.asp'+URLParams;
-  //console.log('https://www.optimalhealthsystems.com/ShoppingCart.asp'+URLParams);
+  $.ajax({
+    type: "POST",
+    url: "https://www.optimalhealthsystems.com/ShoppingCart.asp?ClearCart=Y",
+    success: function(msg){
+        // redirect user to shopping page
+        //window.location = 'http://xrxka.mrsyh.servertrust.com/ShoppingCart.asp'+URLParams;
+        window.location = 'https://www.optimalhealthsystems.com/ShoppingCart.asp'+URLParams;
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+       alert("some error");
+    }
+  });
 });
 function getUrlVars() {
     var vars = {};

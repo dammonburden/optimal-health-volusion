@@ -426,10 +426,20 @@ $test-height: 50px;
 	label {
 		font-size: 12px;
 	}
-	.provider-code {
+	.provider-code-text {
 		padding: 0 4px;
 		background-color: $background-highlight;
 		margin-bottom: 8px;
+	}
+	.edit-button {
+		width: 40px;
+		height: 40px;
+		text-align: right;
+		display: inline-block;
+		float: right;
+		i {
+			font-size: 18px;
+		}
 	}
 	.hp-info {
 		margin-bottom: 6px;
