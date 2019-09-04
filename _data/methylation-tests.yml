@@ -49,7 +49,7 @@
 - index: 9
   title: "VDR"
   desc: "Reduced Vitamin Cellular Absorption"
-  doseinfo: "Optimal Longevi-D-K2 (1-3 x/day) / Essential EFV (1 x/day)"
+  doseinfo: "Optimal Longevi-D-K2 (1-3 x/day) / Essential DAK1K2 (1 x/day)"
   codes: "655705123099|619587048116"
 
 - index: 10
@@ -145,7 +145,7 @@
 - index: 25
   title: "CYP 1A2"
   desc: "Poor Cholesterol Adrenal & Caffeine Control"
-  doseinfo: "Optimal E.F.A. (2 x/day) / Magnesium (1, 2 x/day)"
+  doseinfo: "Optimal DAK1K2 (2 x/day) / Magnesium (1, 2 x/day)"
   codes: "655705123259|619587048123"
 
 - index: 26
